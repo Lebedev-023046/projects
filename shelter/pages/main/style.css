@@ -142,6 +142,8 @@ body {
   width: 15.64vw;
   height: 408px;
   background: url("../../assets/img/about-pets.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .about .about-content .content {
   width: 430px;
@@ -172,17 +174,19 @@ body {
   padding: 80px 0px 100px;
 }
 .pets .pets-content .heading {
+  width: 400px;
   font-family: Georgia, serif;
   font-size: 35px;
   font-weight: 400;
   line-height: 45px;
   letter-spacing: 0.06em;
   text-align: center;
-  padding: 0 400px 60px;
+  margin: 0 auto 60px;
 }
 .pets .pets-content .slider {
   display: flex;
   width: 1280px;
+  padding-bottom: 60px;
 }
 .pets .pets-content .slider .left-arrow {
   border: none;
@@ -220,7 +224,7 @@ body {
   text-align: center;
 }
 .pets .pets-content .slider .cards .card .button-lm {
-  display: blo;
+  display: block;
   font-family: Georgia, serif;
   font-size: 17px;
   font-weight: 400;
@@ -244,6 +248,146 @@ body {
 }
 .pets .pets-content .slider .cards .card:nth-of-type(3) {
   background-image: url("../../assets/img/pets-woody.png");
+}
+.pets .pets-content .primary-button {
+  line-height: 22px;
+  width: 261px;
+  height: 52px;
+  border-radius: 100px;
+  border: none;
+  font-size: 17px;
+  background-color: #F1CDB3;
+  font-family: Georgia, serif;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 2px 0px 0px rgba(89, 89, 89, 0.5);
+}
+.pets .pets-content .primary-button:hover {
+  cursor: pointer;
+}
+
+.help .help-content {
+  padding: 80px 0px 100px;
+}
+.help .help-content .heading {
+  width: 308px;
+  font-family: Georgia, serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin: 0 auto 60px;
+}
+.help .help-content .list {
+  width: 1026px;
+  margin: 0 auto;
+}
+.help .help-content .list .upper-list {
+  display: flex;
+  justify-content: space-between;
+}
+.help .help-content .list .upper-list > h4 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.help .help-content .list .lower-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 84px;
+}
+.help .help-content .list .lower-list > H4 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.help .help-content .list .pet-food {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 82px;
+  background-image: url("../../assets/icons/list/icon-pet-food.svg");
+}
+.help .help-content .list .transportation {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 150px;
+  background-image: url("../../assets/icons/list/icon-transportation.svg");
+}
+.help .help-content .list .toys {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 60px;
+  background-image: url("../../assets/icons/list/icon-toys.svg");
+}
+.help .help-content .list .bowls-and-cups {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 153px;
+  background-image: url("../../assets/icons/list/icon-bowls-and-cups.svg");
+}
+.help .help-content .list .shampoos {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 101px;
+  background-image: url("../../assets/icons/list/icon-shampoos.svg");
+}
+.help .help-content .list .vitamins {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 89px;
+  background-image: url("../../assets/icons/list/icon-vitamins.svg");
+}
+.help .help-content .list .medicines {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 101px;
+  background-image: url("../../assets/icons/list/icon-medicines.svg");
+}
+.help .help-content .list .coralls-leashes {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 165px;
+  background-image: url("../../assets/icons/list/icon-collars-leashes.svg");
+}
+.help .help-content .list .sleeping-areas {
+  height: 113px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 90px 0 55px 0;
+  text-align: center;
+  width: 143px;
+  background-image: url("../../assets/icons/list/icon-sleeping-area.svg");
 }
 
 /*# sourceMappingURL=style.css.map */

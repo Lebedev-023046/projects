@@ -17,6 +17,14 @@ $text : Arial, sans-serif;
     text-align: center;
 }
 
+@mixin list {
+    height: 113px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 90px 0 55px 0;
+    text-align: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -176,6 +184,8 @@ body {
             width: 15.64vw;
             height: 408px;
             background: url('../../assets/img/about-pets.png');
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         .content {
@@ -210,19 +220,21 @@ body {
         padding: 80px 0px 100px;
 
         .heading {
+            width: 400px;
             font-family: $titles;
             font-size: 35px;
             font-weight: 400;
             line-height: 45px;
             letter-spacing: 0.06em;
             text-align: center;
-            padding: 0 400px 60px;
+            margin: 0 auto 60px;
 
         }
 
         .slider {
             display: flex;
             width: 1280px;
+            padding-bottom: 60px;
 
             .left-arrow {
                 @include arrow_buttons();
@@ -253,7 +265,7 @@ body {
                     }
 
                     .button-lm {
-                        display: blo;
+                        display: block;
                         font-family: $titles;
                         font-size: 17px;
                         font-weight: 400;
@@ -285,12 +297,122 @@ body {
             }
         }
     
-        // .primary-button {
-            
-        // }
+        .primary-button {
+            line-height: 22px;
+            width: 261px;
+            height: 52px;
+            border-radius: 100px;
+            border: none;
+            font-size: 17px;
+            background-color: #F1CDB3;
+            font-family: $titles;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0px 2px 0px 0px rgba($color: #595959, $alpha: 0.5);
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
+}
+
+.help {
+    .help-content {
+        padding: 80px 0px 100px;
+
+        .heading {
+            width: 308px;
+            font-family: $titles;
+            font-size: 35px;
+            font-weight: 400;
+            line-height: 45px;
+            letter-spacing: 0.06em;
+            text-align: center;
+            margin: 0 auto 60px;
+        }
+
+        .list {
+            width: 1026px;
+            margin: 0 auto;
+
+            .upper-list {
+                display: flex;
+                justify-content: space-between;
+
+                & > h4 {
+                    font-family: $titles;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    letter-spacing: 0.05em;
+                    text-align: center;
+                }
+            }
+
+            .lower-list {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 84px;
+
+                & > H4 {
+                    font-family: $titles;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    letter-spacing: 0.05em;
+                    text-align: center;
+                }
+            }
 
 
+            .pet-food {
+                @include list();
+                width: 82px;
+                background-image: url('../../assets/icons/list/icon-pet-food.svg');
+            }
+            .transportation {
+                @include list();
+                width: 150px;
+                background-image: url('../../assets/icons/list/icon-transportation.svg');
+            }
+            .toys {
+                @include list();
+                width: 60px;
+                background-image: url('../../assets/icons/list/icon-toys.svg');
+            }
+            .bowls-and-cups {
+                @include list();
+                width: 153px;
+                background-image: url('../../assets/icons/list/icon-bowls-and-cups.svg');
+            }
+            .shampoos {
+                @include list();
+                width: 101px;
+                background-image: url('../../assets/icons/list/icon-shampoos.svg');
+            }
+            .vitamins {
+                @include list();
+                width: 89px;
+                background-image: url('../../assets/icons/list/icon-vitamins.svg');
+            }
+            .medicines {
+                @include list();
+                width: 101px;
+                background-image: url('../../assets/icons/list/icon-medicines.svg');
+            }
+            .coralls-leashes {
+                @include list();
+                width: 165px;
+                background-image: url('../../assets/icons/list/icon-collars-leashes.svg');
+            }
+            .sleeping-areas {
+                @include list();
+                width: 143px;
+                background-image: url('../../assets/icons/list/icon-sleeping-area.svg');
+            }
+        }
+    }
 }
 
 
