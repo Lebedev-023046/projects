@@ -31,20 +31,25 @@ body {
     flex-direction: column;
 }
 .header {
-    display: flex;
-    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     margin: 60px auto;
     max-width: 1200px;
-    width: 100%;
     
-@media (max-width: 1280px) {
-    margin: 0px 40px;
+    @media (max-width: 1280px) {
+        margin: 0px 40px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
 }
 
     .logo {
-        // width: 9.84vw;
-        // height: 7.625vh;
-        
+
         .title {
             color: #F1CDB3;
             font-weight: 400;
@@ -93,7 +98,7 @@ body {
 .start-screen-content {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 180px auto 0px;
     max-width: 1200px;
     width: 100%;
     color: #fff;
@@ -141,6 +146,45 @@ body {
         width: 58.167%;
         height: 728px;
         background: url('../../assets/img/start-screen-puppy.png') transparent;
+    }
+}
+
+.about {
+
+    .about-content {
+
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 175px 100px;
+
+        .about-pets {
+            width: 16.0435vw;
+            height: 408px;
+            background: url('../../assets/img/about-pets.png');
+        }
+
+        .content {
+            width: 300px;
+            height: 380px;
+
+            .heading {
+                padding-bottom: 35px;
+                font-family: $titles;
+                font-weight: 400;
+                font-size: 35px;
+                line-height: 45.5px;
+                width: 370px;
+                padding-right: 60px;
+            }
+
+            .subheading {
+                padding-bottom: 15px;
+                font-family: $text;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 24px;
+            }
+        }
     }
 }
 
