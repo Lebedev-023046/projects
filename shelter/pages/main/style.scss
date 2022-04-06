@@ -25,6 +25,25 @@ $text : Arial, sans-serif;
     text-align: center;
 }
 
+@mixin title-styles {
+    color: #545454;
+    font-family: $titles;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+}
+
+@mixin footer-subtitle {
+    font-family: $titles;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 32px;
+    padding-left: 60px;
+    text-align: left;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +69,7 @@ body {
  }
 
 .start-screen {
-    background: linear-gradient(to bottom right, rgba(91, 72, 58, 1),rgba(38, 36, 37, 1));
+    background: linear-gradient(to bottom right, rgba(91, 72, 58, 1),#292929);
     display: flex;
     flex-direction: column;
 }
@@ -81,6 +100,7 @@ body {
             font-size: 32px;
             line-height: 35.2px;
             -webkit-text-stroke-width: 1px;
+            margin-bottom: 10px;
             -webkit-text-stroke-color: black;
         }
     
@@ -108,13 +128,57 @@ body {
 
     .nav-item {
         margin-left: 35px;
+        line-height: 30px;
 
+        .first-item {
+            color: #fff;
+            text-decoration: none;
+            line-height: 24px;
+            font-size: 15px;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -7px;
+                width: 100%;
+                height: 2px;
+                background-color: #F1CDB3;
+                transition: .3s;
+            }
+        }
+    
         .nav-link {
             color: #fff;
             text-decoration: none;
             line-height: 24px;
             font-size: 15px;
+            font-family: $text;
+            position: relative;
+
+
+            // &:before {
+            //     content: '';
+            //     position: absolute;
+            //     left: 0;
+            //     bottom: -7px;
+            //     width: 0%;
+            //     height: 2px;
+            //     background-color: #F1CDB3;
+            //     transition: .3s;
+            // }
+    
+            // &:hover::before  {
+            //     width: 100%;
+            // }
+
+            .first-item {
+                
+            }
         }
+
+
     }
 }
 
@@ -175,7 +239,6 @@ body {
 .about {
 
     .about-content {
-
         display: flex;
         justify-content: space-between;
         padding: 80px 175px 100px;
@@ -189,22 +252,21 @@ body {
         }
 
         .content {
+            padding-top: 14px;
+            padding-bottom: 14px;
             width: 430px;
             height: 380px;
 
             .heading {
-                padding-bottom: 35px;
-                font-family: $titles;
-                font-weight: 400;
-                font-size: 35px;
-                line-height: 45px;
+                @include title-styles();
+                padding-bottom: 27px;
                 width: 370px;
-                letter-spacing: 0.06em;
                 padding-right: 60px;
             }
 
             .subheading {
-                padding-bottom: 15px;
+                color: #4C4C4C;
+                padding-bottom: 20px;
                 font-family: $text;
                 font-weight: 400;
                 font-size: 15px;
@@ -220,12 +282,8 @@ body {
         padding: 80px 0px 100px;
 
         .heading {
+            @include title-styles();
             width: 400px;
-            font-family: $titles;
-            font-size: 35px;
-            font-weight: 400;
-            line-height: 45px;
-            letter-spacing: 0.06em;
             text-align: center;
             margin: 0 auto 60px;
 
@@ -261,10 +319,12 @@ body {
                     padding-bottom: 30px;
 
                     .name {
-                        @include pet-name()
+                        @include pet-name();
+                        color: #545454;
                     }
 
                     .button-lm {
+                        color: #292929;
                         display: block;
                         font-family: $titles;
                         font-size: 17px;
@@ -298,6 +358,7 @@ body {
         }
     
         .primary-button {
+            color: #292929;
             line-height: 22px;
             width: 261px;
             height: 52px;
@@ -319,15 +380,12 @@ body {
 
 .help {
     .help-content {
+        height: 611px;
         padding: 80px 0px 100px;
 
         .heading {
+            @include title-styles();
             width: 308px;
-            font-family: $titles;
-            font-size: 35px;
-            font-weight: 400;
-            line-height: 45px;
-            letter-spacing: 0.06em;
             text-align: center;
             margin: 0 auto 60px;
         }
@@ -339,6 +397,7 @@ body {
             .upper-list {
                 display: flex;
                 justify-content: space-between;
+                padding-bottom: 55px;
 
                 & > h4 {
                     font-family: $titles;
@@ -347,6 +406,7 @@ body {
                     line-height: 23px;
                     letter-spacing: 0.05em;
                     text-align: center;
+                    padding-bottom: 0px;
                 }
             }
 
@@ -354,6 +414,7 @@ body {
                 display: flex;
                 justify-content: space-between;
                 padding: 0 84px;
+                // padding-top: 10px;
 
                 & > H4 {
                     font-family: $titles;
@@ -362,6 +423,7 @@ body {
                     line-height: 23px;
                     letter-spacing: 0.05em;
                     text-align: center;
+                    align-items: flex-end;
                 }
             }
 
@@ -412,6 +474,193 @@ body {
                 background-image: url('../../assets/icons/list/icon-sleeping-area.svg');
             }
         }
+    }
+}
+
+.donation {
+    background-color: #F6F6F6;
+    .donation-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 182.5px 100px;
+
+        .donation-dog {
+            width: 505px;
+            height: 261px;
+            margin: 10.5px 30px 10.5px 0px;
+            background-image: url('../../assets/img/donation-dog.png');
+        }
+
+        .content {
+
+            width: 380px;
+            height: 282px;
+            .heading {
+                @include title-styles();
+                padding: 0px 80px 20px 0px;
+            }
+
+            .subheading {
+                font-family: $titles;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 17px;
+                letter-spacing: 0.06em;
+                text-align: left;
+                padding-bottom: 20px;
+            }
+
+            .credit-card {
+
+                width: 349px;
+                height: 43px;
+                background-color: #F1CDB3;
+                border-radius: 9px;
+                margin-bottom: 20px;
+
+                .sub-card {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 15px;
+    
+                    .card-icon {
+                        width: 30px;
+                        height: 23px;
+                        background-image: url('../../assets/icons/credit-card.svg');
+                    }
+                    .card-number {
+                        color: #545454;
+                        font-family: $titles;
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 23px;
+                        letter-spacing: 0.06em;
+                        text-align: left;
+
+                    }
+                }
+            }
+
+            .legal-information {
+                font-family: $text;
+                font-size: 12px;
+                font-style: italic;
+                font-weight: 400;
+                line-height: 18px;
+                letter-spacing: 0px;
+                text-align: left;
+                color:#B2B2B2;
+            }
+
+        }
+    }
+}
+
+.footer {
+
+    height: 350px;
+    background: linear-gradient(to right, rgba(91, 72, 58, 1),rgba(38, 36, 37, 1));
+    color: #F1CDB3;
+
+    .footer-content {
+
+        padding: 40px 40px 0px 40px;
+
+        display: flex;
+        justify-content: space-between;
+
+        .contacts {
+            margin-top: 16px;
+            width: 278px;
+            position: relative;
+    
+            .title {
+                @include title-styles();
+                color: #FFFFFF;
+            }
+
+            .mail {
+                margin: 40px 0px;
+                position: relative;
+                @include footer-subtitle();
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 40px;
+                    height: 32px;
+                    background: url('../../assets/icons/footer-icons/icon-email.svg')  no-repeat;
+                }
+            }
+
+            .phone {
+                @include footer-subtitle();
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 40px;
+                    height: 32px;
+                    background: url('../../assets/icons/footer-icons/icon-phone.svg')  no-repeat;
+                }
+            }
+        }
+    
+        .locations {
+            margin-top: 16px;
+            width: 302px;
+    
+            .title { 
+                @include title-styles();
+                color: #FFFFFF; 
+            }
+
+            .boston {
+                margin: 34px 0px 32px 0px;
+                @include footer-subtitle();
+                padding-left: 44px;
+                height: 46px;
+                line-height: 23px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 7px;
+                    width: 22px;
+                    height: 32px;
+                    background: url('../../assets/icons/footer-icons/icon-marker.svg')  no-repeat;
+                }
+            }
+
+            .london {                
+                @include footer-subtitle();
+                padding-left: 44px;
+                height: 23px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 22px;
+                    height: 32px;
+                    margin-top: 7px;
+                    background: url('../../assets/icons/footer-icons/icon-marker.svg')  no-repeat;
+                }
+            }
+        }
+
+        .footer-puppy {
+            width: 300px;
+            height: 310px;
+            background-image: url('../../assets/img/footer-puppy.png');
+        }
+
     }
 }
 
