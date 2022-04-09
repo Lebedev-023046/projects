@@ -1,6 +1,10 @@
 $titles : Georgia, serif;
 $text : Arial, sans-serif;
 
+html {
+    scroll-behavior: smooth;
+}
+
 @mixin arrow_buttons {
     border: none;
     width: 52px;
@@ -172,13 +176,7 @@ body {
             // &:hover::before  {
             //     width: 100%;
             // }
-
-            .first-item {
-                
-            }
         }
-
-
     }
 }
 
@@ -214,14 +212,21 @@ body {
         }
 
         .button-primary {
-            line-height: 22px;
+
             width: 207px;
             height: 52px;
             border-radius: 100px;
             border: none;
-            font-size: 17px;
+
             background-color: #F1CDB3;
             font-family: $titles;
+
+            .a-button-primary {
+                font-size: 17px;
+                line-height: 22px;
+                color: #292929;
+                text-decoration: none;
+            }
 
             &:hover {
                 cursor: pointer;
@@ -244,7 +249,7 @@ body {
         padding: 80px 175px 100px;
 
         .about-pets {
-            width: 15.64vw;
+            width: 300px;
             height: 408px;
             background: url('../../assets/img/about-pets.png');
             background-size: contain;
@@ -298,12 +303,20 @@ body {
                 @include arrow_buttons();
                 margin: auto 53px auto 40px;
                 background: url('../../assets/icons/button_arrow_r.png');
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
 
             .right-arrow {
                 @include arrow_buttons();
                 margin: auto 40px auto 53px;
                 background: url('../../assets/icons/button_arrow_l.png');
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
 
             .cards {
@@ -314,9 +327,15 @@ body {
                 .card {
                     width: 270px;
                     height: 435px;
-                    background-color: #fff;
+                    background-color: #FAFAFA;
                     background-repeat: no-repeat;
                     padding-bottom: 30px;
+                    transition: .3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        filter: brightness(0.9) invert(5%) sepia(10%);
+                    }
 
                     .name {
                         @include pet-name();
@@ -332,7 +351,7 @@ body {
                         line-height: 22px;
                         letter-spacing: 0.06em;
                         margin: 30px 41.5px;
-                        background-color: #fff;
+                        background-color: #FAFAFA;
                         border: 2px solid #F1CDB3;
                         height: 52px;
                         width: 187px;
@@ -358,25 +377,30 @@ body {
         }
     
         .primary-button {
-            color: #292929;
-            line-height: 22px;
             width: 261px;
             height: 52px;
             border-radius: 100px;
             border: none;
-            font-size: 17px;
             background-color: #F1CDB3;
             font-family: $titles;
             display: block;
             margin: 0 auto;
             box-shadow: 0px 2px 0px 0px rgba($color: #595959, $alpha: 0.5);
 
+            .a-primary-button {
+                font-size: 17px;
+                line-height: 22px;
+                color: #292929;
+                text-decoration: none;
+                letter-spacing: 0.06em;
+            }
+
             &:hover {
                 cursor: pointer;
             }
         }
     }
-}
+} 
 
 .help {
     .help-content {
@@ -393,39 +417,60 @@ body {
         .list {
             width: 1026px;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 120px;
+            row-gap: 22.5px;
 
-            .upper-list {
-                display: flex;
-                justify-content: space-between;
-                padding-bottom: 55px;
-
-                & > h4 {
-                    font-family: $titles;
-                    font-size: 20px;
-                    font-weight: 400;
-                    line-height: 23px;
-                    letter-spacing: 0.05em;
-                    text-align: center;
-                    padding-bottom: 0px;
-                }
+            & > h4 {
+                font-family: $titles;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 23px;
+                letter-spacing: 0.05em;
+                text-align: center;
+                padding-bottom: 0px;
+                align-items: flex-end;
+                text-align: center;
+                letter-spacing: 0.05em;
             }
 
-            .lower-list {
-                display: flex;
-                justify-content: space-between;
-                padding: 0 84px;
-                // padding-top: 10px;
+            // .upper-list {
+            //     display: flex;
+            //     justify-content: center;
+            //     flex-wrap: wrap;
+            //     column-gap: 120px;
+            //     row-gap: 55px;
 
-                & > H4 {
-                    font-family: $titles;
-                    font-size: 20px;
-                    font-weight: 400;
-                    line-height: 23px;
-                    letter-spacing: 0.05em;
-                    text-align: center;
-                    align-items: flex-end;
-                }
-            }
+            //     & > h4 {
+            //         font-family: $titles;
+            //         font-size: 20px;
+            //         font-weight: 400;
+            //         line-height: 23px;
+            //         letter-spacing: 0.05em;
+            //         text-align: center;
+            //         padding-bottom: 0px;
+            //     }
+            // }
+
+            // .lower-list {
+            //     display: flex;
+            //     justify-content: center;
+            //     flex-wrap: wrap;
+            //     column-gap: 120px;
+            //     row-gap: 55px;
+
+            //     & > H4 {
+            //         font-family: $titles;
+            //         font-size: 20px;
+            //         font-weight: 400;
+            //         line-height: 23px;
+            //         letter-spacing: 0.05em;
+            //         text-align: center;
+            //         align-items: flex-end;
+            //     }
+            // }
 
 
             .pet-food {
@@ -529,13 +574,17 @@ body {
                         background-image: url('../../assets/icons/credit-card.svg');
                     }
                     .card-number {
-                        color: #545454;
                         font-family: $titles;
                         font-size: 20px;
                         font-weight: 400;
                         line-height: 23px;
                         letter-spacing: 0.06em;
                         text-align: left;
+
+                        .a-card-number {
+                            text-decoration: none;
+                            color: #545454;
+                        }
 
                     }
                 }
@@ -584,6 +633,11 @@ body {
                 position: relative;
                 @include footer-subtitle();
 
+                .a-mail {
+                    text-decoration: none;
+                    color: #F1CDB3;
+                }
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -596,6 +650,11 @@ body {
 
             .phone {
                 @include footer-subtitle();
+
+                .a-phone {
+                    text-decoration: none;
+                    color: #F1CDB3;
+                }
 
                 &::before {
                     content: "";
@@ -625,6 +684,11 @@ body {
                 line-height: 23px;
                 position: relative;
 
+                .a-boston {
+                    text-decoration: none;
+                    color: #F1CDB3;
+                }
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -641,6 +705,11 @@ body {
                 padding-left: 44px;
                 height: 23px;
                 position: relative;
+                
+                .a-london {
+                    text-decoration: none;
+                    color: #F1CDB3;
+                }
 
                 &::before {
                     content: "";

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -105,6 +109,7 @@ body {
   font-family: Arial, sans-serif;
   position: relative;
 }
+
 .start-screen-content {
   display: flex;
   justify-content: space-between;
@@ -135,14 +140,18 @@ body {
   margin-bottom: 42px;
 }
 .start-screen-content .content .button-primary {
-  line-height: 22px;
   width: 207px;
   height: 52px;
   border-radius: 100px;
   border: none;
-  font-size: 17px;
   background-color: #F1CDB3;
   font-family: Georgia, serif;
+}
+.start-screen-content .content .button-primary .a-button-primary {
+  font-size: 17px;
+  line-height: 22px;
+  color: #292929;
+  text-decoration: none;
 }
 .start-screen-content .content .button-primary:hover {
   cursor: pointer;
@@ -159,7 +168,7 @@ body {
   padding: 80px 175px 100px;
 }
 .about .about-content .about-pets {
-  width: 15.64vw;
+  width: 300px;
   height: 408px;
   background: url("../../assets/img/about-pets.png");
   background-size: contain;
@@ -220,12 +229,18 @@ body {
   margin: auto 53px auto 40px;
   background: url("../../assets/icons/button_arrow_r.png");
 }
+.pets .pets-content .slider .left-arrow:hover {
+  cursor: pointer;
+}
 .pets .pets-content .slider .right-arrow {
   border: none;
   width: 52px;
   height: 52px;
   margin: auto 40px auto 53px;
   background: url("../../assets/icons/button_arrow_l.png");
+}
+.pets .pets-content .slider .right-arrow:hover {
+  cursor: pointer;
 }
 .pets .pets-content .slider .cards {
   display: flex;
@@ -235,9 +250,14 @@ body {
 .pets .pets-content .slider .cards .card {
   width: 270px;
   height: 435px;
-  background-color: #fff;
+  background-color: #FAFAFA;
   background-repeat: no-repeat;
   padding-bottom: 30px;
+  transition: 0.3s;
+}
+.pets .pets-content .slider .cards .card:hover {
+  cursor: pointer;
+  filter: brightness(0.9) invert(5%) sepia(10%);
 }
 .pets .pets-content .slider .cards .card .name {
   padding-top: 300px;
@@ -258,7 +278,7 @@ body {
   line-height: 22px;
   letter-spacing: 0.06em;
   margin: 30px 41.5px;
-  background-color: #fff;
+  background-color: #FAFAFA;
   border: 2px solid #F1CDB3;
   height: 52px;
   width: 187px;
@@ -277,18 +297,22 @@ body {
   background-image: url("../../assets/img/pets-woody.png");
 }
 .pets .pets-content .primary-button {
-  color: #292929;
-  line-height: 22px;
   width: 261px;
   height: 52px;
   border-radius: 100px;
   border: none;
-  font-size: 17px;
   background-color: #F1CDB3;
   font-family: Georgia, serif;
   display: block;
   margin: 0 auto;
   box-shadow: 0px 2px 0px 0px rgba(89, 89, 89, 0.5);
+}
+.pets .pets-content .primary-button .a-primary-button {
+  font-size: 17px;
+  line-height: 22px;
+  color: #292929;
+  text-decoration: none;
+  letter-spacing: 0.06em;
 }
 .pets .pets-content .primary-button:hover {
   cursor: pointer;
@@ -312,13 +336,13 @@ body {
 .help .help-content .list {
   width: 1026px;
   margin: 0 auto;
-}
-.help .help-content .list .upper-list {
   display: flex;
-  justify-content: space-between;
-  padding-bottom: 55px;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 120px;
+  row-gap: 22.5px;
 }
-.help .help-content .list .upper-list > h4 {
+.help .help-content .list > h4 {
   font-family: Georgia, serif;
   font-size: 20px;
   font-weight: 400;
@@ -326,20 +350,9 @@ body {
   letter-spacing: 0.05em;
   text-align: center;
   padding-bottom: 0px;
-}
-.help .help-content .list .lower-list {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 84px;
-}
-.help .help-content .list .lower-list > H4 {
-  font-family: Georgia, serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 23px;
-  letter-spacing: 0.05em;
-  text-align: center;
   align-items: flex-end;
+  text-align: center;
+  letter-spacing: 0.05em;
 }
 .help .help-content .list .pet-food {
   height: 113px;
@@ -477,13 +490,16 @@ body {
   background-image: url("../../assets/icons/credit-card.svg");
 }
 .donation .donation-content .content .credit-card .sub-card .card-number {
-  color: #545454;
   font-family: Georgia, serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 23px;
   letter-spacing: 0.06em;
   text-align: left;
+}
+.donation .donation-content .content .credit-card .sub-card .card-number .a-card-number {
+  text-decoration: none;
+  color: #545454;
 }
 .donation .donation-content .content .legal-information {
   font-family: Arial, sans-serif;
@@ -531,6 +547,10 @@ body {
   padding-left: 60px;
   text-align: left;
 }
+.footer .footer-content .contacts .mail .a-mail {
+  text-decoration: none;
+  color: #F1CDB3;
+}
 .footer .footer-content .contacts .mail::before {
   content: "";
   position: absolute;
@@ -547,6 +567,10 @@ body {
   line-height: 32px;
   padding-left: 60px;
   text-align: left;
+}
+.footer .footer-content .contacts .phone .a-phone {
+  text-decoration: none;
+  color: #F1CDB3;
 }
 .footer .footer-content .contacts .phone::before {
   content: "";
@@ -583,6 +607,10 @@ body {
   line-height: 23px;
   position: relative;
 }
+.footer .footer-content .locations .boston .a-boston {
+  text-decoration: none;
+  color: #F1CDB3;
+}
 .footer .footer-content .locations .boston::before {
   content: "";
   position: absolute;
@@ -603,6 +631,10 @@ body {
   padding-left: 44px;
   height: 23px;
   position: relative;
+}
+.footer .footer-content .locations .london .a-london {
+  text-decoration: none;
+  color: #F1CDB3;
 }
 .footer .footer-content .locations .london::before {
   content: "";
