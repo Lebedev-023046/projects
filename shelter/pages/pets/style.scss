@@ -122,6 +122,10 @@ html {
             font-weight: 400;
             position: relative;
 
+            &:hover {
+                color: #292929;
+            }
+
 
             // &:before {
             //     content: '';
@@ -302,6 +306,10 @@ html {
                 .page-number {
                     background-color: #F1CDB3;
                     border: 2px solid #F1CDB3;
+
+                    &:hover {
+                        background-color: #F1CDB3;
+                    }
                 }
 
                 .right {

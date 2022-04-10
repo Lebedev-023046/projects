@@ -71,6 +71,9 @@ html {
   font-weight: 400;
   position: relative;
 }
+.nav-list .nav-item .nav-link:hover {
+  color: #292929;
+}
 .nav-list .nav-item .second-item {
   color: #292929;
   text-decoration: none;
@@ -228,6 +231,9 @@ html {
 .wrapper .pets .pets-content .navigation .page-number {
   background-color: #F1CDB3;
   border: 2px solid #F1CDB3;
+}
+.wrapper .pets .pets-content .navigation .page-number:hover {
+  background-color: #F1CDB3;
 }
 .wrapper .pets .pets-content .navigation .right {
   background-image: url("../../assets/icons/pagination/button_paginator-r1.png");
