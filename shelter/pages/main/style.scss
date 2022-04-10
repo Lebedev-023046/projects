@@ -9,6 +9,13 @@ html {
     border: none;
     width: 52px;
     height: 52px;
+    transition: .3s;
+    border-radius: 50%;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #FDDCC4;
+    }
 }
 
 @mixin pet-name {
@@ -73,7 +80,7 @@ body {
  }
 
 .start-screen {
-    background: linear-gradient(to bottom right, rgba(91, 72, 58, 1),#292929);
+    background: url("../../assets/img/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     display: flex;
     flex-direction: column;
 }
@@ -220,6 +227,7 @@ body {
 
             background-color: #F1CDB3;
             font-family: $titles;
+            transition: .3s;
 
             .a-button-primary {
                 font-size: 17px;
@@ -230,6 +238,7 @@ body {
 
             &:hover {
                 cursor: pointer;
+                background-color: #FDDCC4;
             }
         }
     }
@@ -296,33 +305,27 @@ body {
 
         .slider {
             display: flex;
-            width: 1280px;
+            max-width: 1280px;
+            width: 100%;
             padding-bottom: 60px;
 
             .left-arrow {
                 @include arrow_buttons();
                 margin: auto 53px auto 40px;
                 background: url('../../assets/icons/button_arrow_r.png');
-
-                &:hover {
-                    cursor: pointer;
-                }
             }
 
             .right-arrow {
                 @include arrow_buttons();
                 margin: auto 40px auto 53px;
                 background: url('../../assets/icons/button_arrow_l.png');
-
-                &:hover {
-                    cursor: pointer;
-                }
             }
 
             .cards {
                 display: flex;
                 justify-content: space-between;
-                width: 990px;
+                max-width: 990px;
+                width: 100%;
 
                 .card {
                     width: 270px;
@@ -334,7 +337,8 @@ body {
 
                     &:hover {
                         cursor: pointer;
-                        filter: brightness(0.9) invert(5%) sepia(10%);
+                        background-color: #fff;
+                        // filter: brightness(0.99) invert(5%) sepia(10%);
                     }
 
                     .name {
@@ -356,9 +360,11 @@ body {
                         height: 52px;
                         width: 187px;
                         border-radius: 100px;
+                        transition: .3s;
 
                         &:hover {
                             cursor: pointer;
+                            background-color: #FDDCC4;
                         }
 
                     }
@@ -386,6 +392,7 @@ body {
             display: block;
             margin: 0 auto;
             box-shadow: 0px 2px 0px 0px rgba($color: #595959, $alpha: 0.5);
+            transition: .3s;
 
             .a-primary-button {
                 font-size: 17px;
@@ -397,6 +404,7 @@ body {
 
             &:hover {
                 cursor: pointer;
+                background-color: #FDDCC4;
             }
         }
     }
@@ -415,7 +423,8 @@ body {
         }
 
         .list {
-            width: 1026px;
+            max-width: 1026px;
+            width: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -435,43 +444,6 @@ body {
                 text-align: center;
                 letter-spacing: 0.05em;
             }
-
-            // .upper-list {
-            //     display: flex;
-            //     justify-content: center;
-            //     flex-wrap: wrap;
-            //     column-gap: 120px;
-            //     row-gap: 55px;
-
-            //     & > h4 {
-            //         font-family: $titles;
-            //         font-size: 20px;
-            //         font-weight: 400;
-            //         line-height: 23px;
-            //         letter-spacing: 0.05em;
-            //         text-align: center;
-            //         padding-bottom: 0px;
-            //     }
-            // }
-
-            // .lower-list {
-            //     display: flex;
-            //     justify-content: center;
-            //     flex-wrap: wrap;
-            //     column-gap: 120px;
-            //     row-gap: 55px;
-
-            //     & > H4 {
-            //         font-family: $titles;
-            //         font-size: 20px;
-            //         font-weight: 400;
-            //         line-height: 23px;
-            //         letter-spacing: 0.05em;
-            //         text-align: center;
-            //         align-items: flex-end;
-            //     }
-            // }
-
 
             .pet-food {
                 @include list();
