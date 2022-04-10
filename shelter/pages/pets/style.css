@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -128,6 +132,9 @@
   cursor: pointer;
   background-color: #fff;
 }
+.wrapper .pets .pets-content .cards-container .cards .card:hover .button-lm {
+  background-color: #FDDCC4;
+}
 .wrapper .pets .pets-content .cards-container .cards .card .name {
   padding-top: 300px;
   font-family: Georgia, serif;
@@ -156,7 +163,6 @@
 }
 .wrapper .pets .pets-content .cards-container .cards .card .button-lm:hover {
   cursor: pointer;
-  background-color: #FDDCC4;
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(1) {
   background-image: url("../../assets/img/pets-name/pets-katrine.png");
@@ -186,7 +192,7 @@
   display: flex;
   justify-content: space-between;
   width: 340px;
-  margin: 60px auto;
+  margin: 60px auto 0px;
   padding-bottom: 100px;
 }
 .wrapper .pets .pets-content .navigation > button {
@@ -228,6 +234,150 @@
 }
 .wrapper .pets .pets-content .navigation .right-right {
   background-image: url("../../assets/icons/pagination/button_paginator-r2.png");
+}
+
+.footer {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  height: 350px;
+  background: linear-gradient(to right, #5b483a, #262425);
+  color: #F1CDB3;
+}
+.footer .footer-content {
+  padding: 40px 40px 0px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footer-content .contacts {
+  margin-top: 16px;
+  width: 278px;
+  position: relative;
+}
+.footer .footer-content .contacts .title {
+  color: #545454;
+  font-family: Georgia, serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+.footer .footer-content .contacts .mail {
+  margin: 40px 0px;
+  position: relative;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 32px;
+  padding-left: 60px;
+  text-align: left;
+}
+.footer .footer-content .contacts .mail .a-mail {
+  text-decoration: none;
+  color: #F1CDB3;
+}
+.footer .footer-content .contacts .mail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 32px;
+  background: url("../../assets/icons/footer-icons/icon-email.svg") no-repeat;
+}
+.footer .footer-content .contacts .phone {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 32px;
+  padding-left: 60px;
+  text-align: left;
+}
+.footer .footer-content .contacts .phone .a-phone {
+  text-decoration: none;
+  color: #F1CDB3;
+}
+.footer .footer-content .contacts .phone::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 32px;
+  background: url("../../assets/icons/footer-icons/icon-phone.svg") no-repeat;
+}
+.footer .footer-content .locations {
+  margin-top: 16px;
+  width: 302px;
+}
+.footer .footer-content .locations .title {
+  color: #545454;
+  font-family: Georgia, serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+}
+.footer .footer-content .locations .boston {
+  margin: 34px 0px 32px 0px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 32px;
+  padding-left: 60px;
+  text-align: left;
+  padding-left: 44px;
+  height: 46px;
+  line-height: 23px;
+  position: relative;
+}
+.footer .footer-content .locations .boston .a-boston {
+  text-decoration: none;
+  color: #F1CDB3;
+}
+.footer .footer-content .locations .boston::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 22px;
+  height: 32px;
+  background: url("../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
+}
+.footer .footer-content .locations .london {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 32px;
+  padding-left: 60px;
+  text-align: left;
+  padding-left: 44px;
+  height: 23px;
+  position: relative;
+}
+.footer .footer-content .locations .london .a-london {
+  text-decoration: none;
+  color: #F1CDB3;
+}
+.footer .footer-content .locations .london::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 32px;
+  margin-top: 7px;
+  background: url("../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
+}
+.footer .footer-content .footer-puppy {
+  width: 300px;
+  height: 310px;
+  background-image: url("../../assets/img/footer-puppy.png");
 }
 
 /*# sourceMappingURL=style.css.map */
