@@ -64,7 +64,7 @@ html {
     max-width: 1280px;
     background-color: #fff;
     
-    @media (max-width: 1280px) {
+    @media (max-width: 1281px) {
         margin: 0px 40px;
 }
 
@@ -77,6 +77,7 @@ html {
 
         .title {
             color: #545454;
+            text-decoration: none;
             font-weight: 400;
             letter-spacing: 1.75px;
             font-family: $titles;
@@ -208,6 +209,7 @@ html {
                         &:hover {
                             cursor: pointer;
                             background-color: #fff;
+                            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
                             .button-lm {
                                 background-color: #FDDCC4;
                             }
@@ -288,7 +290,9 @@ html {
                 .left-left {
                     background-image: url('../../assets/icons/pagination/button_paginator_inactive-l2.png');
                     &:hover {
-                        background-color: rgb(230, 230, 230);
+                        // background-color: rgb(230, 230, 230);
+                        background-color: #F6F6F6;
+                        cursor: auto;
                     }
                     // background-image: url('../../assets/icons/pagination/button_paginator-r2.png');
                     // transform: scale(-1, 1);
@@ -297,7 +301,9 @@ html {
                 .left {
                     background-image: url('../../assets/icons/pagination/button_paginator_inactive-l1.png');
                     &:hover {
-                        background-color: rgb(230, 230, 230);
+                        // background-color: rgb(230, 230, 230);
+                        background-color: #F6F6F6;
+                        cursor: auto;
                     }
                     // background-image: url('../../assets/icons/pagination/button_paginator-r1.png');
                     // transform: scale(-1, 1);
@@ -308,7 +314,8 @@ html {
                     border: 2px solid #F1CDB3;
 
                     &:hover {
-                        background-color: #F1CDB3;
+                        background-color: #FDDCC4;
+                        border-color: #FDDCC4;
                     }
                 }
 
