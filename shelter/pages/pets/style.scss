@@ -1,0 +1,304 @@
+$titles : Georgia, serif;
+$text : Arial, sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin title-styles {
+    color: #545454;
+    font-family: $titles;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+}
+
+@mixin pet-name {
+    padding-top: 300px;
+    font-family: $titles;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+@mixin arrow_buttons {
+    border: none;
+    width: 52px;
+    height: 52px;
+    transition: .3s;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #FDDCC4;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 30px 40px;
+    max-width: 1280px;
+    background-color: #fff;
+    
+    @media (max-width: 1280px) {
+        margin: 0px 40px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .logo {
+
+        .title {
+            color: #545454;
+            font-weight: 400;
+            letter-spacing: 1.75px;
+            font-family: $titles;
+            font-size: 32px;
+            line-height: 35.2px;
+            -webkit-text-stroke-width: 1px;
+            margin-bottom: 10px;
+            -webkit-text-stroke-color: black;
+        }
+    
+        .subtitle {
+            letter-spacing: 1.27px;
+            line-height: 14.95px;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 13px;
+            font-family: $text;
+            text-align: center;
+            color: #292929;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+
+    .nav-item {
+        margin-left: 35px;
+        line-height: 30px;
+    
+        .nav-link {
+            color: #545454;
+            text-decoration: none;
+            line-height: 24px;
+            font-size: 15px;
+            font-family: $text;
+            font-weight: 400;
+            position: relative;
+
+
+            // &:before {
+            //     content: '';
+            //     position: absolute;
+            //     left: 0;
+            //     bottom: -7px;
+            //     width: 0%;
+            //     height: 2px;
+            //     background-color: #F1CDB3;
+            //     transition: .3s;
+            // }
+    
+            // &:hover::before  {
+            //     width: 100%;
+            // }
+        }
+
+        .second-item {
+            color: #292929;
+            text-decoration: none;
+            line-height: 24px;
+            font-size: 15px;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -7px;
+                width: 100%;
+                height: 3px;
+                background-color: #F1CDB3;
+                transition: .3s;
+            }
+        }
+    }
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #F6F6F6;
+
+    .main {
+        margin-top: 120px;
+    }
+    .pets {
+        padding-top: 80px;
+    
+        .pets-content {
+    
+            .heading {
+                @include title-styles();
+                width: 400px;
+                margin: 0 auto 60px;
+                text-align: center;
+            }
+    
+            .cards-container {
+
+                
+
+                .cards {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 15px auto;
+                    column-gap: 40px;
+                    row-gap: 30px;
+                    max-width: 1200px;
+                    width: 100%;
+    
+                    .card {
+                        width: 270px;
+                        height: 435px;
+                        background-color: #FAFAFA;
+                        background-repeat: no-repeat;
+                        padding-bottom: 30px;
+                        transition: .3s;
+    
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #fff;
+                            // filter: brightness(0.99) invert(5%) sepia(10%);
+                        }
+    
+                        .name {
+                            @include pet-name();
+                            color: #545454;
+                        }
+    
+                        .button-lm {
+                            color: #292929;
+                            display: block;
+                            font-family: $titles;
+                            font-size: 17px;
+                            font-weight: 400;
+                            line-height: 22px;
+                            letter-spacing: 0.06em;
+                            margin: 30px 41.5px;
+                            background-color: #FAFAFA;
+                            border: 2px solid #F1CDB3;
+                            height: 52px;
+                            width: 187px;
+                            border-radius: 100px;
+                            transition: .3s;
+    
+                            &:hover {
+                                cursor: pointer;
+                                background-color: #FDDCC4;
+                            }
+                        }
+    
+                        &:nth-of-type(1) {
+                            background-image: url('../../assets/img/pets-name/pets-katrine.png');
+                        }
+                        &:nth-of-type(2) {
+                            background-image: url('../../assets/img/pets-name/pets-jennifer.png');
+                        }
+                        &:nth-of-type(3) {
+                            background-image: url('../../assets/img/pets-name/pets-woody.png');
+                        }
+                        &:nth-of-type(4) {
+                            background-image: url('../../assets/img/pets-name/pets-sophia.png'); 
+                        }
+                        &:nth-of-type(5) {
+                            background-image: url('../../assets/img/pets-name/pets-timmy.png'); 
+                        }
+                        &:nth-of-type(6) {
+                            background-image: url('../../assets/img/pets-name/pets-charly.png'); 
+                        }
+                        &:nth-of-type(7) {
+                            background-image: url('../../assets/img/pets-name/pets-scarlett.png'); 
+                        }
+                        &:nth-of-type(8) {
+                            background-image: url('../../assets/img/pets-name/pets-freddie.png'); 
+                        }
+                    }
+                }
+            }
+
+            .navigation {
+                display: flex;
+                justify-content: space-between;
+                width: 340px;
+                margin: 60px auto;
+                padding-bottom: 100px;
+
+                & > button {
+                    @include arrow_buttons();
+                    font-family: $titles;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    letter-spacing: 0.06em;
+                    padding-bottom: 5px;
+                }
+
+                .left-left {
+                    background-image: url('../../assets/icons/pagination/button_paginator_inactive-l2.png');
+                    &:hover {
+                        background-color: rgb(230, 230, 230);
+                    }
+                    // background-image: url('../../assets/icons/pagination/button_paginator-r2.png');
+                    // transform: scale(-1, 1);
+                }
+
+                .left {
+                    background-image: url('../../assets/icons/pagination/button_paginator_inactive-l1.png');
+                    &:hover {
+                        background-color: rgb(230, 230, 230);
+                    }
+                    // background-image: url('../../assets/icons/pagination/button_paginator-r1.png');
+                    // transform: scale(-1, 1);
+                }
+
+                .page-number {
+                    background-color: #F1CDB3;
+                    border: 2px solid #F1CDB3;
+                }
+
+                .right {
+                    background-image: url('../../assets/icons/pagination/button_paginator-r1.png');
+                }
+
+                .right-right {
+                    background-image: url('../../assets/icons/pagination/button_paginator-r2.png');
+                }
+
+            }
+
+        }   
+    }
+}
+
