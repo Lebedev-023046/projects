@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -69,6 +73,9 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   color: #fff;
+}
+.header .logo:hover {
+  cursor: pointer;
 }
 
 .nav {
