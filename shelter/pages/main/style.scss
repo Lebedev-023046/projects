@@ -90,20 +90,22 @@ body {
 }
 .header {
     position: absolute;
+    z-index: 9999;
     top: 0;
     right: 0;
     left: 0;
     margin: 60px auto;
     max-width: 1200px;
-    
-    @media (max-width: 1280px) {
-        margin: 0px 40px;
+
+    @media screen and (max-width: 769px)  {
+        margin: 30px;
+    }
 }
+
 
 .header-container {
     display: flex;
     justify-content: space-between;
-}
 
     .logo {
 
@@ -207,10 +209,19 @@ body {
     width: 100%;
     color: #fff;
 
+    @media screen and (max-width: 769px)  {
+        flex-direction: column;
+        margin: 150px auto 0px;
+    }
+
     .content {
         margin-top: 163px;
         width: 460px;
         text-align: justify;
+
+        @media screen and (max-width: 769px)  {
+            margin: 0 auto;
+        }
 
         .heading {
             font-family: $titles;
@@ -241,6 +252,12 @@ body {
             font-family: $titles;
             transition: .3s;
 
+            @media screen and (max-width: 769px)  {
+                position: relative; 
+                left: 50%; 
+                transform: translate(-50%, 0);
+            }
+
             .a-button-primary {
                 font-size: 17px;
                 line-height: 22px;
@@ -258,7 +275,15 @@ body {
     .start-screen-puppy {
         width: 58.167%;
         height: 728px;
-        background: url('../../assets/img/start-screen-puppy.png') transparent;
+        background: url('../../assets/img/start-screen-puppy.png') transparent no-repeat;
+        background-size: contain;
+
+        @media screen and (max-width: 769px)  {
+            width: 569px;
+            height: 593px;
+            margin: 100px 30px 0px 169px;
+        }   
+        
     }
 }
 
@@ -269,12 +294,22 @@ body {
         justify-content: space-between;
         padding: 80px 175px 100px;
 
+        @media screen and (max-width: 769px)  {
+            flex-direction: column-reverse;
+            padding: 66px 0 100px;
+            align-items: center;
+        }
+
         .about-pets {
             width: 300px;
             height: 408px;
             background: url('../../assets/img/about-pets.png');
             background-size: contain;
             background-repeat: no-repeat;
+
+            @media screen and (max-width: 769px)  {
+                margin-top: 94px;
+            }
         }
 
         .content {
@@ -307,6 +342,10 @@ body {
     .pets-content {
         padding: 80px 0px 100px;
 
+        // @media screen and (max-width: 769px)  {
+        //     padding: 80px 30px 100px;
+        // }
+
         .heading {
             @include title-styles();
             width: 400px;
@@ -325,27 +364,51 @@ body {
                 @include arrow_buttons();
                 margin: auto 53px auto 40px;
                 background: url('../../assets/icons/button_arrow_r.png');
+
+                @media screen and (max-width: 769px)  {
+                    margin: auto 12px auto 30px;
+                }
             }
 
             .right-arrow {
                 @include arrow_buttons();
                 margin: auto 40px auto 53px;
                 background: url('../../assets/icons/button_arrow_l.png');
+
+                @media screen and (max-width: 769px)  {
+                    margin: auto 30px auto 12px;
+                }
             }
 
             .cards {
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
+                column-gap: 90px;
                 max-width: 990px;
                 width: 100%;
 
+                @media screen and (max-width: 769px)  {
+                    justify-content: center;
+                    column-gap: 40px;
+                    width: 580px;
+                }
+
                 .card {
-                    width: 270px;
+                    max-width: 270px;
+                    width: 100%;
                     height: 435px;
                     background-color: #FAFAFA;
                     background-repeat: no-repeat;
                     padding-bottom: 30px;
                     transition: .3s;
+
+                    @media screen and (max-width: 769px)  {
+                        &:nth-of-type(3) {
+                            display: none;
+                            background-image: url('../../assets/img/pets-name/pets-woody.png'); 
+                        }
+                    }
+
 
                     &:hover {
                         cursor: pointer;
@@ -428,9 +491,8 @@ body {
 
 .help {
     .help-content {
-        height: 611px;
-        padding: 80px 0px 100px;
-
+        padding: 80px 0px 70px;
+    
         .heading {
             @include title-styles();
             width: 308px;
@@ -448,6 +510,10 @@ body {
             column-gap: 120px;
             row-gap: 22.5px;
 
+            @media screen and (max-width: 769px)  {
+                column-gap: 60px;
+            }
+
             & > h4 {
                 font-family: $titles;
                 font-size: 20px;
@@ -461,73 +527,130 @@ body {
                 letter-spacing: 0.05em;
             }
 
+
+
             .pet-food {
                 @include list();
                 width: 82px;
                 background-image: url('../../assets/icons/list/icon-pet-food.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .transportation {
                 @include list();
                 width: 150px;
                 background-image: url('../../assets/icons/list/icon-transportation.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .toys {
                 @include list();
                 width: 60px;
                 background-image: url('../../assets/icons/list/icon-toys.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .bowls-and-cups {
                 @include list();
                 width: 153px;
                 background-image: url('../../assets/icons/list/icon-bowls-and-cups.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .shampoos {
                 @include list();
                 width: 101px;
                 background-image: url('../../assets/icons/list/icon-shampoos.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .vitamins {
                 @include list();
                 width: 89px;
                 background-image: url('../../assets/icons/list/icon-vitamins.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .medicines {
                 @include list();
                 width: 101px;
                 background-image: url('../../assets/icons/list/icon-medicines.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .coralls-leashes {
                 @include list();
                 width: 165px;
                 background-image: url('../../assets/icons/list/icon-collars-leashes.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
             .sleeping-areas {
                 @include list();
                 width: 143px;
                 background-image: url('../../assets/icons/list/icon-sleeping-area.svg');
+
+                @media screen and (max-width: 769px)  {
+                    width: 170px;
+                }
             }
         }
     }
 }
 
 .donation {
+
     background-color: #F6F6F6;
+
     .donation-content {
         display: flex;
         justify-content: space-between;
         padding: 80px 182.5px 100px;
 
+        @media screen and (max-width: 769px)  {
+            padding: 80px 0px 100px;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
         .donation-dog {
             width: 505px;
             height: 261px;
             margin: 10.5px 30px 10.5px 0px;
-            background-image: url('../../assets/img/donation-dog.png');
+            background: url('../../assets/img/donation-dog.png') no-repeat;
+            background-size: contain;
+
+            @media screen and (max-width: 769px)  {
+                margin: 60px auto 0px;
+            }
         }
 
         .content {
-
+            display: flex;
+            flex-direction: column;
             width: 380px;
             height: 282px;
+
+            @media screen and (max-width: 769px)  {
+                align-content: center;
+            }
+
             .heading {
                 @include title-styles();
                 padding: 0px 80px 20px 0px;
@@ -610,8 +733,6 @@ body {
 }
 
 .footer {
-
-    height: 350px;
     background: linear-gradient(to right, rgba(91, 72, 58, 1),rgba(38, 36, 37, 1));
     color: #F1CDB3;
 
@@ -621,6 +742,13 @@ body {
 
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: 769px)  {
+            flex-wrap: wrap;
+            column-gap: 60px;
+            row-gap: 65px;
+            justify-content: center;
+        }
 
         .contacts {
             margin-top: 16px;

@@ -38,22 +38,24 @@ body {
 
 .header {
   position: absolute;
+  z-index: 9999;
   top: 0;
   right: 0;
   left: 0;
   margin: 60px auto;
   max-width: 1200px;
 }
-@media (max-width: 1280px) {
+@media screen and (max-width: 769px) {
   .header {
-    margin: 0px 40px;
+    margin: 30px;
   }
 }
-.header .header-container {
+
+.header-container {
   display: flex;
   justify-content: space-between;
 }
-.header .logo .title {
+.header-container .logo .title {
   color: #F1CDB3;
   font-weight: 400;
   letter-spacing: 1.75px;
@@ -64,7 +66,7 @@ body {
   margin-bottom: 10px;
   -webkit-text-stroke-color: black;
 }
-.header .logo .subtitle {
+.header-container .logo .subtitle {
   letter-spacing: 1.27px;
   line-height: 14.95px;
   font-weight: 400;
@@ -74,7 +76,7 @@ body {
   text-align: center;
   color: #fff;
 }
-.header .logo:hover {
+.header-container .logo:hover {
   cursor: pointer;
 }
 
@@ -129,10 +131,21 @@ body {
   width: 100%;
   color: #fff;
 }
+@media screen and (max-width: 769px) {
+  .start-screen-content {
+    flex-direction: column;
+    margin: 150px auto 0px;
+  }
+}
 .start-screen-content .content {
   margin-top: 163px;
   width: 460px;
   text-align: justify;
+}
+@media screen and (max-width: 769px) {
+  .start-screen-content .content {
+    margin: 0 auto;
+  }
 }
 .start-screen-content .content .heading {
   font-family: Georgia, serif;
@@ -159,6 +172,13 @@ body {
   font-family: Georgia, serif;
   transition: 0.3s;
 }
+@media screen and (max-width: 769px) {
+  .start-screen-content .content .button-primary {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
 .start-screen-content .content .button-primary .a-button-primary {
   font-size: 17px;
   line-height: 22px;
@@ -172,7 +192,15 @@ body {
 .start-screen-content .start-screen-puppy {
   width: 58.167%;
   height: 728px;
-  background: url("../../assets/img/start-screen-puppy.png") transparent;
+  background: url("../../assets/img/start-screen-puppy.png") transparent no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 769px) {
+  .start-screen-content .start-screen-puppy {
+    width: 569px;
+    height: 593px;
+    margin: 100px 30px 0px 169px;
+  }
 }
 
 .about .about-content {
@@ -180,12 +208,24 @@ body {
   justify-content: space-between;
   padding: 80px 175px 100px;
 }
+@media screen and (max-width: 769px) {
+  .about .about-content {
+    flex-direction: column-reverse;
+    padding: 66px 0 100px;
+    align-items: center;
+  }
+}
 .about .about-content .about-pets {
   width: 300px;
   height: 408px;
   background: url("../../assets/img/about-pets.png");
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 769px) {
+  .about .about-content .about-pets {
+    margin-top: 94px;
+  }
 }
 .about .about-content .content {
   padding-top: 14px;
@@ -249,6 +289,11 @@ body {
   cursor: pointer;
   background-color: #FDDCC4;
 }
+@media screen and (max-width: 769px) {
+  .pets .pets-content .slider .left-arrow {
+    margin: auto 12px auto 30px;
+  }
+}
 .pets .pets-content .slider .right-arrow {
   border: none;
   width: 52px;
@@ -262,19 +307,39 @@ body {
   cursor: pointer;
   background-color: #FDDCC4;
 }
+@media screen and (max-width: 769px) {
+  .pets .pets-content .slider .right-arrow {
+    margin: auto 30px auto 12px;
+  }
+}
 .pets .pets-content .slider .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 90px;
   max-width: 990px;
   width: 100%;
 }
+@media screen and (max-width: 769px) {
+  .pets .pets-content .slider .cards {
+    justify-content: center;
+    column-gap: 40px;
+    width: 580px;
+  }
+}
 .pets .pets-content .slider .cards .card {
-  width: 270px;
+  max-width: 270px;
+  width: 100%;
   height: 435px;
   background-color: #FAFAFA;
   background-repeat: no-repeat;
   padding-bottom: 30px;
   transition: 0.3s;
+}
+@media screen and (max-width: 769px) {
+  .pets .pets-content .slider .cards .card:nth-of-type(3) {
+    display: none;
+    background-image: url("../../assets/img/pets-name/pets-woody.png");
+  }
 }
 .pets .pets-content .slider .cards .card:hover {
   cursor: pointer;
@@ -348,8 +413,7 @@ body {
 }
 
 .help .help-content {
-  height: 611px;
-  padding: 80px 0px 100px;
+  padding: 80px 0px 70px;
 }
 .help .help-content .heading {
   color: #545454;
@@ -372,6 +436,11 @@ body {
   column-gap: 120px;
   row-gap: 22.5px;
 }
+@media screen and (max-width: 769px) {
+  .help .help-content .list {
+    column-gap: 60px;
+  }
+}
 .help .help-content .list > h4 {
   font-family: Georgia, serif;
   font-size: 20px;
@@ -393,6 +462,11 @@ body {
   width: 82px;
   background-image: url("../../assets/icons/list/icon-pet-food.svg");
 }
+@media screen and (max-width: 769px) {
+  .help .help-content .list .pet-food {
+    width: 170px;
+  }
+}
 .help .help-content .list .transportation {
   height: 113px;
   background-position: center top;
@@ -401,6 +475,11 @@ body {
   text-align: center;
   width: 150px;
   background-image: url("../../assets/icons/list/icon-transportation.svg");
+}
+@media screen and (max-width: 769px) {
+  .help .help-content .list .transportation {
+    width: 170px;
+  }
 }
 .help .help-content .list .toys {
   height: 113px;
@@ -411,6 +490,11 @@ body {
   width: 60px;
   background-image: url("../../assets/icons/list/icon-toys.svg");
 }
+@media screen and (max-width: 769px) {
+  .help .help-content .list .toys {
+    width: 170px;
+  }
+}
 .help .help-content .list .bowls-and-cups {
   height: 113px;
   background-position: center top;
@@ -419,6 +503,11 @@ body {
   text-align: center;
   width: 153px;
   background-image: url("../../assets/icons/list/icon-bowls-and-cups.svg");
+}
+@media screen and (max-width: 769px) {
+  .help .help-content .list .bowls-and-cups {
+    width: 170px;
+  }
 }
 .help .help-content .list .shampoos {
   height: 113px;
@@ -429,6 +518,11 @@ body {
   width: 101px;
   background-image: url("../../assets/icons/list/icon-shampoos.svg");
 }
+@media screen and (max-width: 769px) {
+  .help .help-content .list .shampoos {
+    width: 170px;
+  }
+}
 .help .help-content .list .vitamins {
   height: 113px;
   background-position: center top;
@@ -437,6 +531,11 @@ body {
   text-align: center;
   width: 89px;
   background-image: url("../../assets/icons/list/icon-vitamins.svg");
+}
+@media screen and (max-width: 769px) {
+  .help .help-content .list .vitamins {
+    width: 170px;
+  }
 }
 .help .help-content .list .medicines {
   height: 113px;
@@ -447,6 +546,11 @@ body {
   width: 101px;
   background-image: url("../../assets/icons/list/icon-medicines.svg");
 }
+@media screen and (max-width: 769px) {
+  .help .help-content .list .medicines {
+    width: 170px;
+  }
+}
 .help .help-content .list .coralls-leashes {
   height: 113px;
   background-position: center top;
@@ -455,6 +559,11 @@ body {
   text-align: center;
   width: 165px;
   background-image: url("../../assets/icons/list/icon-collars-leashes.svg");
+}
+@media screen and (max-width: 769px) {
+  .help .help-content .list .coralls-leashes {
+    width: 170px;
+  }
 }
 .help .help-content .list .sleeping-areas {
   height: 113px;
@@ -465,6 +574,11 @@ body {
   width: 143px;
   background-image: url("../../assets/icons/list/icon-sleeping-area.svg");
 }
+@media screen and (max-width: 769px) {
+  .help .help-content .list .sleeping-areas {
+    width: 170px;
+  }
+}
 
 .donation {
   background-color: #F6F6F6;
@@ -474,15 +588,35 @@ body {
   justify-content: space-between;
   padding: 80px 182.5px 100px;
 }
+@media screen and (max-width: 769px) {
+  .donation .donation-content {
+    padding: 80px 0px 100px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 .donation .donation-content .donation-dog {
   width: 505px;
   height: 261px;
   margin: 10.5px 30px 10.5px 0px;
-  background-image: url("../../assets/img/donation-dog.png");
+  background: url("../../assets/img/donation-dog.png") no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 769px) {
+  .donation .donation-content .donation-dog {
+    margin: 60px auto 0px;
+  }
 }
 .donation .donation-content .content {
+  display: flex;
+  flex-direction: column;
   width: 380px;
   height: 282px;
+}
+@media screen and (max-width: 769px) {
+  .donation .donation-content .content {
+    align-content: center;
+  }
 }
 .donation .donation-content .content .heading {
   color: #545454;
@@ -557,7 +691,6 @@ body {
 }
 
 .footer {
-  height: 350px;
   background: linear-gradient(to right, #5b483a, #262425);
   color: #F1CDB3;
 }
@@ -565,6 +698,14 @@ body {
   padding: 40px 40px 0px 40px;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 769px) {
+  .footer .footer-content {
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 65px;
+    justify-content: center;
+  }
 }
 .footer .footer-content .contacts {
   margin-top: 16px;
