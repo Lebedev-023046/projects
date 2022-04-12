@@ -63,10 +63,7 @@ html {
     padding: 30px 40px;
     max-width: 1280px;
     background-color: #fff;
-    
-    @media (max-width: 1281px) {
-        margin: 0px 40px;
-}
+
 
 .header-container {
     display: flex;
@@ -314,8 +311,9 @@ html {
                     border: 2px solid #F1CDB3;
 
                     &:hover {
-                        background-color: #FDDCC4;
-                        border-color: #FDDCC4;
+                        background-color: #F1CDB3;
+                        border-color: #F1CDB3;
+                        cursor: auto;
                     }
                 }
 
@@ -345,6 +343,8 @@ html {
 
         display: flex;
         justify-content: space-between;
+
+        
 
         .contacts {
             margin-top: 16px;
