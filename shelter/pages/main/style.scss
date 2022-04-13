@@ -97,7 +97,7 @@ body {
     margin: 60px auto;
     max-width: 1200px;
 
-    @media screen and (max-width: 769px)  {
+    @media screen and (max-width: 1280px)  {
         margin: 30px;
     }
 }
@@ -209,7 +209,7 @@ body {
     width: 100%;
     color: #fff;
 
-    @media screen and (max-width: 769px)  {
+    @media screen and (max-width: 1170px)  {
         flex-direction: column;
         margin: 150px auto 0px;
     }
@@ -219,7 +219,7 @@ body {
         width: 460px;
         text-align: justify;
 
-        @media screen and (max-width: 769px)  {
+        @media screen and (max-width: 1170px)  {
             margin: 0 auto;
         }
 
@@ -252,7 +252,7 @@ body {
             font-family: $titles;
             transition: .3s;
 
-            @media screen and (max-width: 769px)  {
+            @media screen and (max-width: 1170px)  {
                 position: relative; 
                 left: 50%; 
                 transform: translate(-50%, 0);
@@ -278,7 +278,7 @@ body {
         background: url('../../assets/img/start-screen-puppy.png') transparent no-repeat;
         background-size: contain;
 
-        @media screen and (max-width: 769px)  {
+        @media screen and (max-width: 1170px)  {
             width: 569px;
             height: 593px;
             margin: 100px 30px 0px 169px;
@@ -294,7 +294,7 @@ body {
         justify-content: space-between;
         padding: 80px 175px 100px;
 
-        @media screen and (max-width: 769px)  {
+        @media screen and (max-width: 1170px)  {
             flex-direction: column-reverse;
             padding: 66px 0 100px;
             align-items: center;
@@ -307,7 +307,7 @@ body {
             background-size: contain;
             background-repeat: no-repeat;
 
-            @media screen and (max-width: 769px)  {
+            @media screen and (max-width: 1170px)  {
                 margin-top: 94px;
             }
         }
@@ -342,7 +342,7 @@ body {
     .pets-content {
         padding: 80px 0px 100px;
 
-        // @media screen and (max-width: 769px)  {
+        // @media screen and (max-width: 1170px)  {
         //     padding: 80px 30px 100px;
         // }
 
@@ -356,16 +356,21 @@ body {
 
         .slider {
             display: flex;
-            max-width: 1280px;
-            width: 100%;
+            justify-content: center;
             padding-bottom: 60px;
 
+            @media screen and (max-width: 1170px)  {
+                justify-content: center;
+                overflow: hidden;
+            }
+
             .left-arrow {
+                display: block;
                 @include arrow_buttons();
                 margin: auto 53px auto 40px;
-                background: url('../../assets/icons/button_arrow_r.png');
+                background-color: #F6F6F6;
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1280px)  {
                     margin: auto 12px auto 30px;
                 }
             }
@@ -373,24 +378,22 @@ body {
             .right-arrow {
                 @include arrow_buttons();
                 margin: auto 40px auto 53px;
-                background: url('../../assets/icons/button_arrow_l.png');
+                background-color: #F6F6F6;
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1280px)  {
                     margin: auto 30px auto 12px;
                 }
             }
 
             .cards {
                 display: flex;
-                justify-content: center;
                 column-gap: 90px;
-                max-width: 990px;
-                width: 100%;
 
-                @media screen and (max-width: 769px)  {
-                    justify-content: center;
+                @media screen and (max-width: 1170px)  {
+                    justify-content: flex-start;
                     column-gap: 40px;
                     width: 580px;
+                    overflow-x: hidden;
                 }
 
                 .card {
@@ -402,9 +405,9 @@ body {
                     padding-bottom: 30px;
                     transition: .3s;
 
-                    @media screen and (max-width: 769px)  {
+                    @media screen and (max-width: 1170px)  {
                         &:nth-of-type(3) {
-                            display: none;
+                            // display: none;
                             background-image: url('../../assets/img/pets-name/pets-woody.png'); 
                         }
                     }
@@ -510,7 +513,7 @@ body {
             column-gap: 120px;
             row-gap: 22.5px;
 
-            @media screen and (max-width: 769px)  {
+            @media screen and (max-width: 1170px)  {
                 column-gap: 60px;
             }
 
@@ -534,7 +537,7 @@ body {
                 width: 82px;
                 background-image: url('../../assets/icons/list/icon-pet-food.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -543,7 +546,7 @@ body {
                 width: 150px;
                 background-image: url('../../assets/icons/list/icon-transportation.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -552,7 +555,7 @@ body {
                 width: 60px;
                 background-image: url('../../assets/icons/list/icon-toys.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -561,7 +564,7 @@ body {
                 width: 153px;
                 background-image: url('../../assets/icons/list/icon-bowls-and-cups.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -570,7 +573,7 @@ body {
                 width: 101px;
                 background-image: url('../../assets/icons/list/icon-shampoos.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -579,7 +582,7 @@ body {
                 width: 89px;
                 background-image: url('../../assets/icons/list/icon-vitamins.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -588,7 +591,7 @@ body {
                 width: 101px;
                 background-image: url('../../assets/icons/list/icon-medicines.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -597,7 +600,7 @@ body {
                 width: 165px;
                 background-image: url('../../assets/icons/list/icon-collars-leashes.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -606,7 +609,7 @@ body {
                 width: 143px;
                 background-image: url('../../assets/icons/list/icon-sleeping-area.svg');
 
-                @media screen and (max-width: 769px)  {
+                @media screen and (max-width: 1170px)  {
                     width: 170px;
                 }
             }
@@ -623,7 +626,7 @@ body {
         justify-content: space-between;
         padding: 80px 182.5px 100px;
 
-        @media screen and (max-width: 769px)  {
+        @media screen and (max-width: 1170px)  {
             padding: 80px 0px 100px;
             flex-direction: column-reverse;
             align-items: center;
@@ -636,7 +639,7 @@ body {
             background: url('../../assets/img/donation-dog.png') no-repeat;
             background-size: contain;
 
-            @media screen and (max-width: 769px)  {
+            @media screen and (max-width: 1170px)  {
                 margin: 60px auto 0px;
             }
         }
@@ -647,7 +650,7 @@ body {
             width: 380px;
             height: 282px;
 
-            @media screen and (max-width: 769px)  {
+            @media screen and (max-width: 1170px)  {
                 align-content: center;
             }
 
@@ -743,7 +746,7 @@ body {
         display: flex;
         justify-content: space-between;
 
-        @media screen and (max-width: 769px)  {
+        @media screen and (max-width: 1170px)  {
             flex-wrap: wrap;
             column-gap: 60px;
             row-gap: 65px;

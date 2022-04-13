@@ -45,7 +45,7 @@ body {
   margin: 60px auto;
   max-width: 1200px;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1280px) {
   .header {
     margin: 30px;
   }
@@ -131,7 +131,7 @@ body {
   width: 100%;
   color: #fff;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .start-screen-content {
     flex-direction: column;
     margin: 150px auto 0px;
@@ -142,7 +142,7 @@ body {
   width: 460px;
   text-align: justify;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .start-screen-content .content {
     margin: 0 auto;
   }
@@ -172,7 +172,7 @@ body {
   font-family: Georgia, serif;
   transition: 0.3s;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .start-screen-content .content .button-primary {
     position: relative;
     left: 50%;
@@ -195,7 +195,7 @@ body {
   background: url("../../assets/img/start-screen-puppy.png") transparent no-repeat;
   background-size: contain;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .start-screen-content .start-screen-puppy {
     width: 569px;
     height: 593px;
@@ -208,7 +208,7 @@ body {
   justify-content: space-between;
   padding: 80px 175px 100px;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .about .about-content {
     flex-direction: column-reverse;
     padding: 66px 0 100px;
@@ -222,7 +222,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .about .about-content .about-pets {
     margin-top: 94px;
   }
@@ -272,24 +272,30 @@ body {
 }
 .pets .pets-content .slider {
   display: flex;
-  max-width: 1280px;
-  width: 100%;
+  justify-content: center;
   padding-bottom: 60px;
 }
+@media screen and (max-width: 1170px) {
+  .pets .pets-content .slider {
+    justify-content: center;
+    overflow: hidden;
+  }
+}
 .pets .pets-content .slider .left-arrow {
+  display: block;
   border: none;
   width: 52px;
   height: 52px;
   transition: 0.3s;
   border-radius: 50%;
   margin: auto 53px auto 40px;
-  background: url("../../assets/icons/button_arrow_r.png");
+  background-color: #F6F6F6;
 }
 .pets .pets-content .slider .left-arrow:hover {
   cursor: pointer;
   background-color: #FDDCC4;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1280px) {
   .pets .pets-content .slider .left-arrow {
     margin: auto 12px auto 30px;
   }
@@ -301,29 +307,27 @@ body {
   transition: 0.3s;
   border-radius: 50%;
   margin: auto 40px auto 53px;
-  background: url("../../assets/icons/button_arrow_l.png");
+  background-color: #F6F6F6;
 }
 .pets .pets-content .slider .right-arrow:hover {
   cursor: pointer;
   background-color: #FDDCC4;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1280px) {
   .pets .pets-content .slider .right-arrow {
     margin: auto 30px auto 12px;
   }
 }
 .pets .pets-content .slider .cards {
   display: flex;
-  justify-content: center;
   column-gap: 90px;
-  max-width: 990px;
-  width: 100%;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .pets .pets-content .slider .cards {
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 40px;
     width: 580px;
+    overflow-x: hidden;
   }
 }
 .pets .pets-content .slider .cards .card {
@@ -335,9 +339,8 @@ body {
   padding-bottom: 30px;
   transition: 0.3s;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .pets .pets-content .slider .cards .card:nth-of-type(3) {
-    display: none;
     background-image: url("../../assets/img/pets-name/pets-woody.png");
   }
 }
@@ -436,7 +439,7 @@ body {
   column-gap: 120px;
   row-gap: 22.5px;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list {
     column-gap: 60px;
   }
@@ -462,7 +465,7 @@ body {
   width: 82px;
   background-image: url("../../assets/icons/list/icon-pet-food.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .pet-food {
     width: 170px;
   }
@@ -476,7 +479,7 @@ body {
   width: 150px;
   background-image: url("../../assets/icons/list/icon-transportation.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .transportation {
     width: 170px;
   }
@@ -490,7 +493,7 @@ body {
   width: 60px;
   background-image: url("../../assets/icons/list/icon-toys.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .toys {
     width: 170px;
   }
@@ -504,7 +507,7 @@ body {
   width: 153px;
   background-image: url("../../assets/icons/list/icon-bowls-and-cups.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .bowls-and-cups {
     width: 170px;
   }
@@ -518,7 +521,7 @@ body {
   width: 101px;
   background-image: url("../../assets/icons/list/icon-shampoos.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .shampoos {
     width: 170px;
   }
@@ -532,7 +535,7 @@ body {
   width: 89px;
   background-image: url("../../assets/icons/list/icon-vitamins.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .vitamins {
     width: 170px;
   }
@@ -546,7 +549,7 @@ body {
   width: 101px;
   background-image: url("../../assets/icons/list/icon-medicines.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .medicines {
     width: 170px;
   }
@@ -560,7 +563,7 @@ body {
   width: 165px;
   background-image: url("../../assets/icons/list/icon-collars-leashes.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .coralls-leashes {
     width: 170px;
   }
@@ -574,7 +577,7 @@ body {
   width: 143px;
   background-image: url("../../assets/icons/list/icon-sleeping-area.svg");
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .help .help-content .list .sleeping-areas {
     width: 170px;
   }
@@ -588,7 +591,7 @@ body {
   justify-content: space-between;
   padding: 80px 182.5px 100px;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .donation .donation-content {
     padding: 80px 0px 100px;
     flex-direction: column-reverse;
@@ -602,7 +605,7 @@ body {
   background: url("../../assets/img/donation-dog.png") no-repeat;
   background-size: contain;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .donation .donation-content .donation-dog {
     margin: 60px auto 0px;
   }
@@ -613,7 +616,7 @@ body {
   width: 380px;
   height: 282px;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .donation .donation-content .content {
     align-content: center;
   }
@@ -699,7 +702,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1170px) {
   .footer .footer-content {
     flex-wrap: wrap;
     column-gap: 60px;

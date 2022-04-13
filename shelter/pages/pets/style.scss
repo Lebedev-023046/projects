@@ -56,6 +56,7 @@ html {
 
 .header {
     position: fixed;
+    z-index: 9999;
     top: 0;
     right: 0;
     left: 0;
@@ -64,6 +65,9 @@ html {
     max-width: 1280px;
     background-color: #fff;
 
+    @media screen and (max-width: 769px)  {
+        padding: 30px;
+}
 
 .header-container {
     display: flex;
@@ -184,16 +188,20 @@ html {
     
             .cards-container {
 
-                
-
                 .cards {
                     display: flex;
                     flex-wrap: wrap;
-                    margin: 15px auto;
+                    margin: -30px auto;
                     column-gap: 40px;
                     row-gap: 30px;
                     max-width: 1200px;
                     width: 100%;
+
+                    @media screen and (max-width: 769px)  {
+                        height: 1365px;
+                        justify-content: center;
+                        overflow-y: hidden;
+                    }
     
                     .card {
                         width: 270px;
@@ -274,6 +282,11 @@ html {
                 margin: 60px auto 0px;
                 padding-bottom: 100px;
 
+                @media screen and (max-width: 769px)  {
+                    margin: 70px auto 0px;
+                    padding-bottom: 75px;
+                }
+
                 & > button {
                     @include arrow_buttons();
                     font-family: $titles;
@@ -333,7 +346,6 @@ html {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    height: 350px;
     background: linear-gradient(to right, rgba(91, 72, 58, 1),rgba(38, 36, 37, 1));
     color: #F1CDB3;
 
@@ -344,7 +356,13 @@ html {
         display: flex;
         justify-content: space-between;
 
-        
+        @media screen and (max-width: 769px)  {
+            flex-wrap: wrap;
+            column-gap: 60px;
+            row-gap: 65px;
+            justify-content: center;
+            padding: 13px 40px 0px 40px;
+        }
 
         .contacts {
             margin-top: 16px;
