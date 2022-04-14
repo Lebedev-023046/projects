@@ -47,6 +47,14 @@ a {
     font-weight: 400;
     line-height: 45px;
     letter-spacing: 0.05em;
+
+    @media screen and (max-width: 320px)  {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
 }
 
 @mixin footer-subtitle {
@@ -375,10 +383,6 @@ body {
 
 .about {
 
-    @media screen and (max-width: 320px)  {
-        display: none;
-    }
-
     .about-content {
         display: flex;
         justify-content: space-between;
@@ -388,6 +392,10 @@ body {
             flex-direction: column-reverse;
             padding: 66px 0 100px;
             align-items: center;
+        }
+
+        @media screen and (max-width: 320px)  {
+            padding: 42px 10px;
         }
 
         .about-pets {
@@ -400,6 +408,12 @@ body {
             @media screen and (max-width: 1170px)  {
                 margin-top: 94px;
             }
+
+            @media screen and (max-width: 320px)  {
+                margin-top: 156px;
+                width: 260px;
+                height: 353.6px;
+            }
         }
 
         .content {
@@ -409,7 +423,9 @@ body {
             height: 380px;
 
             @media screen and (max-width: 320px)  {
+                padding: 0px;
                 width: 300px;
+                padding: 0px 10px;
             }
 
             .heading {
@@ -417,6 +433,11 @@ body {
                 padding-bottom: 27px;
                 width: 370px;
                 padding-right: 60px;
+
+                @media screen and (max-width: 320px)  {
+                    width: 100%;
+                    padding: 0px 0px 25px;
+                }
             }
 
             .subheading {
@@ -426,6 +447,11 @@ body {
                 font-weight: 400;
                 font-size: 15px;
                 line-height: 24px;
+
+                @media screen and (max-width: 320px)  {
+                    padding: 0px 5px 22px;
+                    text-align: justify;
+                }
             }
         }
     }
@@ -437,9 +463,9 @@ body {
     .pets-content {
         padding: 80px 0px 100px;
 
-        // @media screen and (max-width: 1170px)  {
-        //     padding: 80px 30px 100px;
-        // }
+        @media screen and (max-width: 320px)  {
+            padding: 42px 10px;
+        }
 
         .heading {
             @include title-styles();
@@ -449,6 +475,7 @@ body {
 
             @media screen and (max-width: 320px)  {
                 width: 300px;
+                margin: 0 auto 42px;
             }
 
         }
@@ -463,6 +490,13 @@ body {
                 overflow: hidden;
             }
 
+            @media screen and (max-width: 320px)  {
+                flex-wrap: wrap;
+                row-gap: 20px;
+                column-gap: 80px;
+                padding-bottom: 42px;
+            }
+
             .left-arrow {
                 display: block;
                 @include arrow_buttons();
@@ -471,6 +505,12 @@ body {
 
                 @media screen and (max-width: 1280px)  {
                     margin: auto 12px auto 30px;
+                }
+
+                @media screen and (max-width: 320px)  {
+                    order: 1;
+                    margin: 0px;
+                    transform: scale(-1, 1);
                 }
             }
 
@@ -481,6 +521,11 @@ body {
 
                 @media screen and (max-width: 1280px)  {
                     margin: auto 30px auto 12px;
+                }
+
+                @media screen and (max-width: 320px)  {
+                    transform: scale(-1, 1);
+                    margin: 0px;
                 }
             }
 
@@ -493,6 +538,11 @@ body {
                     column-gap: 40px;
                     width: 580px;
                     overflow-x: hidden;
+                }
+
+                @media screen and (max-width: 320px)  {
+                    width: 270px;
+                    margin: 0 auto;
                 }
 
                 .card {

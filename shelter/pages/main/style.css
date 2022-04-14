@@ -300,11 +300,6 @@ body {
   }
 }
 
-@media screen and (max-width: 320px) {
-  .about {
-    display: none;
-  }
-}
 .about .about-content {
   display: flex;
   justify-content: space-between;
@@ -315,6 +310,11 @@ body {
     flex-direction: column-reverse;
     padding: 66px 0 100px;
     align-items: center;
+  }
+}
+@media screen and (max-width: 320px) {
+  .about .about-content {
+    padding: 42px 10px;
   }
 }
 .about .about-content .about-pets {
@@ -329,6 +329,13 @@ body {
     margin-top: 94px;
   }
 }
+@media screen and (max-width: 320px) {
+  .about .about-content .about-pets {
+    margin-top: 156px;
+    width: 260px;
+    height: 353.6px;
+  }
+}
 .about .about-content .content {
   padding-top: 14px;
   padding-bottom: 14px;
@@ -337,7 +344,9 @@ body {
 }
 @media screen and (max-width: 320px) {
   .about .about-content .content {
+    padding: 0px;
     width: 300px;
+    padding: 0px 10px;
   }
 }
 .about .about-content .content .heading {
@@ -351,6 +360,21 @@ body {
   width: 370px;
   padding-right: 60px;
 }
+@media screen and (max-width: 320px) {
+  .about .about-content .content .heading {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 320px) {
+  .about .about-content .content .heading {
+    width: 100%;
+    padding: 0px 0px 25px;
+  }
+}
 .about .about-content .content .subheading {
   color: #4C4C4C;
   padding-bottom: 20px;
@@ -359,12 +383,23 @@ body {
   font-size: 15px;
   line-height: 24px;
 }
+@media screen and (max-width: 320px) {
+  .about .about-content .content .subheading {
+    padding: 0px 5px 22px;
+    text-align: justify;
+  }
+}
 
 .pets {
   background-color: #F6F6F6;
 }
 .pets .pets-content {
   padding: 80px 0px 100px;
+}
+@media screen and (max-width: 320px) {
+  .pets .pets-content {
+    padding: 42px 10px;
+  }
 }
 .pets .pets-content .heading {
   color: #545454;
@@ -379,7 +414,17 @@ body {
 }
 @media screen and (max-width: 320px) {
   .pets .pets-content .heading {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 320px) {
+  .pets .pets-content .heading {
     width: 300px;
+    margin: 0 auto 42px;
   }
 }
 .pets .pets-content .slider {
@@ -391,6 +436,14 @@ body {
   .pets .pets-content .slider {
     justify-content: center;
     overflow: hidden;
+  }
+}
+@media screen and (max-width: 320px) {
+  .pets .pets-content .slider {
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 80px;
+    padding-bottom: 42px;
   }
 }
 .pets .pets-content .slider .left-arrow {
@@ -412,6 +465,13 @@ body {
     margin: auto 12px auto 30px;
   }
 }
+@media screen and (max-width: 320px) {
+  .pets .pets-content .slider .left-arrow {
+    order: 1;
+    margin: 0px;
+    transform: scale(-1, 1);
+  }
+}
 .pets .pets-content .slider .right-arrow {
   border: none;
   width: 52px;
@@ -430,6 +490,12 @@ body {
     margin: auto 30px auto 12px;
   }
 }
+@media screen and (max-width: 320px) {
+  .pets .pets-content .slider .right-arrow {
+    transform: scale(-1, 1);
+    margin: 0px;
+  }
+}
 .pets .pets-content .slider .cards {
   display: flex;
   column-gap: 90px;
@@ -440,6 +506,12 @@ body {
     column-gap: 40px;
     width: 580px;
     overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 320px) {
+  .pets .pets-content .slider .cards {
+    width: 270px;
+    margin: 0 auto;
   }
 }
 .pets .pets-content .slider .cards .card {
@@ -540,6 +612,15 @@ body {
   width: 308px;
   text-align: center;
   margin: 0 auto 60px;
+}
+@media screen and (max-width: 320px) {
+  .help .help-content .heading {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
 }
 .help .help-content .list {
   max-width: 1026px;
@@ -752,6 +833,15 @@ body {
   letter-spacing: 0.05em;
   padding: 0px 80px 20px 0px;
 }
+@media screen and (max-width: 320px) {
+  .donation .donation-content .content .heading {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
 .donation .donation-content .content .subheading {
   font-family: Georgia, serif;
   font-size: 15px;
@@ -847,6 +937,15 @@ body {
   letter-spacing: 0.05em;
   color: #FFFFFF;
 }
+@media screen and (max-width: 320px) {
+  .footer .footer-content .contacts .title {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
 .footer .footer-content .contacts .mail {
   margin: 40px 0px;
   position: relative;
@@ -903,6 +1002,15 @@ body {
   line-height: 45px;
   letter-spacing: 0.05em;
   color: #FFFFFF;
+}
+@media screen and (max-width: 320px) {
+  .footer .footer-content .locations .title {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
 }
 .footer .footer-content .locations .boston {
   margin: 34px 0px 32px 0px;
