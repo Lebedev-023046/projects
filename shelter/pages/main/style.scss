@@ -38,6 +38,25 @@ a {
     background-repeat: no-repeat;
     padding: 90px 0 55px 0;
     text-align: center;
+
+    @media screen and (max-width: 1170px)  {
+        width: 170px;
+    }
+
+    @media screen and (max-width: 320px)  {
+        font-family: $titles;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0.06em;
+        text-align: center;
+
+        padding: 70px 0 0px 0;
+
+        width: 130px;
+        height: 87px;
+        background-size: 50px;
+    }
 }
 
 @mixin title-styles {
@@ -645,18 +664,28 @@ body {
 
     .help-content {
         padding: 80px 0px 70px;
+
+        @media screen and (max-width: 320px)  {
+            padding: 42px 0px;
+        }
     
         .heading {
             @include title-styles();
             width: 308px;
             text-align: center;
             margin: 0 auto 60px;
+
+            @media screen and (max-width: 320px)  {
+                padding: 0 42px;
+                margin-bottom: 42px;
+            }
+
         }
 
         .list {
             max-width: 1026px;
             width: 100%;
-            margin: 0 auto;
+            margin: 0 15px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -666,6 +695,11 @@ body {
             @media screen and (max-width: 1170px)  {
                 column-gap: 60px;
             }
+
+            @media screen and (max-width: 320px)  {
+                gap: 30px;
+                justify-content: flex-start;
+            }   
 
             & > h4 {
                 font-family: $titles;
@@ -680,98 +714,73 @@ body {
                 letter-spacing: 0.05em;
             }
 
-
-
             .pet-food {
-                @include list();
                 width: 82px;
+                @include list();
+                
                 background-image: url('../../assets/icons/list/icon-pet-food.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .transportation {
-                @include list();
                 width: 150px;
+                @include list();
+                
                 background-image: url('../../assets/icons/list/icon-transportation.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .toys {
-                @include list();
                 width: 60px;
+                @include list();
+
                 background-image: url('../../assets/icons/list/icon-toys.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .bowls-and-cups {
-                @include list();
                 width: 153px;
+                @include list();
+
                 background-image: url('../../assets/icons/list/icon-bowls-and-cups.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .shampoos {
-                @include list();
                 width: 101px;
+                @include list();
+                
                 background-image: url('../../assets/icons/list/icon-shampoos.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .vitamins {
-                @include list();
                 width: 89px;
+                @include list();
+
                 background-image: url('../../assets/icons/list/icon-vitamins.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .medicines {
-                @include list();
                 width: 101px;
+                @include list();
+
                 background-image: url('../../assets/icons/list/icon-medicines.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
             }
+
             .coralls-leashes {
-                @include list();
                 width: 165px;
-                background-image: url('../../assets/icons/list/icon-collars-leashes.svg');
-
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
-            }
-            .sleeping-areas {
                 @include list();
-                width: 143px;
-                background-image: url('../../assets/icons/list/icon-sleeping-area.svg');
 
-                @media screen and (max-width: 1170px)  {
-                    width: 170px;
-                }
+                background-image: url('../../assets/icons/list/icon-collars-leashes.svg');
+            }
+
+            .sleeping-areas {
+                width: 143px;
+                @include list();
+
+                background-image: url('../../assets/icons/list/icon-sleeping-area.svg');
             }
         }
     }
 }
 
 .donation {
-
-    @media screen and (max-width: 320px)  {
-        display: none;
-    }
 
     background-color: #F6F6F6;
 

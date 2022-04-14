@@ -602,6 +602,11 @@ body {
 .help .help-content {
   padding: 80px 0px 70px;
 }
+@media screen and (max-width: 320px) {
+  .help .help-content {
+    padding: 42px 0px;
+  }
+}
 .help .help-content .heading {
   color: #545454;
   font-family: Georgia, serif;
@@ -622,10 +627,16 @@ body {
     text-align: center;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .heading {
+    padding: 0 42px;
+    margin-bottom: 42px;
+  }
+}
 .help .help-content .list {
   max-width: 1026px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 15px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -635,6 +646,12 @@ body {
 @media screen and (max-width: 1170px) {
   .help .help-content .list {
     column-gap: 60px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .help .help-content .list {
+    gap: 30px;
+    justify-content: flex-start;
   }
 }
 .help .help-content .list > h4 {
@@ -650,12 +667,12 @@ body {
   letter-spacing: 0.05em;
 }
 .help .help-content .list .pet-food {
+  width: 82px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 82px;
   background-image: url("../../assets/icons/list/icon-pet-food.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -663,13 +680,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .pet-food {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .transportation {
+  width: 150px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 150px;
   background-image: url("../../assets/icons/list/icon-transportation.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -677,13 +708,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .transportation {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .toys {
+  width: 60px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 60px;
   background-image: url("../../assets/icons/list/icon-toys.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -691,13 +736,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .toys {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .bowls-and-cups {
+  width: 153px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 153px;
   background-image: url("../../assets/icons/list/icon-bowls-and-cups.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -705,13 +764,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .bowls-and-cups {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .shampoos {
+  width: 101px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 101px;
   background-image: url("../../assets/icons/list/icon-shampoos.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -719,13 +792,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .shampoos {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .vitamins {
+  width: 89px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 89px;
   background-image: url("../../assets/icons/list/icon-vitamins.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -733,13 +820,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .vitamins {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .medicines {
+  width: 101px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 101px;
   background-image: url("../../assets/icons/list/icon-medicines.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -747,13 +848,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .medicines {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .coralls-leashes {
+  width: 165px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 165px;
   background-image: url("../../assets/icons/list/icon-collars-leashes.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -761,13 +876,27 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .coralls-leashes {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 .help .help-content .list .sleeping-areas {
+  width: 143px;
   height: 113px;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 90px 0 55px 0;
   text-align: center;
-  width: 143px;
   background-image: url("../../assets/icons/list/icon-sleeping-area.svg");
 }
 @media screen and (max-width: 1170px) {
@@ -775,14 +904,23 @@ body {
     width: 170px;
   }
 }
+@media screen and (max-width: 320px) {
+  .help .help-content .list .sleeping-areas {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 70px 0 0px 0;
+    width: 130px;
+    height: 87px;
+    background-size: 50px;
+  }
+}
 
 .donation {
   background-color: #F6F6F6;
-}
-@media screen and (max-width: 320px) {
-  .donation {
-    display: none;
-  }
 }
 .donation .donation-content {
   display: flex;
