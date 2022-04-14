@@ -116,16 +116,22 @@ html {
   margin: 0 auto 60px;
   text-align: center;
 }
+@media screen and (max-width: 769px) {
+  .wrapper .pets .pets-content .heading {
+    margin-bottom: 30px;
+  }
+}
 .wrapper .pets .pets-content .cards-container .cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  margin: -30px auto;
+  margin: 0px auto;
   column-gap: 40px;
   row-gap: 30px;
   max-width: 1200px;
   width: 100%;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1200px) {
   .wrapper .pets .pets-content .cards-container .cards {
     height: 1365px;
     justify-content: center;
@@ -210,7 +216,7 @@ html {
 }
 @media screen and (max-width: 769px) {
   .wrapper .pets .pets-content .navigation {
-    margin: 70px auto 0px;
+    margin: 40px auto 0px;
     padding-bottom: 75px;
   }
 }
@@ -273,6 +279,15 @@ html {
   padding: 40px 40px 0px 40px;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 1170px) {
+  .footer .footer-content {
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 65px;
+    justify-content: center;
+    padding: 13px 40px 0px 40px;
+  }
 }
 @media screen and (max-width: 769px) {
   .footer .footer-content {

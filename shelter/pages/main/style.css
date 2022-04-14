@@ -50,6 +50,11 @@ body {
     margin: 30px;
   }
 }
+@media screen and (max-width: 320px) {
+  .header {
+    margin: 30px 53px 0px 10px;
+  }
+}
 
 .header-container {
   display: flex;
@@ -84,10 +89,33 @@ body {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 320px) {
+  .nav .hamburger {
+    display: block;
+    z-index: 1000;
+    height: 22px;
+    margin-bottom: 15px;
+  }
+  .nav .hamburger .line {
+    width: 30px;
+    height: 2px;
+    background-color: #F1CDB3;
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+}
 
 .nav-list {
   display: flex;
   list-style-type: none;
+}
+@media screen and (max-width: 320px) {
+  .nav-list {
+    display: none;
+  }
 }
 .nav-list .nav-item {
   margin-left: 35px;
@@ -104,6 +132,19 @@ body {
 }
 .nav-list .nav-item .nav-link:hover {
   color: #FAFAFA;
+}
+.nav-list .nav-item .nav-link:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0%;
+  height: 2px;
+  background-color: #F1CDB3;
+  transition: 0.3s;
+}
+.nav-list .nav-item .nav-link:hover::before {
+  width: 100%;
 }
 .nav-list .nav-item .first-item {
   color: #FAFAFA;
@@ -147,6 +188,11 @@ body {
     margin: 0 auto;
   }
 }
+@media screen and (max-width: 320px) {
+  .start-screen-content .content {
+    width: 300px;
+  }
+}
 .start-screen-content .content .heading {
   font-family: Georgia, serif;
   font-weight: 400;
@@ -156,12 +202,41 @@ body {
   width: 310px;
   margin-bottom: 42px;
 }
+@media screen and (max-width: 320px) {
+  .start-screen-content .content .heading {
+    width: 300px;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .start-screen-content .content {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
 .start-screen-content .content .subheading {
   font-family: Arial, sans-serif;
   font-size: 15px;
   line-height: 24px;
   color: #CDCDCD;
   margin-bottom: 42px;
+}
+@media screen and (max-width: 320px) {
+  .start-screen-content .content .subheading {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
 }
 .start-screen-content .content .button-primary {
   width: 207px;
@@ -179,11 +254,26 @@ body {
     transform: translate(-50%, 0);
   }
 }
+@media screen and (max-width: 320px) {
+  .start-screen-content .content .button-primary {
+    display: flex;
+    justify-content: center;
+  }
+}
 .start-screen-content .content .button-primary .a-button-primary {
   font-size: 17px;
   line-height: 22px;
   color: #292929;
   text-decoration: none;
+}
+@media screen and (max-width: 320px) {
+  .start-screen-content .content .button-primary .a-button-primary {
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+  }
 }
 .start-screen-content .content .button-primary:hover {
   cursor: pointer;
@@ -202,7 +292,19 @@ body {
     margin: 100px 30px 0px 169px;
   }
 }
+@media screen and (max-width: 320px) {
+  .start-screen-content .start-screen-puppy {
+    width: 260px;
+    height: 271px;
+    margin: 105px 10px 0.23px 50px;
+  }
+}
 
+@media screen and (max-width: 320px) {
+  .about {
+    display: none;
+  }
+}
 .about .about-content {
   display: flex;
   justify-content: space-between;
@@ -232,6 +334,11 @@ body {
   padding-bottom: 14px;
   width: 430px;
   height: 380px;
+}
+@media screen and (max-width: 320px) {
+  .about .about-content .content {
+    width: 300px;
+  }
 }
 .about .about-content .content .heading {
   color: #545454;
@@ -269,6 +376,11 @@ body {
   width: 400px;
   text-align: center;
   margin: 0 auto 60px;
+}
+@media screen and (max-width: 320px) {
+  .pets .pets-content .heading {
+    width: 300px;
+  }
 }
 .pets .pets-content .slider {
   display: flex;
@@ -586,6 +698,11 @@ body {
 .donation {
   background-color: #F6F6F6;
 }
+@media screen and (max-width: 320px) {
+  .donation {
+    display: none;
+  }
+}
 .donation .donation-content {
   display: flex;
   justify-content: space-between;
@@ -608,6 +725,11 @@ body {
 @media screen and (max-width: 1170px) {
   .donation .donation-content .donation-dog {
     margin: 60px auto 0px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .donation .donation-content .donation-dog {
+    display: none;
   }
 }
 .donation .donation-content .content {

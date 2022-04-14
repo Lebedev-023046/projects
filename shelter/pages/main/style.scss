@@ -100,6 +100,10 @@ body {
     @media screen and (max-width: 1280px)  {
         margin: 30px;
     }
+
+    @media screen and (max-width: 320px)  {
+        margin: 30px 53px 0px 10px;
+    }
 }
 
 
@@ -141,15 +145,45 @@ body {
 .nav {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 320px)  {
+
+        .hamburger {
+            display: block;
+            z-index: 1000;
+            height: 22px;
+            margin-bottom: 15px;
+        
+            .line {
+                width: 30px;
+                height: 2px;
+                background-color: #F1CDB3;
+                display: block;
+                margin: 8px auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
 }
+
+
 
 .nav-list {
     display: flex;
     list-style-type: none;
 
+    @media screen and (max-width: 320px)  {
+        display: none;
+    }
+
     .nav-item {
         margin-left: 35px;
         line-height: 30px;
+
+
 
         .nav-link {
             color: #CDCDCD;
@@ -164,20 +198,20 @@ body {
                 color: #FAFAFA;
             }
 
-            // &:before {
-            //     content: '';
-            //     position: absolute;
-            //     left: 0;
-            //     bottom: -7px;
-            //     width: 0%;
-            //     height: 2px;
-            //     background-color: #F1CDB3;
-            //     transition: .3s;
-            // }
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -7px;
+                width: 0%;
+                height: 2px;
+                background-color: #F1CDB3;
+                transition: .3s;
+            }
     
-            // &:hover::before  {
-            //     width: 100%;
-            // }
+            &:hover::before  {
+                width: 100%;
+            }
         }
 
         .first-item {
@@ -214,6 +248,9 @@ body {
         margin: 150px auto 0px;
     }
 
+    @media screen and (max-width: 320px)  {
+    }
+
     .content {
         margin-top: 163px;
         width: 460px;
@@ -221,6 +258,10 @@ body {
 
         @media screen and (max-width: 1170px)  {
             margin: 0 auto;
+        }
+
+        @media screen and (max-width: 320px)  {
+            width: 300px;
         }
 
         .heading {
@@ -231,6 +272,25 @@ body {
             line-height: 57.2px;
             width: 310px;
             margin-bottom: 42px;
+
+            @media screen and (max-width: 320px)  {
+                width: 300px;
+                font-size: 25px;
+                font-weight: 400;
+                line-height: 32px;
+                letter-spacing: 0.06em;
+                text-align: center;
+                padding: 0px 20px;
+            }
+        }
+
+        @media screen and (max-width: 320px)  {
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 32px;
+            letter-spacing: 0.06em;
+            text-align: center;
+
         }
 
         .subheading {
@@ -239,6 +299,14 @@ body {
             line-height: 24px;
             color: #CDCDCD;
             margin-bottom: 42px;
+
+            @media screen and (max-width: 320px)  {
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 0px;
+                text-align: center;
+            }
         }
 
         .button-primary {
@@ -258,11 +326,24 @@ body {
                 transform: translate(-50%, 0);
             }
 
+            @media screen and (max-width: 320px)  {
+                display: flex;
+                justify-content: center;
+            }
+
             .a-button-primary {
                 font-size: 17px;
                 line-height: 22px;
                 color: #292929;
                 text-decoration: none;
+
+                @media screen and (max-width: 320px)  {
+                    padding: 15px;
+                    font-size: 17px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    letter-spacing: 0.06em;
+                }
             }
 
             &:hover {
@@ -284,10 +365,19 @@ body {
             margin: 100px 30px 0px 169px;
         }   
         
+        @media screen and (max-width: 320px)  {
+            width: 260px;
+            height: 271px;
+            margin: 105px 10px 0.23px 50px;
+        }
     }
 }
 
 .about {
+
+    @media screen and (max-width: 320px)  {
+        display: none;
+    }
 
     .about-content {
         display: flex;
@@ -318,6 +408,10 @@ body {
             width: 430px;
             height: 380px;
 
+            @media screen and (max-width: 320px)  {
+                width: 300px;
+            }
+
             .heading {
                 @include title-styles();
                 padding-bottom: 27px;
@@ -338,6 +432,7 @@ body {
 }
 
 .pets {
+
     background-color: #F6F6F6;
     .pets-content {
         padding: 80px 0px 100px;
@@ -351,6 +446,10 @@ body {
             width: 400px;
             text-align: center;
             margin: 0 auto 60px;
+
+            @media screen and (max-width: 320px)  {
+                width: 300px;
+            }
 
         }
 
@@ -493,6 +592,7 @@ body {
 } 
 
 .help {
+
     .help-content {
         padding: 80px 0px 70px;
     
@@ -619,6 +719,10 @@ body {
 
 .donation {
 
+    @media screen and (max-width: 320px)  {
+        display: none;
+    }
+
     background-color: #F6F6F6;
 
     .donation-content {
@@ -641,6 +745,10 @@ body {
 
             @media screen and (max-width: 1170px)  {
                 margin: 60px auto 0px;
+            }
+
+            @media screen and (max-width: 320px)  {
+                display: none;
             }
         }
 
@@ -736,6 +844,7 @@ body {
 }
 
 .footer {
+
     background: linear-gradient(to right, rgba(91, 72, 58, 1),rgba(38, 36, 37, 1));
     color: #F1CDB3;
 
