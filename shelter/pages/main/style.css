@@ -45,12 +45,12 @@ body {
   margin: 60px auto;
   max-width: 1200px;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .header {
     margin: 30px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .header {
     margin: 30px 53px 0px 10px;
   }
@@ -89,7 +89,7 @@ body {
   display: flex;
   align-items: center;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .nav .hamburger {
     display: block;
     z-index: 1000;
@@ -112,7 +112,7 @@ body {
   display: flex;
   list-style-type: none;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .nav-list {
     display: none;
   }
@@ -188,7 +188,7 @@ body {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .content {
     width: 300px;
   }
@@ -202,7 +202,7 @@ body {
   width: 310px;
   margin-bottom: 42px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .content .heading {
     width: 300px;
     font-size: 25px;
@@ -213,7 +213,7 @@ body {
     padding: 0px 20px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .content {
     font-size: 25px;
     font-weight: 400;
@@ -229,7 +229,7 @@ body {
   color: #CDCDCD;
   margin-bottom: 42px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .content .subheading {
     font-size: 15px;
     font-weight: 400;
@@ -254,7 +254,7 @@ body {
     transform: translate(-50%, 0);
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .content .button-primary {
     display: flex;
     justify-content: center;
@@ -266,7 +266,7 @@ body {
   color: #292929;
   text-decoration: none;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .content .button-primary .a-button-primary {
     padding: 15px;
     font-size: 17px;
@@ -287,16 +287,22 @@ body {
 }
 @media screen and (max-width: 1170px) {
   .start-screen-content .start-screen-puppy {
+    display: flex;
+    align-self: center;
     width: 569px;
     height: 593px;
     margin: 100px 30px 0px 169px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .start-screen-content .start-screen-puppy {
+    display: flex;
+    align-self: center;
     width: 260px;
     height: 271px;
     margin: 105px 10px 0.23px 50px;
+    margin: 105px 3.05% 0px 15.25%;
+    margin-right: 5%;
   }
 }
 
@@ -312,7 +318,7 @@ body {
     align-items: center;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .about .about-content {
     padding: 42px 10px;
   }
@@ -329,7 +335,7 @@ body {
     margin-top: 94px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .about .about-content .about-pets {
     margin-top: 156px;
     width: 260px;
@@ -342,7 +348,7 @@ body {
   width: 430px;
   height: 380px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .about .about-content .content {
     padding: 0px;
     width: 300px;
@@ -360,7 +366,7 @@ body {
   width: 370px;
   padding-right: 60px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .about .about-content .content .heading {
     font-size: 25px;
     font-weight: 400;
@@ -369,7 +375,7 @@ body {
     text-align: center;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .about .about-content .content .heading {
     width: 100%;
     padding: 0px 0px 25px;
@@ -383,7 +389,7 @@ body {
   font-size: 15px;
   line-height: 24px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .about .about-content .content .subheading {
     padding: 0px 5px 22px;
     text-align: justify;
@@ -396,7 +402,7 @@ body {
 .pets .pets-content {
   padding: 80px 0px 100px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content {
     padding: 42px 10px;
   }
@@ -412,7 +418,7 @@ body {
   text-align: center;
   margin: 0 auto 60px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content .heading {
     font-size: 25px;
     font-weight: 400;
@@ -421,7 +427,7 @@ body {
     text-align: center;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content .heading {
     width: 300px;
     margin: 0 auto 42px;
@@ -438,12 +444,14 @@ body {
     overflow: hidden;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content .slider {
     flex-wrap: wrap;
     row-gap: 20px;
     column-gap: 80px;
     padding-bottom: 42px;
+    width: 270px;
+    margin: 0 auto;
   }
 }
 .pets .pets-content .slider .left-arrow {
@@ -460,12 +468,12 @@ body {
   cursor: pointer;
   background-color: #FDDCC4;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .pets .pets-content .slider .left-arrow {
     margin: auto 12px auto 30px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content .slider .left-arrow {
     order: 1;
     margin: 0px;
@@ -485,12 +493,12 @@ body {
   cursor: pointer;
   background-color: #FDDCC4;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .pets .pets-content .slider .right-arrow {
     margin: auto 30px auto 12px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content .slider .right-arrow {
     transform: scale(-1, 1);
     margin: 0px;
@@ -508,7 +516,7 @@ body {
     overflow-x: hidden;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .pets .pets-content .slider .cards {
     width: 270px;
     margin: 0 auto;
@@ -602,7 +610,7 @@ body {
 .help .help-content {
   padding: 80px 0px 70px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content {
     padding: 42px 0px;
   }
@@ -618,7 +626,7 @@ body {
   text-align: center;
   margin: 0 auto 60px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .heading {
     font-size: 25px;
     font-weight: 400;
@@ -627,7 +635,7 @@ body {
     text-align: center;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .heading {
     padding: 0 42px;
     margin-bottom: 42px;
@@ -636,7 +644,7 @@ body {
 .help .help-content .list {
   max-width: 1026px;
   width: 100%;
-  margin: 0 15px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -646,10 +654,13 @@ body {
 @media screen and (max-width: 1170px) {
   .help .help-content .list {
     column-gap: 60px;
+    width: 630px;
+    margin: 0 auto;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list {
+    width: 290px;
     gap: 30px;
     justify-content: flex-start;
   }
@@ -680,7 +691,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .pet-food {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -708,7 +719,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .transportation {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -736,7 +747,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .toys {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -764,7 +775,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .bowls-and-cups {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -792,7 +803,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .shampoos {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -820,7 +831,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .vitamins {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -848,7 +859,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .medicines {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -876,7 +887,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .coralls-leashes {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -904,7 +915,7 @@ body {
     width: 170px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .help .help-content .list .sleeping-areas {
     font-family: Georgia, serif;
     font-size: 15px;
@@ -934,6 +945,12 @@ body {
     align-items: center;
   }
 }
+@media screen and (max-width: 767px) {
+  .donation .donation-content {
+    padding: 42px 10px;
+    justify-content: center;
+  }
+}
 .donation .donation-content .donation-dog {
   width: 505px;
   height: 261px;
@@ -946,9 +963,11 @@ body {
     margin: 60px auto 0px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .donation .donation-content .donation-dog {
-    display: none;
+    width: 260px;
+    height: 132.5px;
+    margin: 42px auto 2px;
   }
 }
 .donation .donation-content .content {
@@ -962,6 +981,11 @@ body {
     align-content: center;
   }
 }
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content {
+    width: 300px;
+  }
+}
 .donation .donation-content .content .heading {
   color: #545454;
   font-family: Georgia, serif;
@@ -971,13 +995,18 @@ body {
   letter-spacing: 0.05em;
   padding: 0px 80px 20px 0px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .donation .donation-content .content .heading {
     font-size: 25px;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0.06em;
     text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content .heading {
+    padding: 0px 10px 21px;
   }
 }
 .donation .donation-content .content .subheading {
@@ -989,6 +1018,15 @@ body {
   text-align: left;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content .subheading {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+}
 .donation .donation-content .content .credit-card {
   width: 349px;
   height: 43px;
@@ -996,10 +1034,21 @@ body {
   border-radius: 9px;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content .credit-card {
+    width: 281px;
+    margin: 0 auto;
+  }
+}
 .donation .donation-content .content .credit-card .sub-card {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
+}
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content .credit-card .sub-card {
+    margin: 0 auto;
+  }
 }
 .donation .donation-content .content .credit-card .sub-card .card-icon {
   width: 30px;
@@ -1013,6 +1062,15 @@ body {
   line-height: 23px;
   letter-spacing: 0.06em;
   text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content .credit-card .sub-card .card-number {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: left;
+  }
 }
 .donation .donation-content .content .credit-card .sub-card .card-number .a-card-number {
   text-decoration: none;
@@ -1042,6 +1100,12 @@ body {
   text-align: left;
   color: #B2B2B2;
 }
+@media screen and (max-width: 767px) {
+  .donation .donation-content .content .legal-information {
+    padding: 20px 10px 0px;
+    text-align: justify;
+  }
+}
 
 .footer {
   background: linear-gradient(to right, #5b483a, #262425);
@@ -1061,10 +1125,23 @@ body {
     padding: 13px 40px 0px 40px;
   }
 }
+@media screen and (max-width: 767px) {
+  .footer .footer-content {
+    padding: 30px 10px 0px;
+    row-gap: 40px;
+    width: 320px;
+    margin: 0 auto;
+  }
+}
 .footer .footer-content .contacts {
   margin-top: 16px;
   width: 278px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-content .contacts {
+    margin: 0px;
+  }
 }
 .footer .footer-content .contacts .title {
   color: #545454;
@@ -1075,7 +1152,7 @@ body {
   letter-spacing: 0.05em;
   color: #FFFFFF;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .footer .footer-content .contacts .title {
     font-size: 25px;
     font-weight: 400;
@@ -1095,6 +1172,11 @@ body {
   padding-left: 60px;
   text-align: left;
 }
+@media screen and (max-width: 767px) {
+  .footer .footer-content .contacts .mail {
+    padding-left: 75px;
+  }
+}
 .footer .footer-content .contacts .mail .a-mail {
   text-decoration: none;
   color: #F1CDB3;
@@ -1107,6 +1189,11 @@ body {
   height: 32px;
   background: url("../../assets/icons/footer-icons/icon-email.svg") no-repeat;
 }
+@media screen and (max-width: 767px) {
+  .footer .footer-content .contacts .mail::before {
+    margin-left: 13px;
+  }
+}
 .footer .footer-content .contacts .phone {
   font-family: Georgia, serif;
   font-size: 20px;
@@ -1115,6 +1202,11 @@ body {
   line-height: 32px;
   padding-left: 60px;
   text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-content .contacts .phone {
+    padding-left: 80px;
+  }
 }
 .footer .footer-content .contacts .phone .a-phone {
   text-decoration: none;
@@ -1128,9 +1220,19 @@ body {
   height: 32px;
   background: url("../../assets/icons/footer-icons/icon-phone.svg") no-repeat;
 }
+@media screen and (max-width: 767px) {
+  .footer .footer-content .contacts .phone::before {
+    margin: 0 19px;
+  }
+}
 .footer .footer-content .locations {
   margin-top: 16px;
   width: 302px;
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-content .locations {
+    margin: 0px;
+  }
 }
 .footer .footer-content .locations .title {
   color: #545454;
@@ -1141,13 +1243,18 @@ body {
   letter-spacing: 0.05em;
   color: #FFFFFF;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .footer .footer-content .locations .title {
     font-size: 25px;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0.06em;
     text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-content .locations .title {
+    padding: 0 30px;
   }
 }
 .footer .footer-content .locations .boston {
@@ -1163,6 +1270,11 @@ body {
   height: 46px;
   line-height: 23px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-content .locations .boston {
+    margin: 40px 0px 40px 0px;
+  }
 }
 .footer .footer-content .locations .boston .a-boston {
   text-decoration: none;
@@ -1203,10 +1315,23 @@ body {
   margin-top: 7px;
   background: url("../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
 }
+@media screen and (max-width: 767px) {
+  .footer .footer-content .locations .london::before {
+    margin-top: 0;
+  }
+}
 .footer .footer-content .footer-puppy {
   width: 300px;
   height: 310px;
-  background-image: url("../../assets/img/footer-puppy.png");
+  background: url("../../assets/img/footer-puppy.png") no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-content .footer-puppy {
+    width: 260px;
+    height: 269px;
+    margin-top: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
