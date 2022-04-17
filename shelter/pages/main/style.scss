@@ -136,7 +136,8 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    
 
     .logo {
 
@@ -171,32 +172,38 @@ body {
 
 .nav {
     display: flex;
+    margin-left: auto;
     align-items: center;
+}
 
-    @media screen and (max-width: 767px)  {
-
-        .hamburger {
+@media screen and (max-width: 767px)  {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        z-index: 1000;
+        height: 22px;
+        margin: auto 0px;
+    
+        .line {
+            width: 30px;
+            height: 2px;
+            background-color: #F1CDB3;
             display: block;
-            z-index: 1000;
-            height: 22px;
-            margin-bottom: 15px;
-        
-            .line {
-                width: 30px;
-                height: 2px;
-                background-color: #F1CDB3;
-                display: block;
-                margin: 8px auto;
-                -webkit-transition: all 0.3s ease-in-out;
-                -o-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
-            }
+            // margin: 8px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
     }
-
 }
 
 
+.open {
+    right: 0;
+    transition: .5s;
+    box-shadow: 0 0 0 9999px #292929;
+}
 
 .nav-list {
     display: flex;
@@ -204,13 +211,26 @@ body {
 
     @media screen and (max-width: 767px)  {
         display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 158px;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 320px;
+        justify-content: center;
+        row-gap: 40px;
+        background-color: #292929;
     }
 
     .nav-item {
         margin-left: 35px;
         line-height: 30px;
 
-
+        @media screen and (max-width: 767px)  {
+            margin-left: 0px;
+        }
 
         .nav-link {
             color: #CDCDCD;
@@ -220,6 +240,15 @@ body {
             font-family: $text;
             position: relative;
             transition: .3s;
+
+            @media screen and (max-width: 767px)  {
+                font-family: $text;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 51px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
 
             &:hover {
                 color: #FAFAFA;
@@ -247,6 +276,15 @@ body {
             line-height: 24px;
             font-size: 15px;
             position: relative;
+
+            @media screen and (max-width: 767px)  {
+                font-family: $text;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 51px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
 
             &:before {
                 content: '';
@@ -282,6 +320,10 @@ body {
         margin-top: 163px;
         width: 460px;
         text-align: justify;
+
+        @media screen and (max-width: 1279px)  {
+            margin-left: 30px;
+        }
 
         @media screen and (max-width: 1170px)  {
             margin: 0 auto;
@@ -880,6 +922,10 @@ body {
                 border-radius: 9px;
                 margin-bottom: 20px;
 
+                &:hover {
+                    cursor: pointer;
+                }
+
                 @media screen and (max-width: 767px)  {
                     width: 281px;
                     margin: 0 auto;
@@ -913,7 +959,6 @@ body {
                             line-height: 17px;
                             letter-spacing: 0.06em;
                             text-align: left;
-
                         }
 
                         .a-card-number {

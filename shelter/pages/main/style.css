@@ -58,7 +58,6 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
 }
 .header-container .logo .title {
   color: #F1CDB3;
@@ -87,25 +86,33 @@ body {
 
 .nav {
   display: flex;
+  margin-left: auto;
   align-items: center;
 }
+
 @media screen and (max-width: 767px) {
-  .nav .hamburger {
-    display: block;
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
     z-index: 1000;
     height: 22px;
-    margin-bottom: 15px;
+    margin: auto 0px;
   }
-  .nav .hamburger .line {
+  .hamburger .line {
     width: 30px;
     height: 2px;
     background-color: #F1CDB3;
     display: block;
-    margin: 8px auto;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
+}
+.open {
+  right: 0;
+  transition: 0.5s;
+  box-shadow: 0 0 0 9999px #292929;
 }
 
 .nav-list {
@@ -115,11 +122,27 @@ body {
 @media screen and (max-width: 767px) {
   .nav-list {
     display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 158px;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    justify-content: center;
+    row-gap: 40px;
+    background-color: #292929;
   }
 }
 .nav-list .nav-item {
   margin-left: 35px;
   line-height: 30px;
+}
+@media screen and (max-width: 767px) {
+  .nav-list .nav-item {
+    margin-left: 0px;
+  }
 }
 .nav-list .nav-item .nav-link {
   color: #CDCDCD;
@@ -129,6 +152,16 @@ body {
   font-family: Arial, sans-serif;
   position: relative;
   transition: 0.3s;
+}
+@media screen and (max-width: 767px) {
+  .nav-list .nav-item .nav-link {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 }
 .nav-list .nav-item .nav-link:hover {
   color: #FAFAFA;
@@ -152,6 +185,16 @@ body {
   line-height: 24px;
   font-size: 15px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .nav-list .nav-item .first-item {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 }
 .nav-list .nav-item .first-item:before {
   content: "";
@@ -182,6 +225,11 @@ body {
   margin-top: 163px;
   width: 460px;
   text-align: justify;
+}
+@media screen and (max-width: 1279px) {
+  .start-screen-content .content {
+    margin-left: 30px;
+  }
 }
 @media screen and (max-width: 1170px) {
   .start-screen-content .content {
@@ -1033,6 +1081,9 @@ body {
   background-color: #F1CDB3;
   border-radius: 9px;
   margin-bottom: 20px;
+}
+.donation .donation-content .content .credit-card:hover {
+  cursor: pointer;
 }
 @media screen and (max-width: 767px) {
   .donation .donation-content .content .credit-card {
