@@ -12,17 +12,10 @@ a {
   box-sizing: border-box;
 }
 
-body {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1200px;
   width: 100%;
 }
 
@@ -357,6 +350,8 @@ body {
 .about .about-content {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 80px 175px 100px;
 }
 @media screen and (max-width: 1170px) {
@@ -984,6 +979,8 @@ body {
 .donation .donation-content {
   display: flex;
   justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 80px 182.5px 100px;
 }
 @media screen and (max-width: 1170px) {
@@ -1166,6 +1163,9 @@ body {
   padding: 40px 40px 0px 40px;
   display: flex;
   justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
 }
 @media screen and (max-width: 1170px) {
   .footer .footer-content {

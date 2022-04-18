@@ -83,7 +83,6 @@ html {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
 }
 
     .logo {
@@ -116,28 +115,36 @@ html {
 
 .nav {
     display: flex;
+    margin-left: auto;
     align-items: center;
+}
 
-    @media screen and (max-width: 767px)  {
+@media screen and (max-width: 767px)  {
 
-        .hamburger {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        row-gap: 8px;
+        z-index: 1000;
+        height: 22px;
+    
+        .line {
+            width: 30px;
+            height: 2px;
+            background-color: #000;
             display: block;
-            z-index: 1000;
-            height: 22px;
-            margin-bottom: 15px;
-        
-            .line {
-                width: 30px;
-                height: 2px;
-                background-color: #000;
-                display: block;
-                margin: 8px auto;
-                -webkit-transition: all 0.3s ease-in-out;
-                -o-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
-            }
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
     }
+}
+
+.open {
+    right: 0;
+    transition: .5s;
+    box-shadow: 0 0 0 9999px #FAFAFA;
 }
 
 .nav-list {
@@ -146,6 +153,17 @@ html {
 
     @media screen and (max-width: 767px)  {
         display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 158px;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 320px;
+        justify-content: center;
+        row-gap: 40px;
+        background-color: #FAFAFA;
     }
 
     .nav-item {
@@ -160,6 +178,16 @@ html {
             font-family: $text;
             font-weight: 400;
             position: relative;
+            transition: .3s;
+
+            @media screen and (max-width: 767px)  {
+                font-family: $text;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 51px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
 
             &:hover {
                 color: #292929;
@@ -188,6 +216,15 @@ html {
             line-height: 24px;
             font-size: 15px;
             position: relative;
+
+            @media screen and (max-width: 767px)  {
+                font-family: $text;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 51px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
 
             &:before {
                 content: '';
