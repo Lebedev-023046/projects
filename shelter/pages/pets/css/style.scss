@@ -87,6 +87,8 @@ html {
 
     .logo {
 
+        z-index: 1111;
+
         .title {
             color: #545454;
             text-decoration: none;
@@ -110,6 +112,28 @@ html {
             text-align: center;
             color: #292929;
         }
+    }
+}
+
+.logo-burger {
+    transition: .5s;
+}
+
+
+.header-container-burger {
+    margin-left: auto;
+    width: 257px;
+    transition: .5s;
+    animation-duration: .75s;
+    animation-name: anilogo;
+}
+
+@keyframes anilogo {    
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 257px;
     }
 }
 
@@ -139,6 +163,11 @@ html {
             transition: all 0.3s ease-in-out;
         }
     }
+
+    .open-icon {
+        transform: rotate(90deg);
+        transition: .5s;
+    }
 }
 
 .open {
@@ -152,18 +181,20 @@ html {
     list-style-type: none;
 
     @media screen and (max-width: 767px)  {
-        display: none;
         position: fixed;
         z-index: 1000;
-        top: 158px;
-        right: 0;
+        top: 0;
+        right: -320px;
         bottom: 0;
+        padding-top: 158px;
         flex-direction: column;
         align-items: center;
         width: 320px;
+        height: 100%;
         justify-content: center;
         row-gap: 40px;
         background-color: #FAFAFA;
+        transition: .3s;
     }
 
     .nav-item {
@@ -238,6 +269,18 @@ html {
             }
         }
     }
+}
+
+.open {
+    @media screen and (max-width: 767px)  {
+        right: 0;
+        transition: .5s;
+        box-shadow: 0 0 0 9999px rgb(41 41 41 / 60%);
+    } 
+}
+
+.body-scroll {
+    overflow: hidden;
 }
 
 .wrapper {
@@ -339,28 +382,28 @@ html {
                         }
     
                         &:nth-of-type(1) {
-                            background-image: url('../../assets/img/pets-name/pets-katrine.png');
+                            background-image: url('../../../assets/img/pets-name/pets-katrine.png');
                         }
                         &:nth-of-type(2) {
-                            background-image: url('../../assets/img/pets-name/pets-jennifer.png');
+                            background-image: url('../../../assets/img/pets-name/pets-jennifer.png');
                         }
                         &:nth-of-type(3) {
-                            background-image: url('../../assets/img/pets-name/pets-woody.png');
+                            background-image: url('../../../assets/img/pets-name/pets-woody.png');
                         }
                         &:nth-of-type(4) {
-                            background-image: url('../../assets/img/pets-name/pets-sophia.png'); 
+                            background-image: url('../../../assets/img/pets-name/pets-sophia.png'); 
                         }
                         &:nth-of-type(5) {
-                            background-image: url('../../assets/img/pets-name/pets-timmy.png'); 
+                            background-image: url('../../../assets/img/pets-name/pets-timmy.png'); 
                         }
                         &:nth-of-type(6) {
-                            background-image: url('../../assets/img/pets-name/pets-charly.png'); 
+                            background-image: url('../../../assets/img/pets-name/pets-charly.png'); 
                         }
                         &:nth-of-type(7) {
-                            background-image: url('../../assets/img/pets-name/pets-scarlett.png'); 
+                            background-image: url('../../../assets/img/pets-name/pets-scarlett.png'); 
                         }
                         &:nth-of-type(8) {
-                            background-image: url('../../assets/img/pets-name/pets-freddie.png'); 
+                            background-image: url('../../../assets/img/pets-name/pets-freddie.png'); 
                         }
                     }
                 }
@@ -394,7 +437,7 @@ html {
                 }
 
                 .left-left {
-                    background-image: url('../../assets/icons/pagination/button_paginator_inactive-l2.png');
+                    background-image: url('../../../assets/icons/pagination/button_paginator_inactive-l2.png');
                     &:hover {
                         // background-color: rgb(230, 230, 230);
                         background-color: #F6F6F6;
@@ -405,7 +448,7 @@ html {
                 }
 
                 .left {
-                    background-image: url('../../assets/icons/pagination/button_paginator_inactive-l1.png');
+                    background-image: url('../../../assets/icons/pagination/button_paginator_inactive-l1.png');
                     &:hover {
                         // background-color: rgb(230, 230, 230);
                         background-color: #F6F6F6;
@@ -427,11 +470,11 @@ html {
                 }
 
                 .right {
-                    background-image: url('../../assets/icons/pagination/button_paginator-r1.png');
+                    background-image: url('../../../assets/icons/pagination/button_paginator-r1.png');
                 }
 
                 .right-right {
-                    background-image: url('../../assets/icons/pagination/button_paginator-r2.png');
+                    background-image: url('../../../assets/icons/pagination/button_paginator-r2.png');
                 }
             }
         }   
@@ -500,7 +543,7 @@ html {
                     left: 0;
                     width: 40px;
                     height: 32px;
-                    background: url('../../assets/icons/footer-icons/icon-email.svg')  no-repeat;
+                    background: url('../../../assets/icons/footer-icons/icon-email.svg')  no-repeat;
 
                     @media screen and (max-width: 767px)  {
                         margin-left: 13px;
@@ -526,7 +569,7 @@ html {
                     left: 0;
                     width: 40px;
                     height: 32px;
-                    background: url('../../assets/icons/footer-icons/icon-phone.svg')  no-repeat;
+                    background: url('../../../assets/icons/footer-icons/icon-phone.svg')  no-repeat;
 
                     @media screen and (max-width: 767px)  {
                         margin: 0 19px;
@@ -576,7 +619,7 @@ html {
                     top: 7px;
                     width: 22px;
                     height: 32px;
-                    background: url('../../assets/icons/footer-icons/icon-marker.svg')  no-repeat;
+                    background: url('../../../assets/icons/footer-icons/icon-marker.svg')  no-repeat;
                 }
             }
 
@@ -599,7 +642,7 @@ html {
                     width: 22px;
                     height: 32px;
                     margin-top: 7px;
-                    background: url('../../assets/icons/footer-icons/icon-marker.svg')  no-repeat;
+                    background: url('../../../assets/icons/footer-icons/icon-marker.svg')  no-repeat;
 
                     @media screen and (max-width: 767px)  {
                         margin-top: 0;
@@ -611,7 +654,7 @@ html {
         .footer-puppy {
             width: 300px;
             height: 310px;
-            background: url('../../assets/img/footer-puppy.png') no-repeat;
+            background: url('../../../assets/img/footer-puppy.png') no-repeat;
             background-size: contain;
 
             @media screen and (max-width: 767px)  {

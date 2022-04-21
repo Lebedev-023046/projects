@@ -32,6 +32,9 @@ html {
 .header .header-container {
   display: flex;
 }
+.header .logo {
+  z-index: 1111;
+}
 .header .logo .title {
   color: #545454;
   text-decoration: none;
@@ -55,6 +58,26 @@ html {
   color: #292929;
 }
 
+.logo-burger {
+  transition: 0.5s;
+}
+
+.header-container-burger {
+  margin-left: auto;
+  width: 257px;
+  transition: 0.5s;
+  animation-duration: 0.75s;
+  animation-name: anilogo;
+}
+
+@keyframes anilogo {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 257px;
+  }
+}
 .nav {
   display: flex;
   margin-left: auto;
@@ -79,6 +102,11 @@ html {
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
+
+  .open-icon {
+    transform: rotate(90deg);
+    transition: 0.5s;
+  }
 }
 .open {
   right: 0;
@@ -92,18 +120,20 @@ html {
 }
 @media screen and (max-width: 767px) {
   .nav-list {
-    display: none;
     position: fixed;
     z-index: 1000;
-    top: 158px;
-    right: 0;
+    top: 0;
+    right: -320px;
     bottom: 0;
+    padding-top: 158px;
     flex-direction: column;
     align-items: center;
     width: 320px;
+    height: 100%;
     justify-content: center;
     row-gap: 40px;
     background-color: #FAFAFA;
+    transition: 0.3s;
   }
 }
 .nav-list .nav-item {
@@ -172,6 +202,18 @@ html {
   height: 3px;
   background-color: #F1CDB3;
   transition: 0.3s;
+}
+
+@media screen and (max-width: 767px) {
+  .open {
+    right: 0;
+    transition: 0.5s;
+    box-shadow: 0 0 0 9999px rgba(41, 41, 41, 0.6);
+  }
+}
+
+.body-scroll {
+  overflow: hidden;
 }
 
 .wrapper {
@@ -285,28 +327,28 @@ html {
   cursor: pointer;
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(1) {
-  background-image: url("../../assets/img/pets-name/pets-katrine.png");
+  background-image: url("../../../assets/img/pets-name/pets-katrine.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(2) {
-  background-image: url("../../assets/img/pets-name/pets-jennifer.png");
+  background-image: url("../../../assets/img/pets-name/pets-jennifer.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(3) {
-  background-image: url("../../assets/img/pets-name/pets-woody.png");
+  background-image: url("../../../assets/img/pets-name/pets-woody.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(4) {
-  background-image: url("../../assets/img/pets-name/pets-sophia.png");
+  background-image: url("../../../assets/img/pets-name/pets-sophia.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(5) {
-  background-image: url("../../assets/img/pets-name/pets-timmy.png");
+  background-image: url("../../../assets/img/pets-name/pets-timmy.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(6) {
-  background-image: url("../../assets/img/pets-name/pets-charly.png");
+  background-image: url("../../../assets/img/pets-name/pets-charly.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(7) {
-  background-image: url("../../assets/img/pets-name/pets-scarlett.png");
+  background-image: url("../../../assets/img/pets-name/pets-scarlett.png");
 }
 .wrapper .pets .pets-content .cards-container .cards .card:nth-of-type(8) {
-  background-image: url("../../assets/img/pets-name/pets-freddie.png");
+  background-image: url("../../../assets/img/pets-name/pets-freddie.png");
 }
 .wrapper .pets .pets-content .navigation {
   display: flex;
@@ -346,14 +388,14 @@ html {
   background-color: #FDDCC4;
 }
 .wrapper .pets .pets-content .navigation .left-left {
-  background-image: url("../../assets/icons/pagination/button_paginator_inactive-l2.png");
+  background-image: url("../../../assets/icons/pagination/button_paginator_inactive-l2.png");
 }
 .wrapper .pets .pets-content .navigation .left-left:hover {
   background-color: #F6F6F6;
   cursor: auto;
 }
 .wrapper .pets .pets-content .navigation .left {
-  background-image: url("../../assets/icons/pagination/button_paginator_inactive-l1.png");
+  background-image: url("../../../assets/icons/pagination/button_paginator_inactive-l1.png");
 }
 .wrapper .pets .pets-content .navigation .left:hover {
   background-color: #F6F6F6;
@@ -369,10 +411,10 @@ html {
   cursor: auto;
 }
 .wrapper .pets .pets-content .navigation .right {
-  background-image: url("../../assets/icons/pagination/button_paginator-r1.png");
+  background-image: url("../../../assets/icons/pagination/button_paginator-r1.png");
 }
 .wrapper .pets .pets-content .navigation .right-right {
-  background-image: url("../../assets/icons/pagination/button_paginator-r2.png");
+  background-image: url("../../../assets/icons/pagination/button_paginator-r2.png");
 }
 
 .footer {
@@ -457,7 +499,7 @@ html {
   left: 0;
   width: 40px;
   height: 32px;
-  background: url("../../assets/icons/footer-icons/icon-email.svg") no-repeat;
+  background: url("../../../assets/icons/footer-icons/icon-email.svg") no-repeat;
 }
 @media screen and (max-width: 767px) {
   .footer .footer-content .contacts .mail::before {
@@ -488,7 +530,7 @@ html {
   left: 0;
   width: 40px;
   height: 32px;
-  background: url("../../assets/icons/footer-icons/icon-phone.svg") no-repeat;
+  background: url("../../../assets/icons/footer-icons/icon-phone.svg") no-repeat;
 }
 @media screen and (max-width: 767px) {
   .footer .footer-content .contacts .phone::before {
@@ -557,7 +599,7 @@ html {
   top: 7px;
   width: 22px;
   height: 32px;
-  background: url("../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
+  background: url("../../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
 }
 .footer .footer-content .locations .london {
   font-family: Georgia, serif;
@@ -583,7 +625,7 @@ html {
   width: 22px;
   height: 32px;
   margin-top: 7px;
-  background: url("../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
+  background: url("../../../assets/icons/footer-icons/icon-marker.svg") no-repeat;
 }
 @media screen and (max-width: 767px) {
   .footer .footer-content .locations .london::before {
@@ -593,7 +635,7 @@ html {
 .footer .footer-content .footer-puppy {
   width: 300px;
   height: 310px;
-  background: url("../../assets/img/footer-puppy.png") no-repeat;
+  background: url("../../../assets/img/footer-puppy.png") no-repeat;
   background-size: contain;
 }
 @media screen and (max-width: 767px) {
