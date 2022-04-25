@@ -1,4 +1,4 @@
-alert("Я не успел доделать довольно большую часть функционала, поэтому прошу тебя проверить работу в среду в течение дня. Я напишу в этом блоке что я не успел сделать, чтобы не тратить твое время")
+// alert("Я не успел доделать довольно большую часть функционала, поэтому прошу тебя проверить работу в среду в течение дня. Я напишу в этом блоке что я не успел сделать, чтобы не тратить твое время")
 
 // =========  HAMBURGER  =========
 
@@ -42,7 +42,7 @@ const cardsBlock = document.querySelectorAll(".card")
 const petsName = document.querySelectorAll(".name")
 
 const renderCards = () => {
-    fetch("../../../../shelter/static/pets.json")
+    fetch("../../../../shelter/assets/static/pets.json")
         .then((response) => {
             return response.json()
         })
@@ -153,6 +153,12 @@ carousel.addEventListener("animationend", (animationEvent) => {
     rightArrow.addEventListener("click", moveRight)
     leftArrow.addEventListener("click", moveLeft)
 })
+
+
+// =========  POPUP REALISATION   =========
+
+
+
 
 
 
