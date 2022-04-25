@@ -40,26 +40,26 @@ addEventListener("click", closeBurger)
 const leftArrow = document.querySelector(".left-arrow")
 const rightArrow = document.querySelector(".right-arrow")
 
-const cardsBlock = document.querySelector(".cards").children
+const cardsBlock = document.querySelectorAll(".card")
 const petsName = document.querySelectorAll(".name")
 
 // console.log(leftArrow)
 // console.log(rightArrow)
 
-const renderCards = () => {
-    fetch("../../../../shelter/assets/static/pets.json")
-        .then((response) => {
-            return response.json()
-        })
-        .then(data => {
-            Array.from(cardsBlock).forEach((element, index) => {
-                element.style.backgroundImage = `url(${data[index].img[1]})`
+
+async function renderCards(){
+
+    let response = await fetch("../../../shelter/assets/static/pets.json")
+    if (response.ok) {
+        let data = await response.json()
+        console.log(data)
+            cardsBlock.forEach((element, index) => {
+            element.style.backgroundImage = `url(${data[index].img[1]})`
             })
             petsName.forEach((element, index) => {
                 element.textContent = data[index].name
             })
-
-        })
+    }
 }
 
 renderCards()
