@@ -22,14 +22,14 @@ const closeBurger = (event) => {
     if (event.target.classList.contains("nav-link")) {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
-        body.classList.toggle("body-scroll")
+        if (document.body.scrollWidth < 767) body.classList.toggle("body-scroll")
         headerContainerBurger.classList.remove("header-container-burger")
     }
     else if (tagList.includes(event.target.localName)) {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
         headerContainerBurger.classList.remove("header-container-burger")
-        body.classList.remove("body-scroll")
+        if (document.body.scrollWidth < 767) body.classList.toggle("body-scroll")
     }
 }
 
@@ -41,19 +41,36 @@ addEventListener("click", closeBurger)
 const cardsBlock = document.querySelectorAll(".card")
 const petsName = document.querySelectorAll(".name")
 
-const renderCards = () => {
-    fetch("../../../../shelter/assets/static/pets.json")
-        .then((response) => {
-            return response.json()
-        })
-        .then(data => {
-            cardsBlock.forEach((element, index) => {
+async function renderCards(){
+
+    let response = await fetch("../shelter/assets/static/pets.json")
+    
+    if (response.ok) {
+        response.json()
+            .then(data => {
+                cardsBlock.forEach((element, index) => {
                 element.style.backgroundImage = `url(${data[index].img[0]})`
-            })
-            petsName.forEach((element, index) => {
-                element.textContent = data[index].name
-            })
+                })
+                petsName.forEach((element, index) => {
+                    element.textContent = data[index].name
+                })
         })
+    }else {
+        console.log("Error!")
+    }
+    
+    // fetch("../../../../shelter/assets/static/pets.json")
+    //     .then((response) => {
+    //         return response.json()
+    //     })
+    //     .then(data => {
+    //         cardsBlock.forEach((element, index) => {
+    //             element.style.backgroundImage = `url(${data[index].img[0]})`
+    //         })
+    //         petsName.forEach((element, index) => {
+    //             element.textContent = data[index].name
+    //         })
+    //     })
 }
 
 renderCards()
@@ -68,9 +85,6 @@ const carousel = document.querySelector(".cards-items")
 const ITEM_LEFT = document.querySelector(".item-left")
 const ITEM_CENTER = document.querySelector(".item-center")
 const ITEM_RIGHT = document.querySelector(".item-right")
-
-console.log(ITEM_LEFT)
-
 
 const moveLeft = () => {
     carousel.classList.add("transition-left")
