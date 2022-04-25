@@ -44,33 +44,16 @@ const petsName = document.querySelectorAll(".name")
 async function renderCards(){
 
     let response = await fetch("../shelter/assets/static/pets.json")
-    
     if (response.ok) {
-        response.json()
-            .then(data => {
-                cardsBlock.forEach((element, index) => {
-                element.style.backgroundImage = `url(${data[index].img[0]})`
-                })
-                petsName.forEach((element, index) => {
-                    element.textContent = data[index].name
-                })
-        })
-    }else {
-        console.log("Error!")
+        let data = await response.json()
+        console.log(data)
+            cardsBlock.forEach((element, index) => {
+            element.style.backgroundImage = `url(${data[index].img[0]})`
+            })
+            petsName.forEach((element, index) => {
+                element.textContent = data[index].name
+            })
     }
-    
-    // fetch("../../../../shelter/assets/static/pets.json")
-    //     .then((response) => {
-    //         return response.json()
-    //     })
-    //     .then(data => {
-    //         cardsBlock.forEach((element, index) => {
-    //             element.style.backgroundImage = `url(${data[index].img[0]})`
-    //         })
-    //         petsName.forEach((element, index) => {
-    //             element.textContent = data[index].name
-    //         })
-    //     })
 }
 
 renderCards()
