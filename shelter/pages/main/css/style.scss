@@ -9,6 +9,92 @@ a {
     text-decoration: none;
 }
 
+// SLIDER ANIMATION
+
+@keyframes move-right {
+    from {
+        right: 1080px;
+    }
+    to {
+        right: 2160px;
+    }
+}
+
+@keyframes move-left {
+    from {
+        right: 1080px;
+    }
+    to {
+        right: 0px;
+    }
+}
+
+@keyframes move-left-1279 {
+    from {
+        right: 620px;
+    }
+    to {
+        right: 0px;
+    }
+}
+
+@keyframes move-right-1279 {
+    from {
+        right: 620px;
+    }
+    to {
+        right: 1240px;
+    }
+}
+
+@keyframes move-left-767 {
+    from {
+        right: 310px;
+    }
+    to {
+        right: 0px;
+    }
+}
+
+@keyframes move-right-767 {
+    from {
+        right: 310px;
+    }
+    to {
+        right: 620px;
+    }
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 1.5s;
+
+    @media screen and (max-width: 1279px)  {
+        animation-name: move-right-1279;
+    }
+
+    @media screen and (max-width: 767px)  {
+        animation-name: move-left-767;
+    }
+}
+
+
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 1.5s;
+
+    @media screen and (max-width: 1279px)  {
+        animation-name: move-left-1279;
+    }
+
+    @media screen and (max-width: 767px)  {
+        animation-name: move-right-767;
+    }
+}
+
+
+
 @mixin arrow_buttons {
     border: none;
     width: 52px;
@@ -586,6 +672,7 @@ a {
         .slider {
             display: flex;
             justify-content: center;
+            position: relative;
             padding-bottom: 60px;
 
             @media screen and (max-width: 1170px)  {
@@ -633,86 +720,91 @@ a {
                     margin: 0px;
                 }
             }
-
             .cards {
-                display: flex;
-                column-gap: 90px;
+                // width: 990px;
+                overflow-x: hidden;
 
-                @media screen and (max-width: 1170px)  {
-                    justify-content: flex-start;
-                    column-gap: 40px;
-                    width: 580px;
-                    overflow-x: hidden;
-                }
+                .cards-items {
+                    display: flex;
+                    position: relative;
+                    width: 990px;
+                    right: 1080px;
+                    column-gap: 90px;
+                    
 
-                @media screen and (max-width: 767px)  {
-                    width: 270px;
-                    margin: 0 auto;
-                }
+                    .item-left, .item-center, .item-right {
+                        display: flex;
+                        column-gap: 90px;
+                        width: 990px;
 
-                .card {
-                    max-width: 270px;
-                    width: 100%;
-                    height: 435px;
-                    background-color: #FAFAFA;
-                    background-repeat: no-repeat;
-                    padding-bottom: 30px;
-                    transition: .3s;
+                        @media screen and (max-width: 1279px)  {
+                            width: 580px;
+                            column-gap: 40px;
+                        }
 
-                    @media screen and (max-width: 1170px)  {
-                        &:nth-of-type(3) {
-                            // display: none;
-                            background-image: url('../../../assets/img/pets-name/pets-woody.png'); 
+                        @media screen and (max-width: 767px)  {
+                            width: 270px;
+                            column-gap: 40px;
                         }
                     }
 
-
-                    &:hover {
-                        cursor: pointer;
-                        background-color: #fff;
-                        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-                        .button-lm {
-                            background-color: #F1CDB3;
-                        }
-                        // filter: brightness(0.99) invert(5%) sepia(10%);
+                    @media screen and (max-width: 1279px)  {
+                        justify-content: flex-start;
+                        column-gap: 40px;
+                        width: 580px;
+                        right: 620px;
                     }
-
-                    .name {
-                        @include pet-name();
-                        color: #545454;
+    
+                    @media screen and (max-width: 767px)  {
+                        width: 270px;
+                        margin: 0 auto;
+                        right: 310px;
                     }
-
-                    .button-lm {
-                        color: #292929;
-                        display: block;
-                        font-family: $titles;
-                        font-size: 17px;
-                        font-weight: 400;
-                        line-height: 22px;
-                        letter-spacing: 0.06em;
-                        margin: 30px 41.5px;
+    
+                    .card {
+                        max-width: 270px;
+                        width: 100%;
+                        height: 435px;
                         background-color: #FAFAFA;
-                        border: 2px solid #F1CDB3;
-                        height: 52px;
-                        width: 187px;
-                        border-radius: 100px;
+                        background-repeat: no-repeat;
+                        padding-bottom: 30px;
                         transition: .3s;
-
+    
                         &:hover {
                             cursor: pointer;
-                            background-color: #FDDCC4;
+                            background-color: #fff;
+                            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+                            .button-lm {
+                                background-color: #F1CDB3;
+                            }
                         }
-
-                    }
-
-                    &:nth-of-type(1) {
-                        background-image: url('../../../assets/img/pets-name/pets-katrine.png');
-                    }
-                    &:nth-of-type(2) {
-                        background-image: url('../../../assets/img/pets-name/pets-jennifer.png');
-                    }
-                    &:nth-of-type(3) {
-                        background-image: url('../../../assets/img/pets-name/pets-woody.png'); 
+    
+                        .name {
+                            @include pet-name();
+                            color: #545454;
+                        }
+    
+                        .button-lm {
+                            color: #292929;
+                            display: block;
+                            font-family: $titles;
+                            font-size: 17px;
+                            font-weight: 400;
+                            line-height: 22px;
+                            letter-spacing: 0.06em;
+                            margin: 30px 41.5px;
+                            background-color: #FAFAFA;
+                            border: 2px solid #F1CDB3;
+                            height: 52px;
+                            width: 187px;
+                            border-radius: 100px;
+                            transition: .3s;
+    
+                            &:hover {
+                                cursor: pointer;
+                                background-color: #FDDCC4;
+                            }
+                        }
                     }
                 }
             }
