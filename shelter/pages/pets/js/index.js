@@ -47,7 +47,7 @@ const petsName = document.querySelectorAll(".name")
 // console.log(rightArrow)
 
 const renderCards = () => {
-    fetch("../../../../shelter/static/pets.json")
+    fetch("../../../../shelter/assets/static/pets.json")
         .then((response) => {
             return response.json()
         })
