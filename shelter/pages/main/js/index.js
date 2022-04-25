@@ -1,4 +1,4 @@
-// alert("Я не успел доделать довольно большую часть функционала, поэтому прошу тебя проверить работу в среду в течение дня. Я напишу в этом блоке что я не успел сделать, чтобы не тратить твое время")
+alert("Я не успел доделать popup и pagination, поэтому прошу тебя проверить работу в среду в течение дня")
 
 // =========  HAMBURGER  =========
 
@@ -46,7 +46,7 @@ async function renderCards(){
     let response = await fetch("../shelter/assets/static/pets.json")
     if (response.ok) {
         let data = await response.json()
-        console.log(data)
+        // console.log(data)
             cardsBlock.forEach((element, index) => {
             element.style.backgroundImage = `url(${data[index].img[0]})`
             })
@@ -57,7 +57,6 @@ async function renderCards(){
 }
 
 renderCards()
-
 
 // =========  CAROUSEL REALISATION   =========
 
@@ -154,7 +153,36 @@ carousel.addEventListener("animationend", (animationEvent) => {
 
 // =========  POPUP REALISATION   =========
 
+const cards = document.querySelectorAll('.card')
+const popup = document.querySelector('.popup')
+const cross = document.querySelector(".cross")
+const saveBlock = document.querySelector(".save-block")
 
+//console.log(event.target.dataset.number) // element-id
+
+const openPopup = (event) => {
+    console.log(String(event.target.classList))
+    let classes = ["card", "button-lm", "name"]
+    if (classes.includes(String(event.target.classList))) {
+        popup.classList.add('popup-open')
+        body.classList.add('body-scroll')
+        saveBlock.classList.add('save-block-open')
+        // console.log(String(event.target.classList))
+    }
+}
+
+const closePopup = (event) => {
+    if (event.target.classList.contains("cross") || event.target.classList.contains("save-block-open")) {
+        popup.classList.remove('popup-open')
+        body.classList.remove('body-scroll')
+        saveBlock.classList.remove('save-block-open')
+    }
+    
+}
+ 
+
+addEventListener("click", openPopup)
+addEventListener("click", closePopup)
 
 
 
