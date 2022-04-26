@@ -97,6 +97,13 @@ else if (document.body.scrollWidth > 320 && document.body.scrollWidth < 768) {
     ITEM_RIGHT.children[Math.floor(Math.random()*2)].outerHTML = ''
 }
 
+function containsElement(where, what){
+    for(var i=0; i<what.length; i++){
+        if(where.indexOf(what[i]) == -1) return false;
+    }
+    return true;
+}
+
 carousel.addEventListener("animationend", (animationEvent) => {
     let changeItem;
     const animationLeftList = ['move-left', 'move-left-1279', 'move-left-767']
@@ -119,11 +126,8 @@ carousel.addEventListener("animationend", (animationEvent) => {
         if (petsList.length === 3) break
         else {
             card = Array.from(cardsBlock)[Math.floor(Math.random() * 7)].outerHTML
-            if (petsList.includes(card)) {
-                continue
-            }else {
-                petsList.push(card)
-            }
+            if (containsElement(petsList, ITEM_CENTER.children) || petsList.includes(card)) continue
+            else petsList.push(card)
         }
     }
 
