@@ -11,6 +11,19 @@ html {
     scroll-behavior: smooth;
 }
 
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @mixin title-styles {
     color: #545454;
     font-family: $titles;
@@ -49,6 +62,7 @@ html {
     &:hover {
         cursor: pointer;
         background-color: #FDDCC4;
+        border-color: #FDDCC4;
     }
 }
 
@@ -283,6 +297,189 @@ html {
     overflow: hidden;
 }
 
+
+.save-block {
+    display: none;
+    z-index: 100000;
+    width: 100%;
+    height: 3798px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.save-block-open {
+    display: block;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 111111;
+    top: 50%;
+    left:51.5%;
+    transform:translate(-50%, -50%);
+    width: 952px;
+    height: 552px;
+
+    animation-name: fadeIn;
+    animation-duration: .5s;
+
+    @media screen and (max-width: 1170px)  {
+        width: 682px;
+        height: 402px;
+    }
+
+    @media screen and (max-width: 767px)  {
+        width: 271px;
+        height: auto;
+    }
+
+    .cross {
+        width: 52px;
+        height: 52px;
+        position: absolute;
+        z-index: 111112;
+        top: 0;
+        right: 0;
+        background: url("../../../assets/icons/modal_close_button.png") no-repeat;
+        background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+    .popup-card {
+        width: 900px;
+        height: 500px;
+        display: flex;
+        margin-top: 52px;
+        border-radius: 9px;
+        background-color: #FAFAFA;
+        box-shadow: 0 0 0 9999px rgb(41 41 41 / 60%);
+
+        @media screen and (max-width: 1170px)  {
+            width: 630px;
+            height: 350px;
+        }
+
+        @media screen and (max-width: 767px)  {
+            width: 240px;
+            height: auto;
+        }
+
+        .pet-img {
+            width: 500px;
+            height: 500px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 9px;
+
+            @media screen and (max-width: 1170px)  {
+                width: 350px;
+                height: 350px;
+            }
+ 
+            @media screen and (max-width: 767px)  {
+                display: none;
+                width: 0px;
+                height: 0px;
+            }
+        }
+
+        .content {
+            width: 350px;
+            height: 362px;
+            margin: 50px 20px 88px 29px;
+
+            @media screen and (max-width: 1170px)  {
+                margin: 10px 9px 37px 11px;
+            }
+
+            @media screen and (max-width: 767px)  {
+                min-height: 321px;
+                height: auto;
+                margin: 10px;
+            }
+
+            .popup-title {
+                @include title-styles();
+                color: rgba(0, 0, 0, 1);
+                margin-bottom: 10px;
+            }
+
+            .popup-subtitle {
+                @include pet-name();
+                padding-top: 0px;
+                text-align: left;
+                margin-bottom: 40px;
+
+                @media screen and (max-width: 1170px)  {
+                    margin-bottom: 20px
+                }
+
+                @media screen and (max-width: 767px)  {
+                    text-align: center;
+                    letter-spacing: 0px;
+                }
+            }
+
+            .popup-text {
+                font-family: $titles;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 17px;
+                letter-spacing: 0.06em;
+                text-align: left;
+                margin-bottom: 40px;
+
+                @media screen and (max-width: 1170px)  {
+                    margin-bottom: 20px
+                }
+
+                @media screen and (max-width: 767px)  {
+                    text-align: justify;
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                margin-left: 10px;
+                font-family: $titles;
+                font-family: Georgia;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 17px;
+                letter-spacing: 0.06em;
+                text-align: left;
+                &>li::marker {
+                    color: rgba(241, 205, 179, 1);
+                }
+
+                @media screen and (max-width: 1170px)  {
+                    row-gap: 5px;
+                }
+
+                @media screen and (max-width: 767px)  {
+                    margin-left: 17px;
+                }
+            }
+        }
+    }
+}
+
+.popup-open {
+    display: block;
+}
+
 .wrapper {
     max-width: 1280px;
     margin: 0 auto;
@@ -315,8 +512,6 @@ html {
                     margin-bottom: 42px;
                     width: 300px;
                 }
-
-
             }
     
             .cards-container {
@@ -331,8 +526,16 @@ html {
                     max-width: 1200px;
                     width: 100%;
 
-                    @media screen and (max-width: 1200px)  {
+                    @media screen and (max-width: 1279px)  {
                         height: 1365px;
+                        max-width: 580px;
+                        justify-content: center;
+                        overflow-y: hidden;
+                    }
+
+                    @media screen and (max-width: 767px)  {
+                        height: 1365px;
+                        max-width: 270px;
                         justify-content: center;
                         overflow-y: hidden;
                     }
@@ -344,6 +547,9 @@ html {
                         background-repeat: no-repeat;
                         padding-bottom: 30px;
                         transition: .3s;
+
+                        animation-name: fadeIn;
+                        animation-duration: 0.5s;
     
                         &:hover {
                             cursor: pointer;
@@ -380,31 +586,6 @@ html {
                                 cursor: pointer;
                             }
                         }
-    
-                        // &:nth-of-type(1) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-katrine.png');
-                        // }
-                        // &:nth-of-type(2) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-jennifer.png');
-                        // }
-                        // &:nth-of-type(3) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-woody.png');
-                        // }
-                        // &:nth-of-type(4) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-sophia.png'); 
-                        // }
-                        // &:nth-of-type(5) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-timmy.png'); 
-                        // }
-                        // &:nth-of-type(6) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-charly.png'); 
-                        // }
-                        // &:nth-of-type(7) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-scarlett.png'); 
-                        // }
-                        // &:nth-of-type(8) {
-                        //     background-image: url('../../../assets/img/pets-name/pets-freddie.png'); 
-                        // }
                     }
                 }
             }
@@ -437,25 +618,33 @@ html {
                 }
 
                 .left-left {
+                    background-image: url('../../../assets/icons/pagination/button_paginator-r2.png');
+                    transform: scale(-1, 1);
+                }
+
+                .left-left-inactive {
                     background-image: url('../../../assets/icons/pagination/button_paginator_inactive-l2.png');
+                    transform: scale(1, 1);
                     &:hover {
-                        // background-color: rgb(230, 230, 230);
                         background-color: #F6F6F6;
+                        border-color: #F6F6F6;
                         cursor: auto;
                     }
-                    // background-image: url('../../assets/icons/pagination/button_paginator-r2.png');
-                    // transform: scale(-1, 1);
                 }
 
                 .left {
+                    background-image: url('../../../assets/icons/pagination/button_paginator-r1.png');
+                    transform: scale(-1, 1);
+                }
+
+                .left-inactive {
                     background-image: url('../../../assets/icons/pagination/button_paginator_inactive-l1.png');
+                    transform: scale(1, 1);
                     &:hover {
-                        // background-color: rgb(230, 230, 230);
                         background-color: #F6F6F6;
+                        border-color: #F6F6F6;
                         cursor: auto;
                     }
-                    // background-image: url('../../assets/icons/pagination/button_paginator-r1.png');
-                    // transform: scale(-1, 1);
                 }
 
                 .page-number {
@@ -473,8 +662,28 @@ html {
                     background-image: url('../../../assets/icons/pagination/button_paginator-r1.png');
                 }
 
+                .right-inactive {
+                    background-image: url('../../../assets/icons/pagination/button_paginator_inactive-l1.png');
+                    transform: scale(-1, 1);
+                    &:hover {
+                        background-color: #F6F6F6;
+                        border-color: #F6F6F6;
+                        cursor: auto;
+                    }
+                }
+
                 .right-right {
                     background-image: url('../../../assets/icons/pagination/button_paginator-r2.png');
+                }
+
+                .right-right-inactive {
+                    background-image: url('../../../assets/icons/pagination/button_paginator_inactive-l2.png');
+                    transform: scale(-1, 1);
+                    &:hover {
+                        background-color: #F6F6F6;
+                        border-color: #F6F6F6;
+                        cursor: auto;
+                    }
                 }
             }
         }   
