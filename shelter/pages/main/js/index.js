@@ -97,13 +97,6 @@ else if (document.body.scrollWidth > 320 && document.body.scrollWidth < 768) {
     ITEM_RIGHT.children[Math.floor(Math.random()*2)].outerHTML = ''
 }
 
-function containsElement(where, what){
-    for(var i=0; i<what.length; i++){
-        if(where.indexOf(what[i]) == -1) return false;
-    }
-    return true;
-}
-
 carousel.addEventListener("animationend", (animationEvent) => {
     let changeItem;
     const animationLeftList = ['move-left', 'move-left-1279', 'move-left-767']
@@ -122,14 +115,34 @@ carousel.addEventListener("animationend", (animationEvent) => {
     changeItem.innerHTML = ''
 
     let petsList = []
+    let dataCenterList = []
+
+    // Array.from(ITEM_CENTER.children).forEach(element => dataCenterList.push(element.dataset.number))
+    // console.log(dataCenterList)
     while (true) {
         if (petsList.length === 3) break
         else {
-            card = Array.from(cardsBlock)[Math.floor(Math.random() * 7)].outerHTML
-            if (containsElement(petsList, ITEM_CENTER.children) || petsList.includes(card)) continue
-            else petsList.push(card)
+            let card = Array.from(cardsBlock)[Math.floor(Math.random() * 7)]
+            let innerCard = Array.from(cardsBlock)[Math.floor(Math.random() * 7)].outerHTML
+            Array.from(ITEM_CENTER.children).forEach(element => dataCenterList.push(element.dataset.number))
+            // console.log(card.dataset.number)
+            // console.log(ITEM_CENTER.children.item(0).dataset.number)
+            // console.log(ITEM_CENTER.children.item(0).dataset.number === card.dataset.number)
+            
+            // console.log(dataCenterList.includes(card.dataset.number))
+            // console.log(petsList.includes(innerCard))
+            // console.log(innerCard)
+            if (petsList.includes(innerCard)) continue
+            else if (dataCenterList.includes(card.dataset.number)) continue
+            else petsList.push(innerCard)
+            // console.log(Array.from(ITEM_CENTER.children).includes(card))
         }
+        // console.log(card)
+        // console.log(Array.from(ITEM_CENTER.firstChild))
+        // console.log(Array.from(ITEM_CENTER.children).includes(card))
     }
+
+    // console.log(petsList)
 
     const cardNumber = () => {
         if (document.body.scrollWidth > 1279) {
@@ -160,8 +173,6 @@ const cards = document.querySelectorAll('.card')
 const popup = document.querySelector('.popup')
 const cross = document.querySelector(".cross")
 const saveBlock = document.querySelector(".save-block")
-
-//console.log(event.target.dataset.number) // element-id
 
 const openPopup = (event) => {
     let classes = ["card", "button-lm", "name"]
@@ -194,23 +205,28 @@ const cardBG = document.querySelector(".pet-img")
 
 async function renderCard(event){
     let response = await fetch("../shelter/assets/static/pets.json")
+    let classes = ["card", "button-lm", "name"]
     if (response.ok) {
         let data = await response.json()
-        let commonInfo = [title, subtitle, text, age, inoculations, diseases, parasites]
-        commonInfo.forEach(element => element.innerHTML = '')
-        cardBG.style.backgroundImage = ''
-        try {
-            title.innerHTML = data[event.target.dataset.number-1].name 
-            subtitle.innerHTML = `${data[event.target.dataset.number-1].type} - ${data[event.target.dataset.number-1].breed}`
-            text.innerHTML = data[event.target.dataset.number-1].description
-            age.innerHTML += `<b>Age:</b> ${data[event.target.dataset.number-1].age}`
-            inoculations.innerHTML += `<b>Inoculations:</b> ${data[event.target.dataset.number-1].inoculations}`
-            diseases.innerHTML += `<b>Diseases:</b> ${data[event.target.dataset.number-1].diseases}`
-            parasites.innerHTML += `<b>Parasites:</b> ${data[event.target.dataset.number-1].parasites}`
-            cardBG.style.backgroundImage = `url(${data[event.target.dataset.number-1].img[0]})`
-        }catch{}
+        console.log(event.target.classList)
+        if (classes.includes(String(event.target.classList))) {
+            let commonInfo = [title, subtitle, text, age, inoculations, diseases, parasites]
+            commonInfo.forEach(element => element.innerHTML = '')
+            cardBG.style.backgroundImage = ''
+            try {
+                title.innerHTML = data[event.target.dataset.number-1].name 
+                subtitle.innerHTML = `${data[event.target.dataset.number-1].type} - ${data[event.target.dataset.number-1].breed}`
+                text.innerHTML = data[event.target.dataset.number-1].description
+                age.innerHTML += `<b>Age:</b> ${data[event.target.dataset.number-1].age}`
+                inoculations.innerHTML += `<b>Inoculations:</b> ${data[event.target.dataset.number-1].inoculations}`
+                diseases.innerHTML += `<b>Diseases:</b> ${data[event.target.dataset.number-1].diseases}`
+                parasites.innerHTML += `<b>Parasites:</b> ${data[event.target.dataset.number-1].parasites}`
+                cardBG.style.backgroundImage = `url(${data[event.target.dataset.number-1].img[0]})`
+            }catch{}
+        }
     }
 }
+
 
 addEventListener("click", renderCard)
 

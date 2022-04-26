@@ -55,6 +55,17 @@ a {
     right: 620px;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .transition-right {
   animation-name: move-right;
   animation-duration: 1.5s;
@@ -585,6 +596,8 @@ a {
   transform: translate(-50%, -50%);
   width: 952px;
   height: 552px;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 }
 @media screen and (max-width: 1170px) {
   .popup {
