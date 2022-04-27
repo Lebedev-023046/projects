@@ -229,9 +229,6 @@ a {
 
 .header-container {
     display: flex;
-    transition: .5s;
-    // justify-content: space-between;
-
 
     .logo {
         z-index: 1111;
@@ -270,22 +267,36 @@ a {
     transition: .5s;
 }
 
-
-.header-container-burger {
-    margin-left: auto;
-    width: 257px;
-    transition: .5s;
-    animation-duration: .75s;
-    animation-name: anilogo;
-}
-
-@keyframes anilogo {    
+@keyframes anilogo-in {    
     0% {
         width: 100%;
     }
     100% {
         width: 257px;
     }
+}
+
+@keyframes anilogo-out {    
+    0% {
+        width: 257px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.header-container-burger-in {
+    margin-left: auto;
+    width: 257px;
+    animation-duration: .75s;
+    animation-name: anilogo-in;
+}
+
+.header-container-burger-out {
+    margin-left: auto;
+    width: 100%;
+    animation-duration: .75s;
+    animation-name: anilogo-out;
 }
 
 .nav {
