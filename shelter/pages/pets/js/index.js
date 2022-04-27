@@ -4,6 +4,7 @@ const hamburger = document.querySelector(".hamburger")
 const navigation = document.querySelector(".nav-list")
 const logo = document.querySelector(".logo")
 const headerContainerBurger = document.querySelector(".header-container")
+const logoAnimation = document.querySelector(".header-container-burger")
 
 const body = document.querySelector("body")
 
@@ -13,16 +14,19 @@ hamburger.addEventListener("click", () => {
     logo.classList.toggle("logo-burger")
     headerContainerBurger.classList.toggle("header-container-burger")
     body.classList.toggle("body-scroll")
+    // logoAnimation.style.WebkitAnimationName = 'animation-in'
+    // logoAnimation.style.nimationName = 'animation-in'
 })
 
 const closeBurger = (event) => {
     const tagList = ['header', 'section', 'h2', 'h3', 'div', 'p', 'article']
-    // console.log(event.target.localName)
     if (event.target.classList.contains("nav-link")) {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
         body.classList.toggle("body-scroll")
         headerContainerBurger.classList.remove("header-container-burger")
+        // logoAnimation.style.WebkitAnimationName = 'animation-out'
+        // logoAnimation.style.nimationName = 'animation-out'
     }
     else if (tagList.includes(event.target.localName)) {
         navigation.classList.remove("open")
@@ -43,16 +47,11 @@ const rightArrow = document.querySelector(".right-arrow")
 const cardsBlock = document.querySelectorAll(".card")
 const petsName = document.querySelectorAll(".name")
 
-// console.log(leftArrow)
-// console.log(rightArrow)
-
-
 async function renderCards(){
 
     let response = await fetch("../../../shelter/assets/static/pets.json")
     if (response.ok) {
         let data = await response.json()
-        // console.log(data)
             cardsBlock.forEach((element, index) => {
             element.style.backgroundImage = `url(${data[index].img[1]})`
             })
@@ -71,8 +70,6 @@ const cards = document.querySelectorAll('.card')
 const popup = document.querySelector('.popup')
 const cross = document.querySelector(".cross")
 const saveBlock = document.querySelector(".save-block")
-
-//console.log(event.target.dataset.number) // element-id
 
 const openPopup = (event) => {
     let classes = ["card", "button-lm", "name"]
@@ -168,8 +165,6 @@ else if (document.body.scrollWidth >= 320) {
         bigCardArray.push(smallCaddBlock)
     }
 }
-
-console.log(bigCardArray)
 
 const newCards = (pageNumber) => {
     let cardsInner = '';

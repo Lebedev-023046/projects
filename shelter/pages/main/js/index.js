@@ -6,15 +6,26 @@ const hamburger = document.querySelector(".hamburger")
 const navigation = document.querySelector(".nav-list")
 const logo = document.querySelector(".logo")
 const headerContainerBurger = document.querySelector(".header-container")
+const headerContainerBurgerAdaptive = document.querySelector(".header-container-burger-in")
 
 const body = document.querySelector("body")
 
+let mountOfClicks = 0;
+
 hamburger.addEventListener("click", () => {
+    mountOfClicks++
     navigation.classList.toggle("open")
     hamburger.classList.toggle("open-icon")
     logo.classList.toggle("logo-burger")
-    headerContainerBurger.classList.toggle("header-container-burger")
+    if (mountOfClicks % 2 === 1) {
+        headerContainerBurger.classList.remove("header-container-burger-out")
+        headerContainerBurger.classList.add("header-container-burger-in")
+    }else {
+        headerContainerBurger.classList.remove("header-container-burger-in")
+        headerContainerBurger.classList.add("header-container-burger-out")
+    }
     body.classList.toggle("body-scroll")
+    console.log(mountOfClicks)
 })
 
 const closeBurger = (event) => {
@@ -22,14 +33,15 @@ const closeBurger = (event) => {
     if (event.target.classList.contains("nav-link")) {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
+        headerContainerBurger.classList.remove("header-container-burger-in")
         if (document.body.scrollWidth < 767) body.classList.toggle("body-scroll")
-        headerContainerBurger.classList.remove("header-container-burger")
     }
     else if (tagList.includes(event.target.localName)) {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
-        headerContainerBurger.classList.remove("header-container-burger")
+        headerContainerBurger.classList.remove("header-container-burger-in")
         if (document.body.scrollWidth < 767) body.classList.toggle("body-scroll")
+
     }
 }
 
@@ -45,7 +57,6 @@ async function renderCardsBG(){
     let response = await fetch("../shelter/assets/static/pets.json")
     if (response.ok) {
         let data = await response.json()
-        console.log(data)
             cardsBlock.forEach((element, index) => {
             element.style.backgroundImage = `url(${data[index].img[0]})`
             })
@@ -117,32 +128,19 @@ carousel.addEventListener("animationend", (animationEvent) => {
     let petsList = []
     let dataCenterList = []
 
-    // Array.from(ITEM_CENTER.children).forEach(element => dataCenterList.push(element.dataset.number))
-    // console.log(dataCenterList)
+
     while (true) {
         if (petsList.length === 3) break
         else {
             let card = Array.from(cardsBlock)[Math.floor(Math.random() * 7)]
             let innerCard = Array.from(cardsBlock)[Math.floor(Math.random() * 7)].outerHTML
             Array.from(ITEM_CENTER.children).forEach(element => dataCenterList.push(element.dataset.number))
-            // console.log(card.dataset.number)
-            // console.log(ITEM_CENTER.children.item(0).dataset.number)
-            // console.log(ITEM_CENTER.children.item(0).dataset.number === card.dataset.number)
-            
-            // console.log(dataCenterList.includes(card.dataset.number))
-            // console.log(petsList.includes(innerCard))
-            // console.log(innerCard)
+
             if (petsList.includes(innerCard)) continue
             else if (dataCenterList.includes(card.dataset.number)) continue
             else petsList.push(innerCard)
-            // console.log(Array.from(ITEM_CENTER.children).includes(card))
         }
-        // console.log(card)
-        // console.log(Array.from(ITEM_CENTER.firstChild))
-        // console.log(Array.from(ITEM_CENTER.children).includes(card))
     }
-
-    // console.log(petsList)
 
     const cardNumber = () => {
         if (document.body.scrollWidth > 1279) {
@@ -208,7 +206,6 @@ async function renderCard(event){
     let classes = ["card", "button-lm", "name"]
     if (response.ok) {
         let data = await response.json()
-        console.log(event.target.classList)
         if (classes.includes(String(event.target.classList))) {
             let commonInfo = [title, subtitle, text, age, inoculations, diseases, parasites]
             commonInfo.forEach(element => element.innerHTML = '')
