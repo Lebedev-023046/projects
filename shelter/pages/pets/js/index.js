@@ -8,11 +8,20 @@ const logoAnimation = document.querySelector(".header-container-burger")
 
 const body = document.querySelector("body")
 
+let mountOfClicks = 0;
+
 hamburger.addEventListener("click", () => {
+    mountOfClicks++
     navigation.classList.toggle("open")
     hamburger.classList.toggle("open-icon")
     logo.classList.toggle("logo-burger")
-    headerContainerBurger.classList.toggle("header-container-burger")
+    if (mountOfClicks % 2 === 1) {
+        headerContainerBurger.classList.remove("header-container-burger-out")
+        headerContainerBurger.classList.add("header-container-burger-in")
+    }else {
+        headerContainerBurger.classList.remove("header-container-burger-in")
+        headerContainerBurger.classList.add("header-container-burger-out")
+    }
     body.classList.toggle("body-scroll")
     // logoAnimation.style.WebkitAnimationName = 'animation-in'
     // logoAnimation.style.nimationName = 'animation-in'
@@ -36,7 +45,7 @@ const closeBurger = (event) => {
     }
 }
 
-addEventListener("click", closeBurger)
+hamburger.addEventListener("click", closeBurger)
 
 
 // =========  PET'S RENDER  =========
@@ -81,6 +90,7 @@ const openPopup = (event) => {
 }
 
 const closePopup = (event) => {
+    console.log(event.target.classList)
     if (event.target.classList.contains("cross") || event.target.classList.contains("save-block-open")) {
         popup.classList.remove('popup-open')
         body.classList.remove('body-scroll')
