@@ -182,7 +182,7 @@ const openPopup = (event) => {
 }
 
 const closePopup = (event) => {
-    if (event.target.classList.contains("cross") || event.target.classList.contains("save-block-open")) {
+    if ((event.target.classList.contains("cross")) || (event.target.classList.contains("save-block-open"))) {
         popup.classList.remove('popup-open')
         body.classList.remove('body-scroll')
         saveBlock.classList.remove('save-block-open')
