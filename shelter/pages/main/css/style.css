@@ -627,6 +627,8 @@ a {
 .popup .cross {
   width: 52px;
   height: 52px;
+  border-radius: 50%;
+  transition: 0.3s;
   position: absolute;
   z-index: 111112;
   top: 0;
@@ -636,6 +638,7 @@ a {
 }
 .popup .cross:hover {
   cursor: pointer;
+  background-color: #FDDCC4;
 }
 .popup .popup-card {
   width: 900px;

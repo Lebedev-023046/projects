@@ -21,7 +21,7 @@ html {
 }
 .header {
   position: fixed;
-  z-index: 9999;
+  z-index: 55;
   top: 0;
   right: 0;
   left: 0;
@@ -73,20 +73,34 @@ html {
   transition: 0.5s;
 }
 
-.header-container-burger {
+.header-container-burger-in {
   margin-left: auto;
   width: 257px;
-  transition: 0.5s;
   animation-duration: 0.75s;
-  animation-name: anilogo;
+  animation-name: anilogo-in;
 }
 
-@keyframes anilogo {
+.header-container-burger-out {
+  margin-left: auto;
+  width: 100%;
+  animation-duration: 0.75s;
+  animation-name: anilogo-out;
+}
+
+@keyframes anilogo-in {
   0% {
     width: 100%;
   }
   100% {
     width: 257px;
+  }
+}
+@keyframes anilogo-out {
+  0% {
+    width: 257px;
+  }
+  100% {
+    width: 100%;
   }
 }
 .nav {
@@ -229,9 +243,9 @@ html {
 
 .save-block {
   display: none;
-  z-index: 100000;
+  z-index: 100;
   width: 100%;
-  height: 3798px;
+  height: 1812px;
   position: absolute;
   top: 0;
   right: 0;
@@ -249,7 +263,7 @@ html {
 .popup {
   display: none;
   position: fixed;
-  z-index: 111111;
+  z-index: 1111;
   top: 50%;
   left: 51.5%;
   transform: translate(-50%, -50%);
@@ -273,6 +287,8 @@ html {
 .popup .cross {
   width: 52px;
   height: 52px;
+  border-radius: 50%;
+  transition: 0.3s;
   position: absolute;
   z-index: 111112;
   top: 0;
@@ -282,6 +298,7 @@ html {
 }
 .popup .cross:hover {
   cursor: pointer;
+  background-color: #FDDCC4;
 }
 .popup .popup-card {
   width: 900px;
