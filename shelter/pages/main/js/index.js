@@ -9,6 +9,7 @@ const headerContainerBurger = document.querySelector(".header-container")
 const headerContainerBurgerAdaptive = document.querySelector(".header-container-burger-in")
 
 const body = document.querySelector("body")
+const html = document.querySelector("html")
 
 let mountOfClicks = 0;
 
@@ -24,7 +25,7 @@ hamburger.addEventListener("click", () => {
         headerContainerBurger.classList.remove("header-container-burger-in")
         headerContainerBurger.classList.add("header-container-burger-out")
     }
-    body.classList.toggle("body-scroll")
+    html.classList.toggle("body-scroll")
     console.log(mountOfClicks)
 })
 
@@ -34,13 +35,13 @@ const closeBurger = (event) => {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
         headerContainerBurger.classList.remove("header-container-burger-in")
-        if (document.body.scrollWidth < 767) body.classList.toggle("body-scroll")
+        if (document.body.scrollWidth < 767) html.classList.toggle("body-scroll")
     }
     else if (tagList.includes(event.target.localName)) {
         navigation.classList.remove("open")
         hamburger.classList.remove("open-icon")
         headerContainerBurger.classList.remove("header-container-burger-in")
-        if (document.body.scrollWidth < 767) body.classList.toggle("body-scroll")
+        if (document.body.scrollWidth < 767) html.classList.toggle("body-scroll")
 
     }
 }
@@ -176,7 +177,7 @@ const openPopup = (event) => {
     let classes = ["card", "button-lm", "name"]
     if (classes.includes(String(event.target.classList))) {
         popup.classList.add('popup-open')
-        body.classList.add('body-scroll')
+        html.classList.add('body-scroll')
         saveBlock.classList.add('save-block-open')
     }
 }
@@ -184,7 +185,7 @@ const openPopup = (event) => {
 const closePopup = (event) => {
     if ((event.target.classList.contains("cross")) || (event.target.classList.contains("save-block-open"))) {
         popup.classList.remove('popup-open')
-        body.classList.remove('body-scroll')
+        html.classList.remove('body-scroll')
         saveBlock.classList.remove('save-block-open')
     }
 }
