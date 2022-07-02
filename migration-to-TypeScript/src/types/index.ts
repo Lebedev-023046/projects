@@ -1,9 +1,7 @@
-interface IsourseItemPart {
-    id: string | null;
-    name: string | null;
-}
+// VIEW
+type IsourseItemPart = Pick<ISourceItem, 'id' | 'name'>
 
-export interface Iitem {
+export interface INewsItem {
     author: string | null;
     content: string | null;
     description: string | null;
@@ -14,7 +12,7 @@ export interface Iitem {
     urlToImage: string | null;
 }
 
-export interface ISourseItem {
+export interface ISourceItem {
     category: string;
     country: string;
     description: string;
@@ -22,4 +20,11 @@ export interface ISourseItem {
     language: string;
     name: string;
     url: string;
+}
+
+export interface IArticleCombiner {
+    articles?: Array<INewsItem>;
+    sources?: Array<ISourceItem>;
+    status: string;
+    totalResults: number;
 }
