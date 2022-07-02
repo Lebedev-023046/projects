@@ -1,4 +1,5 @@
 import './sources.css';
+// import { IitemInterface } from '../viewInterfaces'
 
 class Sources {
     draw(data) {
