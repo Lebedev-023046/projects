@@ -1,8 +1,8 @@
 import './sources.css';
-import { ISourseItem } from '../../../types/index'
+import { ISourceItem } from '../../../types/index'
 
 class Sources {
-    draw(data: Array<ISourseItem>) {
+    draw(data: Array<ISourceItem>) {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector('#sourceItemTemp');
 
