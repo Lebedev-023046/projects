@@ -1,3 +1,6 @@
+import News from "../components/view/news/news";
+import Sources from "../components/view/sources/sources";
+
 // VIEW
 type IsourseItemPart = Pick<ISourceItem, 'id' | 'name'>
 
@@ -28,6 +31,23 @@ export interface IArticleCombiner {
     status: string;
     totalResults: number;
 }
+
+export interface ISourceClass {
+    draw(data: Array<ISourceItem>): void;
+}
+
+export interface INewsClass {
+    draw(data: Array<INewsItem>): void;
+}
+
+export interface IViewClass {
+    news: News;
+    sources: Sources;
+    drawNews(data: IArticleCombiner): void;
+    drawSources(data: IArticleCombiner): void;
+}
+
+
 
 //CONTROLLER
 

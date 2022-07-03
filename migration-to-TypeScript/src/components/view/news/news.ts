@@ -1,7 +1,7 @@
 import './news.css';
-import { INewsItem } from '../../../types/index'
+import { INewsItem, INewsClass } from '../../../types/index'
 
-class News {
+class News implements INewsClass {
     draw(data: Array<INewsItem>) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 

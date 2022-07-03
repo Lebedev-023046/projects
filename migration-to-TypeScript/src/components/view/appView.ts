@@ -1,8 +1,8 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { IArticleCombiner } from '../../types/index'
+import { IArticleCombiner, IViewClass } from '../../types/index'
 
-export class AppView {
+export class AppView implements IViewClass {
     news: News;
     sources: Sources;
     constructor() {
@@ -10,12 +10,12 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: IArticleCombiner) {
+    drawNews(data: IArticleCombiner): void {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: IArticleCombiner) {
+    drawSources(data: IArticleCombiner): void {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
