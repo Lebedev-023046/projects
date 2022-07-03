@@ -33,3 +33,50 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
+
+/* ADDITIONAL FUNCTIONALITY */
+
+.footer-container {
+    height: 60px;
+    width: 100%;
+    margin:  0 auto;
+    padding: 0px 20px;
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer {
+    background-color: var(--main-color);
+}
+.github {
+    font-size: 25px;
+}
+
+.github-link {
+   text-decoration: none;
+   color: #018192;
+   text-transform: capitalize;
+   transition: .3s;
+}
+
+.github-link:hover {
+   color: #0099ad;
+}
+
+.rsschool-link {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url("assets/rs_school.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: .3s;
+    filter: invert(100%) sepia() saturate(1000%) hue-rotate(140deg) brightness(100%) contrast(100%);
+}
+
+.rsschool-link:hover {
+    cursor: pointer;
+}
