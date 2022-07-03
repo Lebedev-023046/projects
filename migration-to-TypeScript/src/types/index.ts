@@ -28,3 +28,19 @@ export interface IArticleCombiner {
     status: string;
     totalResults: number;
 }
+
+//CONTROLLER
+
+export enum Endpoint {
+    everything = 'everything',
+    topHeadlines = 'top-headlines',
+    sources = 'sources'
+} 
+
+export enum Status {
+ok = 401,
+error = 404
+}
+export type Callback<T> = (data: T) => void;
+export type Options = { apiKey?: string, sources?: string} | {};
+
