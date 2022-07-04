@@ -113,10 +113,12 @@ footer .copyright:before {
 
 .search-button {
     height: 53px;
-    width: 40px;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid #30c5ff;
+    background: transparent;
+    color: #30c5ff;
     border-radius: 0 20px 20px 0;
     transition: 0.3s;
 }
