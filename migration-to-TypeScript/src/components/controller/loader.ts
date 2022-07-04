@@ -29,11 +29,14 @@ class Loader {
     makeUrl(options: Required<Options>, endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines): string {
         const urlOptions: {[index: string]: string} = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
-        Object.keys(urlOptions).forEach((key) => {
-            url += `${key}=${urlOptions[key]}&`;
-        });
+        // Object.keys(urlOptions).forEach((key) => {
+        //     url += `${key}=${urlOptions[key]}&`;
+        // });
+        let finalUrl = Object.keys(urlOptions).reduce((url, key) => {
+            return url + `${key}=${urlOptions[key]}&`;
+        }, url);
 
-        return url.slice(0, -1);
+        return finalUrl.slice(0, -1);
     }
 
     load<T>(method: Methods.GET | Methods.POST, endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines, callback: (data: T) => void, options: Partial<Options> = {}) {
