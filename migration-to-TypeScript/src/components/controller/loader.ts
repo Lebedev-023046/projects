@@ -8,7 +8,7 @@ class Loader {
     }
 
     getResp<T>(
-        { endpoint, options = {} }: {endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines, options?: Options | {} },
+        { endpoint, options = {} }: { endpoint: Endpoint.everything | Endpoint.sources | Endpoint.topHeadlines, options?: Options | {} },
         callback: Callback<T> = (): void => {
             console.error('No callback for GET response');
         }
@@ -16,7 +16,7 @@ class Loader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: Response):Response {
+    errorHandler(res: Response): Response {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
