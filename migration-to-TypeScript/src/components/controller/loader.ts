@@ -1,4 +1,4 @@
-import { Endpoint, Callback, Options} from '../../types/index'
+import { Endpoint, Callback, Options, IArticleCombiner} from '../../types/index'
 
 class Loader {
 
@@ -7,14 +7,6 @@ class Loader {
         this.options = options;
     }
 
-    // getResp(
-    //     { endpoint, options = {} }: {endpoint: Endpoint, options?: Options | {} },
-    //     callback: Callback<IArticleCombiner> = () => {
-    //         console.error('No callback for GET response');
-    //     }
-    // ) {
-    //     this.load('GET', endpoint, callback, options);
-    // }
     getResp<T>(
         { endpoint, options = {} }: {endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines, options?: Options | {} },
         callback: Callback<T> = (): void => {
@@ -44,13 +36,6 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    // load(method: 'GET' | 'POST', endpoint: Endpoint, callback: (data: IArticleCombiner) => void, options: Partial<Options> = {}) {
-    //     fetch(this.makeUrl(options, endpoint), { method })
-    //         .then(this.errorHandler)
-    //         .then((res): Promise<IArticleCombiner> => res.json())
-    //         .then((data: IArticleCombiner) => callback(data))
-    //         .catch((err: Error) => console.error(err));
-    // }
     load<T>(method: 'GET' | 'POST', endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines, callback: (data: T) => void, options: Partial<Options> = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
