@@ -1,4 +1,4 @@
-import { Endpoint, Callback, Options, IArticleCombiner} from '../../types/index'
+import { Endpoint, Callback, Options, IArticleCombiner, Methods} from '../../types/index'
 
 class Loader {
 
@@ -13,7 +13,7 @@ class Loader {
             console.error('No callback for GET response');
         }
     ) {
-        this.load('GET', endpoint, callback, options);
+        this.load(Methods.GET, endpoint, callback, options);
     }
 
     errorHandler(res: Response): Response {
@@ -36,7 +36,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: 'GET' | 'POST', endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines, callback: (data: T) => void, options: Partial<Options> = {}) {
+    load<T>(method: Methods.GET | Methods.POST, endpoint: Endpoint.everything | Endpoint.sources| Endpoint.topHeadlines, callback: (data: T) => void, options: Partial<Options> = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res): Promise<T> => res.json())

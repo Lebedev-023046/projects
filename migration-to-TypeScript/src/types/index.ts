@@ -57,6 +57,11 @@ export enum Endpoint {
     sources = 'sources'
 } 
 
+export enum Methods {
+    GET = 'GET',
+    POST = 'POST'
+}
+
 export type Callback<T> = (data: T) => void;
 export type Options = { apiKey?: string, sources?: string} | {};
 
