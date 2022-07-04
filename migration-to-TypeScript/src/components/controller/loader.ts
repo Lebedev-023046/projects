@@ -1,4 +1,4 @@
-import { Endpoint, Callback, Options, IArticleCombiner, Methods} from '../../types/index'
+import { Endpoint, Callback, Options, Methods} from '../../types/index'
 
 class Loader {
 
@@ -22,7 +22,6 @@ class Loader {
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
-
         return res;
     }
 
