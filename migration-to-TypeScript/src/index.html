@@ -8,13 +8,28 @@
     </head>
     <body>
         <header>
-            <h1>News Portal</h1>
+            <h1 class="name">News Portal</h1>
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Enter key word..." autofocus>
+                <button class="search-button">Искать записи с этим словом</button>
+            </div>
         </header>
+        
         <main>
             <div class="sources buttons"></div>
             <div class="news"></div>
         </main>
-        <footer>
+
+        <footer id="footer">
+            <div class="footer__container">
+                <div class="github">
+                    <span class="github__year"></span>
+                    <a class="github__link" href="https://github.com/Lebedev-023046">© 2022 GitHub</a>
+                </div>
+                <div class="rsschool">
+                    <a class="rsschool__link" href="https://rs.school/js-stage0/"></a>
+                </div>
+            </div>
             <p class="copyright">
                 Copyright <a href="https://newsapi.org">NewsAPI</a>
             </p>
@@ -45,18 +60,5 @@
                 </div>
             </div>
         </template>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="github">
-                    <span class="year"></span>
-                    <a class="github-link" href="https://github.com/Lebedev-023046">© 2022 GitHub</a>
-                </div>
-                <div class="rsschool">
-                    <a class="rsschool-link" href="https://rs.school/js-stage0/"></a>
-                </div>
-            </div>
-        </footer>
-        <!-- <script src="./index.js"></script> -->
     </body>
 </html>

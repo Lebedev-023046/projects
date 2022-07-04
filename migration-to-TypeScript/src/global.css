@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 body {
     color: #fff;
     background: #17181c;
@@ -5,31 +9,36 @@ body {
 }
 
 header {
-    padding: 10px 30px;
+    padding: .7% 1.8%;
+    text-align: center;
 }
 
-header h1 {
-    font-size: 40px;
+.name {
+    font-size: 3em;
     font-weight: 800;
 }
 
 footer {
-    height: 100px;
-    display: flex;
+    height: 4rem;
+    margin-top: 2%;
     align-items: center;
     justify-content: center;
 }
+
 footer .copyright {
-    font-size: 14px;
+    font-size: 1rem;
     color: #333;
     text-align: center;
 }
+
 footer .copyright a {
     color: #444;
 }
+
 footer .copyright a:hover {
     color: #555;
 }
+
 footer .copyright:before {
     content: '©';
 }
@@ -37,36 +46,34 @@ footer .copyright:before {
 
 /* ADDITIONAL FUNCTIONALITY */
 
-.footer-container {
+.footer__container {
     height: 60px;
     width: 100%;
-    margin:  0 auto;
-    padding: 0px 20px;
+    margin: 0 auto;
     max-width: 1440px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.footer {
-    background-color: var(--main-color);
-}
+
 .github {
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
-.github-link {
+.github__link {
    text-decoration: none;
    color: #018192;
    text-transform: capitalize;
    transition: .3s;
 }
 
-.github-link:hover {
+.github__link:hover {
+   cursor: pointer;
    color: #0099ad;
 }
 
-.rsschool-link {
+.rsschool__link {
     display: block;
     width: 60px;
     height: 60px;
@@ -77,6 +84,64 @@ footer .copyright:before {
     filter: invert(100%) sepia() saturate(1000%) hue-rotate(140deg) brightness(100%) contrast(100%);
 }
 
-.rsschool-link:hover {
+.rsschool__link:hover {
     cursor: pointer;
+}
+
+
+/* SEARCH */
+.search {
+    height: 60px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    margin: 2% auto;
+    justify-content: center;
+}
+
+.search-input {
+    height: 45px;
+    width: 80%;
+    border: 3px solid #30c5ff;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    padding-left: 15px;
+    outline: none;
+    color: #30c5ff;
+    background: transparent;
+}
+
+.search-button {
+    height: 53px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid #30c5ff;
+    border-radius: 0 20px 20px 0;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    filter: contrast(100%) brightness(1.08);
+}
+
+.search-input::placeholder {
+    color: #018192;
+}
+
+@media screen and (max-width: 800px) {
+    .rsschool__link {
+        width: 30px;
+        height: 30px;
+    }
+
+    .github {
+        font-size: 1rem;
+    }
+
+    .name {
+        font-size: 5vw;
+    }
+
 }
