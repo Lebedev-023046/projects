@@ -63,5 +63,5 @@ export enum Methods {
 }
 
 export type Callback<T> = (data: T) => void;
-export type Options = { apiKey?: string, sources?: string} | {};
+export type Options = { apiKey?: string, sources?: string, q?: string} | {};
 

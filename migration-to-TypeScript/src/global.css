@@ -113,14 +113,14 @@ footer .copyright:before {
 
 .search-button {
     height: 53px;
-    width: 100%;
-    background-repeat: no-repeat;
+    width: 20%;
     background-position: center;
     border: 3px solid #30c5ff;
-    background: transparent;
+    background: url("assets/search.png") no-repeat;
     color: #30c5ff;
     border-radius: 0 20px 20px 0;
     transition: 0.3s;
+    background-position: center;
 }
 
 .search-button:hover {

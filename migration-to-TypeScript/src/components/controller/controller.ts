@@ -34,6 +34,18 @@ class AppController extends AppLoader {
             }
             target = target.parentNode as HTMLElement;
         }
+        if (target.classList.contains('search-button')) {
+            const keyWord = (document.querySelector(".search-input") as HTMLInputElement).value as string
+            super.getResp(
+                {
+                    endpoint: Endpoint.everything,
+                    options: {
+                        q: keyWord
+                    },
+                },
+                callback
+            );
+        }
     }
 }
 
