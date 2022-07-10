@@ -1,0 +1,31 @@
+.footer-container {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.github {
+  font-size: 1.5rem;
+}
+
+.github__link {
+  text-decoration: none;
+  color: #000;
+  text-transform: capitalize;
+  transition: .3s;
+
+  &:hover {
+    color: #018192;
+  }
+}
+
+.rsschool__link {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url("../assets/rs_school.png") no-repeat;
+  background-size: cover;
+}

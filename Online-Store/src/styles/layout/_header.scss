@@ -1,0 +1,100 @@
+@import '../abstracts/variables';
+
+.header {
+  display: flex;
+  height: 5rem;
+  max-width: 1366px;
+  width: 100%;
+  padding: 0 30px;
+  position: absolute;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  align-self: center;
+  margin-right: 50px;
+
+  .line {
+    background-color: black;
+    height: 3px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.brand {
+  width: 6.25rem;
+  height: 1.5rem;
+  line-height: 5rem;
+  background: url("../assets/header/Mazy.png") no-repeat;
+  align-self: center;
+  margin-left: 3.45%;
+}
+
+.search {
+  align-self: center;
+  margin: 0 46.5px 0 auto;
+}
+
+.search-container {
+  display: flex;
+  background-color: #fff;
+  padding: 0 10px;
+  border-radius: 3px;
+}
+
+.search__icon {
+  align-self: center;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background: url("../assets/header/search.png") no-repeat;
+}
+
+.search__input {
+  height: 28px;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    font-family: $mainFont;
+    line-height: 28px;
+  }
+}
+
+.search__cancel {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  background: url("../assets/header/cancel.png") no-repeat;
+  background-size: contain;
+}
+
+.cart {
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+  height: 28px;
+  align-self: center;
+}
+
+.cart__like {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  background: url("../assets/header/like.png") no-repeat;
+  background-size: contain;
+}
+
+.cart__cart-instance {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  background: url("../assets/header/cart.png") no-repeat;
+  background-size: contain;
+}
