@@ -2,6 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const autoprefixer = require('autoprefixer')
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
@@ -23,8 +24,8 @@ const baseConfig = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ["style-loader", "css-loader", "sass-loader"],
-              },
+                use: ["style-loader", "css-loader", 'sass-loader', "postcss-loader"]
+            },
 
         ],
     },
