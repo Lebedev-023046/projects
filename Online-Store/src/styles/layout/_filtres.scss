@@ -1,0 +1,111 @@
+.filtres {
+    width: 30%;
+}
+
+.purpose {
+    margin-bottom: 20px;
+}
+
+.purpose__group {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.purpose__title {
+    text-align: center;
+    margin-top: 15px;
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+        @include stick-before;
+    } 
+    &::after {
+        @include stick-after;
+    }   
+}
+
+.purpose__choices {
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+}
+
+.brand__item {
+    width: 6.875rem;
+}
+
+.size__item {
+    width: 3rem;
+}
+
+.color__item:nth-child(1) {
+    background-color: $black;
+    &:checked {
+        background-color: $black;
+    }
+}
+.color__item:nth-child(2) {
+        background-color: $blue;
+    &:checked {
+        background-color: $blue;
+    }
+}
+.color__item:nth-child(3) {
+        background-color: $brown;
+    &:checked {
+        background-color: $brown;
+    }
+}
+.color__item:nth-child(4) {
+        background-color: $gray;
+    &:checked {
+        background-color: $gray;
+    }
+}
+.color__item:nth-child(5) {
+        background-color: $green;
+    &:checked {
+        background-color: $green;
+    }
+}
+.color__item:nth-child(6) {
+        background-color: $pink;
+    &:checked {
+        background-color: $pink;
+    }
+}
+.color__item:nth-child(7) {
+        background-color: $white;
+    &:checked {
+        background-color: $white;
+    }
+}
+.color__item:nth-child(8) {
+        background-color: $yellow;
+    &:checked {
+        background-color: $yellow;
+    }
+}
+
+.color__item {
+    appearance: none;
+    @include size(2rem, 2rem);
+    border: 2px solid $dark-red-color;
+    border-radius: 10px;
+
+    &:checked {
+        background: url("../assets/icons/tick.png") no-repeat;
+        background-position: center;
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,18 +1,24 @@
 @import './base/reset';
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './components/buttons';
 @import './layout/header';
 @import './layout/navigation';
+@import './layout/filtres';
+@import './layout/cards';
 @import './layout/footer';
-@import './abstracts/mixins';
-@import './abstracts/variables';
+
 
 .body {
-  background-color: rgb(231, 231, 231);
+  background-color: $bgColor;
+  font-family: $mainFont;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 1366px;
+  max-width: $lgDesktopWidth;
+  padding: 0 1.875rem;
   width: 100%;
   margin: 0 auto;
   height: 100vh;
@@ -20,6 +26,8 @@
 
 .main {
   flex: 1 1 auto;
+  display: flex;
+  margin-top: 2rem;
 }
 
 

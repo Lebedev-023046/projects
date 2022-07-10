@@ -1,3 +1,7 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
 .nav {
   line-height: 28px;
   align-self: center;
@@ -7,10 +11,25 @@
   display: flex;
   list-style: none;
   column-gap: 25px;
-  font-size: 1.3vw;
+  font-size: 1.5rem;
 }
 
 .nav__link {
   text-decoration: none;
-  color: #000;
+  color: $mainFontColor;
+}
+
+.nav__link_active {
+  position: relative;
+  color: $mainFontColor;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: $neutral-regular;
+  }
 }
