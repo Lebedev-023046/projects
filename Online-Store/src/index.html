@@ -44,49 +44,69 @@
         </header>
         <main class="main">
             <div class="filtres">
+                <div class="sort">
+                    <h3 class="purpose__group">Sort by</h3>
+                    <div class="sort__container">
+                        <select class="sorting">
+                            <option value="0">Choose sort conditions:</option>
+                            <option value="asc">By quantity (asc)</option>
+                            <option value="desc">By quantity (desc)</option>
+                            <option value="nameUp">By name (a - z)</option>
+                            <option value="nameDN">By name (z - a)</option>
+                          </select>
+                    </div>
+                </div>
                 <div class="purpose">
                     <h3 class="purpose__group">filters by purpose</h3>
                     <div class="brand">
                         <h4 class="brand__brand purpose__title">Brand</h4>
                         <div class="purpose__choices">
-                            <input type="checkbox" class="brand__item purpose-button__item brand_checkbox" value="mazy">
-                            <input type="checkbox" class="brand__item purpose-button__item brand_checkbox" value="rawr">
-                            <input type="checkbox" class="brand__item purpose-button__item brand_checkbox" value="woogee">
+                            <button class="brand__item purpose-button__item ">MAZY</button>
+                            <button class="brand__item purpose-button__item">RAWR</button>
+                            <button class="brand__item purpose-button__item">WOOGEE</button>
                         </div>
                     </div>
                     <div class="size">
                         <h4 class="size__title purpose__title">Size</h4>
                         <div class="purpose__choices">
-                            <input type="radio" name="size_radio" class="size__item size_radio" value="42">
-                            <input type="radio" name="size_radio" class="size__item size_radio" value="44">
-                            <input type="radio" name="size_radio" class="size__item size_radio" value="46">
-                            <input type="radio" name="size_radio" class="size__item size_radio" value="48">
-                            <input type="radio" name="size_radio" class="size__item size_radio" value="50">
-                            <input type="radio" name="size_radio" class="size__item size_radio" value="52">
+                            <button class="size__item size__radio">42</button>
+                            <button class="size__item size__radio">44</button>
+                            <button class="size__item size__radio">46</button>
+                            <button class="size__item size__radio">48</button>
+                            <button class="size__item size__radio">50</button>
+                            <button class="size__item size__radio">52</button>
                         </div>
                     </div>
                     <div class="color">
                         <h4 class="color__title purpose__title">Color</h4>
                         <div class="purpose__choices colors">
-                            <input type="checkbox" class="color__item purpose-button__item" value="black">
-                            <input type="checkbox" class="color__item purpose-button__item" value="blue">
-                            <input type="checkbox" class="color__item purpose-button__item" value="brown">
-                            <input type="checkbox" class="color__item purpose-button__item" value="gray">
-                            <input type="checkbox" class="color__item purpose-button__item" value="green">
-                            <input type="checkbox" class="color__item purpose-button__item" value="pink">
-                            <input type="checkbox" class="color__item purpose-button__item" value="white">
-                            <input type="checkbox" class="color__item purpose-button__item" value="yellow">
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
+                            <button class="color__item purpose-button__item"></button>
                         </div>
                     </div>
                     <div class="popular">
                         <h4 class="popular__title purpose__title">Only Popular</h4>
                         <div class="purpose__choices">
-                            <input class="popular_checkbox" type="checkbox" value="yes">
+                            <button class="popular_checkbox"></button>
                         </div>
                     </div>
                 </div>
                 <div class="range">
                     <h3 class="purpose__group">filters by range</h3>
+                    <div class="year">
+                        <h4 class="popular__title purpose__title">launch year</h4>
+                        <div class="slider__year"></div>
+                    </div>
+                    <div class="quantity">
+                        <h4 class="popular__title purpose__title">quantity</h4>
+                        <div class="slider__quantity"></div>
+                    </div>
                 </div>
             </div>
             <div class="cards"></div>

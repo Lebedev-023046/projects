@@ -41,66 +41,36 @@
     width: 3rem;
 }
 
-.color__item:nth-child(1) {
-    background-color: $black;
-    &:checked {
-        background-color: $black;
-    }
-}
-.color__item:nth-child(2) {
-        background-color: $blue;
-    &:checked {
-        background-color: $blue;
-    }
-}
-.color__item:nth-child(3) {
-        background-color: $brown;
-    &:checked {
-        background-color: $brown;
-    }
-}
-.color__item:nth-child(4) {
-        background-color: $gray;
-    &:checked {
-        background-color: $gray;
-    }
-}
-.color__item:nth-child(5) {
-        background-color: $green;
-    &:checked {
-        background-color: $green;
-    }
-}
-.color__item:nth-child(6) {
-        background-color: $pink;
-    &:checked {
-        background-color: $pink;
-    }
-}
-.color__item:nth-child(7) {
-        background-color: $white;
-    &:checked {
-        background-color: $white;
-    }
-}
-.color__item:nth-child(8) {
-        background-color: $yellow;
-    &:checked {
-        background-color: $yellow;
-    }
+.slider__year, .slider__quantity {
+    margin: 40px;
 }
 
-.color__item {
-    appearance: none;
-    @include size(2rem, 2rem);
-    border: 2px solid $dark-red-color;
+.noUi-connect:nth-child(1) {
+    background-color: $danger-color-opacity;
+}
+
+.noUi-tooltip {
     border-radius: 10px;
-
-    &:checked {
-        background: url("../assets/icons/tick.png") no-repeat;
-        background-position: center;
-    }
 }
+
+.noUi-touch-area {
+    background-color: $neutral-secondary;
+    cursor: pointer;
+}
+
+.sort__container {
+    width: 22rem;
+    height: 4rem;
+    margin: 0 auto;
+}
+
+.sorting {
+    border: 0;
+    width: 22rem;
+    height: 2rem;
+    margin: 15px auto;
+    cursor: pointer;
+  }
 
 
 

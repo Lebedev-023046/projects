@@ -2,49 +2,18 @@
     appearance: none;
     @include size(2rem, 2rem);
     position: relative;
-    padding: 10px;
     font-family: $mainFont;
     border: 2px solid #7e1414;
     border-radius: 10px;
+    transition: .1s;
 
     &:hover {
         cursor: pointer;
     }
-    
-    &:checked {
-        background-color: $soft-purple;
-    }
 }
 
-.brand_checkbox {
-    transition: .1s;
-}
-
-.brand_checkbox:nth-child(1) {
-    &::before {
-        content: "MAZY";
-        position: absolute;
-        top: 18%;
-        right: 28%;
-    }
-}
-
-.brand_checkbox:nth-child(2) {
-    &::before {
-        content: "RAWR";
-        position: absolute;
-        top: 18%;
-        right: 28%;
-    }
-}
-
-.brand_checkbox:nth-child(3) {
-    &::before {
-        content: "WOOGEE";
-        position: absolute;
-        top: 18%;
-        right: 20%;
-    }
+.purpose-button__item_active {
+    background-color: $crimson-color-opacity;
 }
 
 .popular_checkbox {
@@ -54,17 +23,18 @@
     border-radius: 10px;
     transition: .3s;
 
-    &:checked {
-        background: url("../assets/icons/input_tick.png") no-repeat;
-        background-size: cover;
-        background-color: $garnet-color-opacity;
-    }
-
     &:hover {
         cursor: pointer;
     }
 }
-.size_radio {
+
+.popular_checkbox_active {
+    background: url("../assets/icons/input_tick.png") no-repeat;
+    background-size: cover;
+    background-color: $garnet-color-opacity;
+}
+
+.size__radio {
     appearance: none;
     @include size(2rem, 2rem);
     border: 2px solid $dark-red-color;
@@ -72,62 +42,54 @@
     position: relative;
     transition: .1s;
 
-    &:checked {
-        background-color: $soft-purple;
+    &:hover {
+        cursor: pointer;
     }
+}
+
+.size__radio_active {
+    background-color: $soft-purple;
+}
+
+.color__item:nth-child(1) {
+    background-color: $black;
+}
+.color__item:nth-child(2) {
+        background-color: $blue;
+}
+.color__item:nth-child(3) {
+        background-color: $brown;
+}
+.color__item:nth-child(4) {
+        background-color: $gray;
+}
+.color__item:nth-child(5) {
+        background-color: $green;
+}
+.color__item:nth-child(6) {
+        background-color: $pink;
+}
+.color__item:nth-child(7) {
+        background-color: $white;
+}
+.color__item:nth-child(8) {
+        background-color: $yellow;
+}
+
+.color__item {
+    appearance: none;
+    @include size(2rem, 2rem);
+    border: 2px solid $dark-red-color;
+    border-radius: 10px;
 
     &:hover {
         cursor: pointer;
     }
 }
 
-.size_radio:nth-child(1) {
-    &::before {
-        content: "42";
-        position: absolute;
-        top: 20%;
-        right: 30%;
-    }
+.color__item_active {
+    background-image: url("../assets/icons/tick.png");
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.size_radio:nth-child(2) {
-    &::before {
-        content: "44";
-        position: absolute;
-        top: 20%;
-        right: 30%;
-    }
-}
-.size_radio:nth-child(3) {
-    &::before {
-        content: "46";
-        position: absolute;
-        top: 20%;
-        right: 30%;
-    }
-}
-.size_radio:nth-child(4) {
-    &::before {
-        content: "48";
-        position: absolute;
-        top: 20%;
-        right: 30%;
-    }
-}
-.size_radio:nth-child(5) {
-    &::before {
-        content: "50";
-        position: absolute;
-        top: 20%;
-        right: 30%;
-    }
-}
-.size_radio:nth-child(6) {
-    &::before {
-        content: "52";
-        position: absolute;
-        top: 20%;
-        right: 30%;
-    }
-}
-
 
