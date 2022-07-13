@@ -46,6 +46,11 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.join(__dirname, 'src/assets'), to: path.join(__dirname, 'dist/assets') }
+            ]
+        })
     ],
 };
 
