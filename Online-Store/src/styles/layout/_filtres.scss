@@ -13,10 +13,14 @@
     text-align: center;
 }
 
-.purpose__title {
+.title-container {
     text-align: center;
     margin-top: 15px;
     text-transform: uppercase;
+}
+
+.purpose__title {
+    display: inline;
     position: relative;
 
     &::before {
@@ -59,18 +63,32 @@
 }
 
 .sort__container {
-    width: 22rem;
     height: 4rem;
-    margin: 0 auto;
+    text-align: center;
 }
 
 .sorting {
     border: 0;
-    width: 22rem;
+    width: 90%;
     height: 2rem;
-    margin: 15px auto;
+    margin: 15px 0;
     cursor: pointer;
-  }
+}
+
+.settings__container {
+    display: flex;
+    justify-content: space-around;
+    height: 3rem;
+    padding: 15px;
+}
+
+.reset-filters,
+.reset-settings {
+    @include size(7rem, 3rem);
+    cursor: pointer;
+    background-color: $border-lighter;
+
+}
 
 
 
