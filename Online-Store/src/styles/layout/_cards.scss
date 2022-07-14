@@ -1,4 +1,41 @@
 .cards {
     width: 70%;
-    // background-color: rgb(228, 28, 28);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 40px 50px;
+    margin: 0 auto;
+}
+
+.card {
+    @include size(17.5rem, 25rem);
+    border: 2px solid $dark-red-color;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.card_active {
+    box-shadow: inset 5rem 1rem 5rem 1rem $dark-red-color-opacity;
+}
+
+.card__photo {
+    height: 70%;
+    background-size: cover;
+    border-bottom: 2px solid $dark-red-color;
+}
+
+.card__info {
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    // padding: .6rem;
+    text-align: center;
+    
+}
+
+.card__span {
+    width: 100%;
 }

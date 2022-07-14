@@ -3,6 +3,7 @@
   height: 5rem;
   max-width: $lgDesktopWidth;
   width: 100%;
+  padding: 10px 0;
   position: relative;
 }
 
@@ -32,6 +33,7 @@
   line-height: 5rem;
   background: url("../assets/header/Mazy.png") no-repeat;
   align-self: center;
+  cursor: pointer;
 }
 
 .search {
@@ -52,6 +54,7 @@
   height: 15px;
   margin-right: 5px;
   background: url("../assets/header/search.png") no-repeat;
+  cursor: pointer;
 }
 
 .search__input {
@@ -85,18 +88,20 @@
   align-self: center;
 }
 
-.cart__like {
-  align-self: center;
-  width: 20px;
-  height: 20px;
-  background: url("../assets/header/like.png") no-repeat;
-  background-size: contain;
-}
-
 .cart__cart-instance {
+  position: relative;
   align-self: center;
   width: 20px;
   height: 20px;
   background: url("../assets/header/cart.png") no-repeat;
   background-size: contain;
 }
+
+.amount {
+  @include size(20px, 20px);
+  align-self: center;
+  border-radius: 50%;
+  text-align: center;
+  margin-top: 4px;
+}
+
