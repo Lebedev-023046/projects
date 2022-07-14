@@ -9,7 +9,7 @@
 }
 
 .card {
-    @include size(17.5rem, 25rem);
+    @include size(17.5rem, 28rem);
     border: 2px solid $dark-red-color;
     border-radius: 7px;
     cursor: pointer;

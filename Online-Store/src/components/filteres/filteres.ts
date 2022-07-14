@@ -32,3 +32,12 @@ noUiSlider.create(slider_quantity, {
         decimals: 0
     })
 });
+
+// search-bar functionality
+const cross = <HTMLDivElement>document.querySelector('.search__cancel')
+const input = <HTMLInputElement>document.querySelector('.search__input')
+cross.addEventListener('click', () => {
+    input.value = ''
+})
+
+
