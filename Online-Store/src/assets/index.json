@@ -9,19 +9,21 @@
         "img": "./assets/photos/blue_hoodie.jpg",
         "year": 2022,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 28
     },
     {
         "id": "2",
         "name": "t-shirt",
-        "size": ["one size"],
+        "size": [42, 44, 46, 48, 50, 52],
         "color": "yellow",
         "price": 69,
         "collection": "mercury",
         "img": "./assets/photos/yellow_t-shirt.jpg",
         "year": 2022,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 20
     },
     {
         "id": "3",
@@ -33,7 +35,8 @@
         "img": "./assets/photos/gray_sweatshirt.jpg",
         "year": 2021,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 12
     },
     {
         "id": "4",
@@ -45,19 +48,21 @@
         "img": "./assets/photos/pink_summer_suit.jpg",
         "year": 2021,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 40
     },
     {
         "id": "5",
         "name": "t-shirt",
-        "size": ["one size"],
+        "size": [42, 44, 46, 48, 50, 52],
         "color": "blue",
         "price": 69,
         "collection": "mercury",
         "img": "./assets/photos/blue_t-shirt.jpg",
         "year": 2022,
         "popular": "no",
-        "brand": "Mazy" 
+        "brand": "Mazy",
+        "quantity": 33
     },
     {
         "id": "6",
@@ -69,7 +74,8 @@
         "img": "./assets/photos/white_hoodie.jpg",
         "year": 2022,
         "popular": "no",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 29
     },
     {
         "id": "7",
@@ -81,7 +87,8 @@
         "img": "./assets/photos/gray_hoodie.jpg",
         "year": 2022,
         "popular": "no",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 18
     },
     {
         "id": "8",
@@ -93,7 +100,8 @@
         "img": "./assets/photos/yellow_summer_suit.jpg",
         "year": 2021,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 11
     },
     {
         "id": "9",
@@ -105,7 +113,8 @@
         "img": "./assets/photos/black_palazzo.jpg",
         "year": 2021,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 7
     },
     {
         "id": "10",
@@ -117,7 +126,8 @@
         "img": "./assets/photos/brown_palazzo.jpg",
         "year": 2020,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 19
     },
     {
         "id": "11",
@@ -129,7 +139,9 @@
         "img": "./assets/photos/brown_hoodie.jpg",
         "year": 2022,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 25
+        
     },
     {
         "id": "12",
@@ -141,7 +153,8 @@
         "img": "./assets/photos/pink_hoodie.jpg",
         "year": 2020,
         "popular": "no",
-        "brand": "Rawr"
+        "brand": "Rawr",
+        "quantity": 15
     },
     {
         "id": "13",
@@ -153,7 +166,8 @@
         "img": "./assets/photos/green_hoodie.jpg",
         "year": 2020,
         "popular": "yes",
-        "brand": "Rawr"
+        "brand": "Rawr",
+        "quantity": 35
     },
     {
         "id": "14",
@@ -165,7 +179,8 @@
         "img": "./assets/photos/pink_sweatshirt.jpg",
         "year": 2020,
         "popular": "yes",
-        "brand": "Rawr"
+        "brand": "Rawr",
+        "quantity": 2
     },
     {
         "id": "15",
@@ -177,7 +192,8 @@
         "img": "./assets/photos/white_sweatshirt.jpg",
         "year": 2020,
         "popular": "yes",
-        "brand": "Rawr"
+        "brand": "Rawr",
+        "quantity": 5
     },
     {
         "id": "16",
@@ -189,7 +205,8 @@
         "img": "./assets/photos/green_sweatshirt.jpg",
         "year": 2019,
         "popular": "no",
-        "brand": "Woogee"
+        "brand": "Woogee",
+        "quantity": 34
     },
     {
         "id": "17",
@@ -201,7 +218,8 @@
         "img": "./assets/photos/black_hoodie.jpg",
         "year": 2019,
         "popular": "no",
-        "brand": "Woogee"
+        "brand": "Woogee",
+        "quantity": 32
     },
     {
         "id": "18",
@@ -213,7 +231,8 @@
         "img": "./assets/photos/yellow_sweatshirt.jpg",
         "year": 2019,
         "popular": "yes",
-        "brand": "Woogee"
+        "brand": "Woogee",
+        "quantity": 21
     },
     {
         "id": "19",
@@ -225,7 +244,8 @@
         "img": "./assets/photos/yellow_hoodie.jpg",
         "year": 2020,
         "popular": "no",
-        "brand": "Woogee"
+        "brand": "Woogee",
+        "quantity": 4
     },
     {
         "id": "20",
@@ -237,6 +257,7 @@
         "img": "./assets/photos/pink_hoodie_merc.jpg",
         "year": 2022,
         "popular": "yes",
-        "brand": "Mazy"
+        "brand": "Mazy",
+        "quantity": 23
     }
 ]
