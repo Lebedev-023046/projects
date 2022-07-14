@@ -17,7 +17,7 @@ const renderCards = () => {
                                 Color:   ${element.color}<br> 
                                 Sizes:   ${[...element.size]}<br> 
                                 Price:   ${element.price} BYN<br>
-                                Brand:   ${element.brand} 
+                                Brand:   ${element.brand} <br>
                                 Year:    ${element.year}<br> 
                                 Popular: ${element.popular}<br>
                                 Quantity: ${element.quantity}<br>`
