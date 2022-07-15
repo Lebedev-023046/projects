@@ -8,6 +8,18 @@
     margin: 0 auto;
 }
 
+.cards__modal {
+    display: none;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 4rem;
+}
+
+.cards__modal_active {
+    display: block
+}
+
 .card {
     @include size(17.5rem, 28rem);
     border: 2px solid $dark-red-color;
