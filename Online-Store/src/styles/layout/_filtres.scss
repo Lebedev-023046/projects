@@ -31,7 +31,10 @@
     }   
 }
 
-.purpose__choices {
+.purpose__choices-brand,
+.purpose__choices-size,
+.purpose__choices-color,
+.purpose__choices-popular {
     display: flex;
     padding: 15px;
     justify-content: space-around;

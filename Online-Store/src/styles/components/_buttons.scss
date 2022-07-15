@@ -1,4 +1,4 @@
-.purpose-button__item {
+ .purpose-button__item {
     appearance: none;
     @include size(2rem, 2rem);
     position: relative;
@@ -16,7 +16,7 @@
     background-color: $crimson-color-opacity;
 }
 
-.popular_checkbox {
+.popular-checkbox {
     appearance: none;
     @include size(2rem, 2rem);
     border: 2px solid $dark-red-color;
@@ -28,7 +28,7 @@
     }
 }
 
-.popular_checkbox_active {
+.popular-checkbox_active {
     background: url("../assets/icons/input_tick.png") no-repeat;
     background-size: cover;
     background-color: $garnet-color-opacity;
