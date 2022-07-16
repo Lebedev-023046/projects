@@ -31,7 +31,7 @@
   width: 6.25rem;
   height: 1.5rem;
   line-height: 5rem;
-  background: url("../assets/header/Mazy.png") no-repeat;
+  background: url("../assets/header-icons/Mazy.png") no-repeat;
   align-self: center;
   cursor: pointer;
 }
@@ -53,7 +53,7 @@
   width: 15px;
   height: 15px;
   margin-right: 5px;
-  background: url("../assets/header/search.png") no-repeat;
+  background: url("../assets/header-icons/search.png") no-repeat;
   cursor: pointer;
 }
 
@@ -72,7 +72,7 @@
   align-self: center;
   width: 20px;
   height: 20px;
-  background: url("../assets/header/cancel.png") no-repeat;
+  background: url("../assets/header-icons/cancel.png") no-repeat;
   background-size: contain;
 
   &:hover {
@@ -93,7 +93,7 @@
   align-self: center;
   width: 20px;
   height: 20px;
-  background: url("../assets/header/cart.png") no-repeat;
+  background: url("../assets/header-icons/cart.png") no-repeat;
   background-size: contain;
 }
 
