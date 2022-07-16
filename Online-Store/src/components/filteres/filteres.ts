@@ -2,7 +2,9 @@ import wNumb from 'wnumb';
 import 'nouislider/dist/nouislider.css';
 import noUiSlider from 'nouislider';
 import { IJson } from '../../types/index'
-import { data, renderCards } from '../cards/cards'
+import { data, renderCards, filterByValues, renderByValues } from '../cards/cards'
+
+const sortBy = <HTMLInputElement>document.querySelector('.sorting')
 
 const slider_year = <HTMLElement>document.querySelector(".slider__year")
 const slider_quantity = <HTMLElement>document.querySelector(".slider__quantity")
@@ -16,22 +18,25 @@ const colorButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.color_
 const popularBlock = <HTMLElement>document.querySelector('.purpose__choices-popular')
 const popularButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.popular-checkbox')
 
+const reset = <HTMLElement>document.querySelector('.reset-filters')
+
 
 brandBlock.addEventListener('click', (event: MouseEvent) => {
     if (event.target instanceof HTMLButtonElement) {
         if (event.target.classList.contains('brand__item')) {
             event.target.classList.toggle('purpose-button__item_active')
         }
-        filterByBrand(data)
+        renderByValues(data)
     }
 })
 
 sizeBlock.addEventListener('click', (event: MouseEvent) => {
+    sizeButtons.forEach(element => element.classList.remove('size__radio_active'))
     if (event.target instanceof HTMLButtonElement) {
         if (event.target.classList.contains('size__item')) {
             event.target.classList.toggle('size__radio_active')
         }
-        filterBySize(data)
+        renderByValues(data)
     }
 })
 
@@ -40,7 +45,7 @@ colorBlock.addEventListener('click', (event: MouseEvent) => {
         if (event.target.classList.contains('color__item')) {
             event.target.classList.toggle('color__item_active')
         }
-        filterByColor(data)
+        renderByValues(data)
     }
 })
 
@@ -49,8 +54,48 @@ popularBlock.addEventListener('click', (event: MouseEvent) => {
         if (event.target.classList.contains('popular-checkbox')) {
             event.target.classList.toggle('popular-checkbox_active')
         }
-        filterByPopular(data)
+        renderByValues(data)
     }
+})
+
+reset.addEventListener('click', () => {
+    Array.from(brandButtons).forEach(elem => elem.classList.remove('purpose-button__item_active'))
+    Array.from(sizeButtons).forEach(elem => elem.classList.remove('size__radio_active'))
+    Array.from(colorButtons).forEach(elem => elem.classList.remove('color__item_active'))
+    Array.from(popularButtons).forEach(elem => elem.classList.remove('popular-checkbox_active'))
+    renderCards(data)
+})
+
+
+// search by sort
+// export const sortByValue = () => {}
+sortBy.addEventListener('change', () => {
+    let filteredData = filterByValues(data)
+    console.log(filteredData)
+    let value = sortBy.value
+    if (value === 'asc') {
+        filteredData = filteredData.sort((a, b) => a.quantity - b.quantity)
+    }  
+    else if (value === 'desc') 
+    {
+        filteredData = filteredData.sort((a, b) => b.quantity - a.quantity)
+    } 
+    else if (value === 'nameUp') {
+        filteredData = filteredData.sort((a, b) => {
+            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
+            return 0
+        })
+    }
+    else if (value === 'nameDn') {
+        filteredData = filteredData.sort((a, b) => {
+            if (b.name.toLowerCase() < a.name.toLowerCase()) return -1
+            if (b.name.toLowerCase() > a.name.toLowerCase()) return 1
+            return 0
+        })
+    }
+    renderCards(filteredData)
+    
 })
 
 
@@ -96,16 +141,7 @@ const filterСriterias = (relevantButtons: NodeListOf<HTMLElement>) => {
     return relevantValues
 }
 
-// const filterCriteriasColor = (relevantButtons: NodeListOf<HTMLElement>) => {
-//     const relevantValues: string[] = Array.from(relevantButtons)
-//                                             .filter((btn) => btn.classList.contains('purpose-button__item_active') ||
-//                                                             btn.classList.contains('size__radio_active') ||
-//                                                             btn.classList.contains('popular-checkbox_active'))
-//                                             .map((btn) => btn.innerHTML)
-//     return relevantValues
-// }
-
-const filterByBrand = (data: Array<IJson>) => {
+export const filterByBrand = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let brandArr = filterСriterias(brandButtons)
     if (brandArr.length > 0) {
@@ -113,14 +149,14 @@ const filterByBrand = (data: Array<IJson>) => {
             let fData = data.filter(elem => elem.brand.toLowerCase().includes(brandArr[i].toLowerCase()))
             fData.forEach(element => res.push(element))
         }
-        renderCards(res)
+        return res
     }
     else {
-        renderCards(data)
+        return data
     }
 }
 
-const filterBySize = (data: Array<IJson>) => {
+export const filterBySize = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let sizeArr = filterСriterias(sizeButtons)
     if (sizeArr.length > 0) {
@@ -128,39 +164,38 @@ const filterBySize = (data: Array<IJson>) => {
             let fData = data.filter(elem => elem.size.includes(Number(sizeArr[i])))
             fData.forEach(element => res.push(element))
         }
-        renderCards(res)
+        return res
     }
     else {
-        renderCards(data)
+        return data
     }
 }
 
-const filterByColor = (data: Array<IJson>) => {
+export const filterByColor = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let colorArr = filterСriterias(colorButtons)
-    console.log(colorArr)
     if (colorArr.length > 0) {
         for (let i=0; i<colorArr.length;i++) {
             let fData = data.filter(elem => elem.color.includes((colorArr[i])))
             fData.forEach(element => res.push(element))
         }
-        renderCards(res)
+        return res
     }
     else {
-        renderCards(data)
+        return data
     }
 }
 
-const filterByPopular = (data: Array<IJson>) => {
+export const filterByPopular = (data: Array<IJson>) => {
     let res: Array<IJson> = []
-    let sizeArr = filterСriterias(popularButtons)
-    if (sizeArr.length > 0) {
+    let popularArr = filterСriterias(popularButtons)
+    if (popularArr.length > 0) {
         let fData = data.filter(elem => elem.popular === 'yes')
         fData.forEach(element => res.push(element))
-        renderCards(res)
+        return res
     }
     else {
-        renderCards(data)
+        return data
     }
 }
 
