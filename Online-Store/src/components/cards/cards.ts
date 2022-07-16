@@ -1,7 +1,8 @@
 import { IJson } from '../../types/index'
 import json from '../../assets/index.json'
+import { filterByBrand, filterBySize, filterByColor, filterByPopular } from '../filteres/filteres' // returns filtered array
 
-let data = json
+export const data = json
 
 const cards = <HTMLElement>document.querySelector('.cards')
 const modal = <HTMLElement>document.querySelector('.cards__modal')
@@ -9,9 +10,7 @@ const modal = <HTMLElement>document.querySelector('.cards__modal')
 const cross = <HTMLDivElement>document.querySelector('.search__cancel')
 const input = <HTMLInputElement>document.querySelector('.search__input')
 
-const sortBy = <HTMLInputElement>document.querySelector('.sorting')
-
-const renderCards = (data: Array<IJson>) => {
+export const renderCards = (data: Array<IJson>): void => {
     cards.innerHTML = ''
     if (data.length > 0) {
         modal.classList.remove('cards__modal_active')
@@ -45,46 +44,37 @@ const renderCards = (data: Array<IJson>) => {
 
 renderCards(data)
 
+export const filterByValues = (rawData: Array<IJson>) => {
+    let byBrand = filterByBrand(rawData)
+    let bySize = filterBySize(byBrand)
+    let byColor = filterByColor(bySize)
+    let byPopular = filterByPopular(byColor)
+    return byPopular
+}
+
+export const renderByValues = (rawData: Array<IJson>): void => {
+    let byBrand = filterByBrand(rawData)
+    let bySize = filterBySize(byBrand)
+    let byColor = filterByColor(bySize)
+    let byPopular = filterByPopular(byColor)
+    renderCards(byPopular)
+}
+
 // search-bar functionality
 cross.addEventListener('click', () => {
     input.value = ''
-    renderCards(data)
+    let filteredData = filterByValues(data)
+    renderCards(filteredData)
 })
 
 // search by input
 input.addEventListener('input', () => {
-    let filteredData: Array<IJson> = data.filter(element => Object.values(element).some(elem => {
+    let filteredData = filterByValues(data)
+    filteredData = filteredData.filter(element => Object.values(element).some(elem => {
         if (typeof(elem) === 'string' && !elem.match(/\.(jpe?g|png|gif)$/i)) {
             return elem.toLowerCase().includes(<string>input.value.toLowerCase())
         } 
     }))
-    // const keys: Array<string> = ['name', 'color', 'collection', 'popular', 'brand'] 
-    // let filteredData: Array<IJson> = data.filter(el => keys.some((key: string) => {
-    //         return el[key].toLowerCase().includes(input.value.toLowerCase())
-    // }))
-    renderCards(filteredData)
-})
-
-// search by sort
-sortBy.addEventListener('change', () => {
-    let filteredData = data;
-    let value = sortBy.value;
-    if (value === 'asc') filteredData = data.sort((a, b) => a.quantity - b.quantity)
-    else if (value === 'desc') filteredData = data.sort((a, b) => b.quantity - a.quantity)
-    else if (value === 'nameUp') {
-        filteredData = data.sort((a, b) => {
-            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
-            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
-            return 0
-        })
-    }
-    else if (value === 'nameDn') {
-        filteredData = data.sort((a, b) => {
-            if (b.name.toLowerCase() < a.name.toLowerCase()) return -1
-            if (b.name.toLowerCase() > a.name.toLowerCase()) return 1
-            return 0
-        })
-    }
     renderCards(filteredData)
 })
 
@@ -112,14 +102,6 @@ cards.addEventListener('click', (event: MouseEvent) => {
     }
 })
 
-
-
-
-// const getSettings = () => {
-//     let relevantSettings: Array<ISettings> = Object.values(settings).filter(element => {
-//         return Boolean(element) && Array.from(element).length > 0
-//     })
-// }
 
 
 
