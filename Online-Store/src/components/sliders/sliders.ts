@@ -1,7 +1,7 @@
 import wNumb from 'wnumb';
 import 'nouislider/dist/nouislider.css';
 import * as noUiSlider from 'nouislider';
-import { data, renderByValues } from '../cards/cards';
+import { renderByValues } from '../cards/cards';
 
 // noUiSlider functionality
 const slider_year = <HTMLElement>document.querySelector(".slider__year")
