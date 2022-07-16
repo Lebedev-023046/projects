@@ -1,11 +1,6 @@
-import wNumb from 'wnumb';
-import 'nouislider/dist/nouislider.css';
-import noUiSlider from 'nouislider';
 import { IJson } from '../../types/index'
-
-const slider_year = <HTMLElement>document.querySelector(".slider__year")
-const slider_quantity = <HTMLElement>document.querySelector(".slider__quantity")
-
+import { yearIns, quantityIns} from '../sliders/sliders'
+ 
 export const brandButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.brand__item')
 export const sizeButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.size__item')
 export const colorButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.color__item')
@@ -16,7 +11,10 @@ export const filterByValues = (rawData: Array<IJson>) => {
     let bySize = filterBySize(byBrand)
     let byColor = filterByColor(bySize)
     let byPopular = filterByPopular(byColor)
-    return byPopular
+    let byYear = filterByYear(byPopular)
+    let byQuantity = filterByQuantity(byYear)
+
+    return byQuantity
 }
 
 const filterСriterias = (relevantButtons: NodeListOf<HTMLElement>) => {
@@ -30,7 +28,7 @@ const filterСriterias = (relevantButtons: NodeListOf<HTMLElement>) => {
     return relevantValues
 }
 
-export const filterByBrand = (data: Array<IJson>) => {
+const filterByBrand = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let brandArr = filterСriterias(brandButtons)
     if (brandArr.length > 0) {
@@ -43,7 +41,7 @@ export const filterByBrand = (data: Array<IJson>) => {
     else return data
 }
 
-export const filterBySize = (data: Array<IJson>) => {
+const filterBySize = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let sizeArr = filterСriterias(sizeButtons)
     if (sizeArr.length > 0) {
@@ -56,7 +54,7 @@ export const filterBySize = (data: Array<IJson>) => {
     else return data
 }
 
-export const filterByColor = (data: Array<IJson>) => {
+const filterByColor = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let colorArr = filterСriterias(colorButtons)
     if (colorArr.length > 0) {
@@ -69,7 +67,7 @@ export const filterByColor = (data: Array<IJson>) => {
     else return data
 }
 
-export const filterByPopular = (data: Array<IJson>) => {
+const filterByPopular = (data: Array<IJson>) => {
     let res: Array<IJson> = []
     let popularArr = filterСriterias(popularButtons)
     if (popularArr.length > 0) {
@@ -80,34 +78,27 @@ export const filterByPopular = (data: Array<IJson>) => {
     else return data
 }
 
-// noUiSlider functionality
-noUiSlider.create(slider_year, {
-    start: [2019, 2022],
-    connect: true,
-    range: {
-        'min': 2019,
-        'max': 2022
-    },
-    behaviour: 'tap-drag',
-    tooltips: true,
-    format: wNumb({
-        decimals: 0
-    })
-});
+const filterByYear = (data: Array<IJson>) => {
+    let res: Array<IJson> = []
+    let years = yearIns.get() as number[]
+    if (data.length > 0) {
+        let fData = data.filter(elem => elem.year >= years[0] && elem.year <= years[1])
+        fData.forEach(element => res.push(element))
+        return res
+    }
+    else return data
+}
 
-noUiSlider.create(slider_quantity, {
-    start: [0, 40],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 40
-    },
-    behaviour: 'tap-drag',
-    tooltips: true,
-    format: wNumb({
-        decimals: 0
-    })
-});
+const filterByQuantity = (data: Array<IJson>) => {
+    let res: Array<IJson> = []
+    let quantity = quantityIns.get() as number[]
+    if (data.length > 0) {
+        let fData = data.filter(elem => elem.quantity >= quantity[0] && elem.quantity <= quantity[1])
+        fData.forEach(element => res.push(element))
+        return res
+    }
+    else return data
+}
 
 
 
