@@ -191,7 +191,7 @@
         "collection": "amazing life",
         "img": "./assets/photos/white_sweatshirt.jpg",
         "year": 2020,
-        "popular": "yes",
+        "popular": "no",
         "brand": "Rawr",
         "quantity": 5
     },
@@ -230,7 +230,7 @@
         "collection": "daisy",
         "img": "./assets/photos/yellow_sweatshirt.jpg",
         "year": 2019,
-        "popular": "yes",
+        "popular": "no",
         "brand": "Woogee",
         "quantity": 21
     },
@@ -256,7 +256,7 @@
         "collection": "mercury",
         "img": "./assets/photos/pink_hoodie_merc.jpg",
         "year": 2022,
-        "popular": "yes",
+        "popular": "no",
         "brand": "Mazy",
         "quantity": 23
     }
