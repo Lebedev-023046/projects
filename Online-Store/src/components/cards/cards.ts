@@ -4,7 +4,7 @@ import { filterByValues, brandButtons, sizeButtons,  colorButtons, popularButton
 
 const data = json
 
-const cards = <HTMLElement>document.querySelector('.cards')
+const cards = <HTMLElement>document.querySelector('.cards__container')
 const modal = <HTMLElement>document.querySelector('.cards__modal')
 const cross = <HTMLDivElement>document.querySelector('.search__cancel')
 const input = <HTMLInputElement>document.querySelector('.search__input')
