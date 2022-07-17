@@ -4,7 +4,6 @@ export interface IJson {
     size: number[],
     color: string,
     price: number,
-    collection: string,
     img: string,
     year: number,
     popular: string,
