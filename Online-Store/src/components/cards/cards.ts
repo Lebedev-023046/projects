@@ -1,6 +1,7 @@
 import { IJson } from '../../types/index'
 import json from '../../assets/index.json'
 import { filterByValues, brandButtons, sizeButtons,  colorButtons, popularButtons} from '../filteres/filteres'
+import { slidesReset } from '../sliders/sliders'
 
 const data = json
 
@@ -96,6 +97,7 @@ reset.addEventListener('click', () => {
     Array.from(sizeButtons).forEach(elem => elem.classList.remove('size__radio_active'))
     Array.from(colorButtons).forEach(elem => elem.classList.remove('color__item_active'))
     Array.from(popularButtons).forEach(elem => elem.classList.remove('popular-checkbox_active'))
+    slidesReset()
     renderCards(data)
 })
 

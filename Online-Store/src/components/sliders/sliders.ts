@@ -35,6 +35,11 @@ export const quantityIns = noUiSlider.create(slider_quantity, {
     }),
 });
 
+export const slidesReset = () => {
+    yearIns.reset()
+    quantityIns.reset()
+}
+
 
 (slider_year as noUiSlider.target).noUiSlider?.on('end', (): void => renderByValues());
 (slider_quantity as noUiSlider.target).noUiSlider?.on('end', (): void => renderByValues());
