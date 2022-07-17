@@ -8,10 +8,25 @@
 @import './layout/cards';
 @import './layout/footer';
 
+html {
+  @media (max-width: $lgDesktopWidth)  {
+    font-size: 16px;
+  }
+  @media (max-width: $desktopWidth)  {
+    font-size: 14px;
+  }
+  @media (max-width: $smDesktopWidth)  {
+    font-size: 13px;
+  }
+  @media (max-width: $tableWidth)  {
+    font-size: 12px;
+  }
+}
 
 .body {
   background-color: $bgColor;
   font-family: $mainFont;
+  font-size: $mainFontSize;
 }
 
 .wrapper {
@@ -30,6 +45,3 @@
   margin-top: 2rem;
   position: relative;
 }
-
-
-
