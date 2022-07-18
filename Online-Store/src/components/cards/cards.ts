@@ -1,7 +1,6 @@
 import { IJson } from '../../types/index'
 import json from '../../assets/index.json'
-import { filterByValues, brandButtons, sizeButtons,  colorButtons, popularButtons} from '../filteres/filteres'
-import { slidesReset } from '../sliders/sliders'
+import { filterByValues, brandButtons, sizeButtons,  colorButtons, popularButtons, slidesReset} from '../filteres/filteres'
 
 const data = json
 
@@ -32,7 +31,6 @@ const renderCards = (data: Array<IJson>): void => {
 
             card__photo.classList.add('card__photo')
             card__info.classList.add('card__info')
-            console.log(cardIdArr)
             card.setAttribute('card-id', element.id)
             if (cardIdArr.includes(element.id)) card.classList.add('card_active')
             card__photo.style.backgroundImage = `url(${element.img})`
@@ -60,14 +58,24 @@ const sortByValue = (data: Array<IJson>, reset=false) => {
     else filteredData = filterByValues(data)
     
     let value = sortBy.value
-    if (value === 'asc') filteredData = filteredData.sort((a, b) => a.quantity - b.quantity)  
-    else if (value === 'desc') filteredData = filteredData.sort((a, b) => b.quantity - a.quantity) 
+    if (value === '0') {
+        localStorage.setItem('sortBy', '0')
+    }
+    else if (value === 'asc') {
+        filteredData = filteredData.sort((a, b) => a.quantity - b.quantity)
+        localStorage.setItem('sortBy', 'asc')
+    }   
+    else if (value === 'desc') {
+        filteredData = filteredData.sort((a, b) => b.quantity - a.quantity) 
+        localStorage.setItem('sortBy', 'desc')
+    }
     else if (value === 'nameUp') {
         filteredData = filteredData.sort((a, b) => {
             if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
             if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
             return 0
         })
+        localStorage.setItem('sortBy', 'nameUp')
     }
     else if (value === 'nameDn') {
         filteredData = filteredData.sort((a, b) => {
@@ -75,6 +83,7 @@ const sortByValue = (data: Array<IJson>, reset=false) => {
             if (b.name.toLowerCase() > a.name.toLowerCase()) return 1
             return 0
         })
+        localStorage.setItem('sortBy', 'nameDn')
     }
     return filteredData
 }
@@ -94,7 +103,7 @@ brandBlock.addEventListener('click', (event: MouseEvent) => {
 })
 
 sizeBlock.addEventListener('click', (event: MouseEvent) => {
-    sizeButtons.forEach(element => element.classList.remove('size__radio_active'))
+    // sizeButtons.forEach(element => element.classList.remove('size__radio_active'))
     if (event.target instanceof HTMLButtonElement) {
         if (event.target.classList.contains('size__item')) {
             event.target.classList.toggle('size__radio_active')
@@ -138,7 +147,30 @@ sortBy.addEventListener('change', () => {
     renderCards(filteredData)  
 })
 
-renderCards(data)
+// export const renderLS = () => {
+//     let brandArrLS = localStorage.getItem('brands')?.split(',')
+//     let sizeLS = <string>localStorage.getItem('sizes')
+//     let popularLS = <string>localStorage.getItem('popular')
+//     let colorArrLS = localStorage.getItem('color')?.split(',')
+//     let selectValueLS = localStorage.getItem('sortBy')
+//     let inputValueLS = localStorage.getItem('input')
+
+//     // brand filters
+//     brandArrLS?.forEach(element => Array.from(brandBlock.children).forEach(elem => {
+//         if (elem.innerHTML === element) elem.classList.add('purpose-button__item_active')}))
+//     // size filters
+//     Array.from(sizeBlock.children).forEach(elem => {if (elem.innerHTML === sizeLS) {elem.classList.add('size__radio_active')}})
+//     // color filters
+//     let colorArr  = Array.from(colorBlock.children).map(element => element as HTMLElement)
+//     colorArrLS?.forEach(element => colorArr.forEach(elem => {if (elem.dataset.color === element) {elem.classList.add('color__item_active')}}))
+//     // popular filters
+//     if (popularLS === '1') popularBlock.children[0].classList.add('popular-checkbox_active')
+//     // sortBy
+//     if (selectValueLS) sortBy.value = selectValueLS
+//     // input value
+//     if (inputValueLS) input.value = inputValueLS
+//     // range values
+// }
 
 // search-bar functionality
 cross.addEventListener('click', () => {
@@ -149,6 +181,7 @@ cross.addEventListener('click', () => {
 
 // search by input
 input.addEventListener('input', () => {
+    localStorage.setItem('input', input.value)
     let filteredData = filterByValues(data)
     filteredData = filteredData.filter(element => Object.values(element).some(elem => {
         if (typeof(elem) === 'string' && !elem.match(/\.(jpe?g|png|gif)$/i)) {
@@ -179,7 +212,6 @@ cards.addEventListener('click', (event: MouseEvent) => {
                         amount.innerHTML = String(Number(amount?.innerHTML) + 1)
                         cardId = <string>event.target.parentNode.getAttribute('card-id')
                         cardIdArr.push(cardId)
-                        console.log(cardIdArr)
                     }
                 }
             }
@@ -187,6 +219,6 @@ cards.addEventListener('click', (event: MouseEvent) => {
     }
 })
 
-
+renderCards(data)
 
 
