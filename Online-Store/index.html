@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Mazy</title>
+<script defer src="index.js"></script></head>
+<body class="body">
+    <div class="wrapper">
+        <header class="header">
+            <div class="burger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav__item"><a href="##" class="nav__link nav__link_active">Catalog</a></li>
+                    <li class="nav__item"><a href="##" class="nav__link">About us</a></li>
+                    <li class="nav__item"><a href="##" class="nav__link">Wemen</a></li>
+                    <li class="nav__item"><a href="##" class="nav__link">Men</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <img src="./assets/header-icons/Mazy.png" alt="logo">
+            </div>
+            <div class="search">
+                <div class="search-container">
+                    <div class="search__icon"></div>
+                    <input class="search__input" type="text" placeholder="Search" autofocus autocomplete="off">
+                    <div class="search__cancel"></div>
+                </div>
+            </div>
+            <div class="cart">
+                <!-- <div class="cart__like"></div> -->
+                <div class="cart__cart-instance"></div>
+                <div class="amount">0</div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="filtres">
+                <div class="sort">
+                    <h3 class="purpose__group">Sort by</h3>
+                    <div class="sort__container">
+                        <select class="sorting">
+                            <option value="0">Choose sort conditions:</option>
+                            <option value="asc">By quantity (asc)</option>
+                            <option value="desc">By quantity (desc)</option>
+                            <option value="nameUp">By name (a - z)</option>
+                            <option value="nameDn">By name (z - a)</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="purpose">
+                    <h3 class="purpose__group">filters by purpose</h3>
+                    <div class="brand">
+                        <div class="title-container">
+                            <h4 class="brand__brand purpose__title">Brand</h4>
+                        </div>
+                        <div class="purpose__choices-brand">
+                            <button class="brand__item purpose-button__item">MAZY</button>
+                            <button class="brand__item purpose-button__item">RAWR</button>
+                            <button class="brand__item purpose-button__item">WOOGEE</button>
+                        </div>
+                    </div>
+                    <div class="size">
+                        <div class="title-container">
+                            <h4 class="size__title purpose__title">Size</h4>
+                        </div>
+                        <div class="purpose__choices-size">
+                            <button class="size__item size__radio">42</button>
+                            <button class="size__item size__radio">44</button>
+                            <button class="size__item size__radio">46</button>
+                            <button class="size__item size__radio">48</button>
+                            <button class="size__item size__radio">50</button>
+                            <button class="size__item size__radio">52</button>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <div class="title-container">
+                            <h4 class="color__title purpose__title">Color</h4>
+                        </div>
+                        <div class="purpose__choices-color colors">
+                            <button data-color="black" class="color__item purpose-button__item"></button>
+                            <button data-color="blue" class="color__item purpose-button__item"></button>
+                            <button data-color="brown" class="color__item purpose-button__item"></button>
+                            <button data-color="gray" class="color__item purpose-button__item"></button>
+                            <button data-color="green" class="color__item purpose-button__item"></button>
+                            <button data-color="pink" class="color__item purpose-button__item"></button>
+                            <button data-color="white" class="color__item purpose-button__item"></button>
+                            <button data-color="yellow" class="color__item purpose-button__item"></button>
+                        </div>
+                    </div>
+                    <div class="popular">
+                        <div class="title-container">
+                            <h4 class="popular__title purpose__title">Only Popular</h4>
+                        </div>
+                        <div class="purpose__choices-popular">
+                            <button class="popular-checkbox"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="range">
+                    <div class="title-container">
+                        <h3 class="purpose__group">filters by range</h3>
+                    </div>
+                    <div class="year">
+                        <div class="title-container">
+                            <h4 class="popular__title purpose__title">launch year</h4>
+                        </div>
+                        <div class="slider__year"></div>
+                    </div>
+                    <div class="quantity">
+                        <div class="title-container">
+                            <h4 class="popular__title purpose__title">quantity</h4>
+                        </div>
+                        <div class="slider__quantity"></div>
+                    </div>
+                </div>
+                <div class="reset">
+                    <div class="title-container">
+                        <h3 class="purpose__group">Reset settings</h3>
+                    </div>
+                    <div class="settings__container">
+                        <button class="purpose-button__item reset-filters">reset filters</button>
+                        <button class="purpose-button__item reset-settings">reset settings</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cards__modal">Sorry, no matches detected</div>
+                <div class="cards__container"></div>
+            </div>
+           
+        </main>
+
+
+        <footer class="footer">
+            <div class="footer-container">
+               <div class="github">
+                   <a class="github__link" href="#">© 2022 github</a>
+               </div>
+               <div class="rsschool">
+                   <a class="rsschool__link" href="#"></a>
+               </div>
+           </div>
+        <footer>
+    </div>
+</body>
+</html>
