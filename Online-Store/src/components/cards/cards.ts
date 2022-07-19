@@ -1,22 +1,33 @@
 import { IJson } from '../../types/index'
 import json from '../../assets/index.json'
-import { filterByValues, brandButtons, sizeButtons,  colorButtons, popularButtons, slidesReset} from '../filteres/filteres'
+import { filterByValues, renderLS, softResetOn} from '../filteres/filteres'
 
 const data = json
 
 const cards = <HTMLElement>document.querySelector('.cards__container')
 const modal = <HTMLElement>document.querySelector('.cards__modal')
 const cross = <HTMLDivElement>document.querySelector('.search__cancel')
-const input = <HTMLInputElement>document.querySelector('.search__input')
 const brandBlock = <HTMLElement>document.querySelector('.purpose__choices-brand')
 const sizeBlock = <HTMLElement>document.querySelector('.purpose__choices-size')
 const colorBlock = <HTMLElement>document.querySelector('.purpose__choices-color')
 const popularBlock = <HTMLElement>document.querySelector('.purpose__choices-popular')
-const sortBy = <HTMLInputElement>document.querySelector('.sorting')
-const reset = <HTMLElement>document.querySelector('.reset-filters')
+const softReset = <HTMLElement>document.querySelector('.reset-filters')
+const hardReset = <HTMLElement>document.querySelector('.reset-settings')
 
-let cardIdArr: string[] = []
+export const sortBy = <HTMLInputElement>document.querySelector('.sorting')
+export const input = <HTMLInputElement>document.querySelector('.search__input')
+
+window.addEventListener('load', () => {
+    renderLS()
+    renderByValues()
+})
+   
 let cardId: string = ''
+let amount = document.querySelector('.amount')
+let cardIdArr: string[] = []
+
+if (localStorage.getItem('cartCountArrId')) cardIdArr = localStorage.getItem('cartCountArrId')?.split(',') as string[]
+if (localStorage.getItem('cartCount') && (amount)) amount.innerHTML = localStorage.getItem('cartCount') as string
 
 const renderCards = (data: Array<IJson>): void => {
     cards.innerHTML = ''
@@ -52,42 +63,6 @@ const renderCards = (data: Array<IJson>): void => {
     }
 }
 
-const sortByValue = (data: Array<IJson>, reset=false) => {
-    let filteredData: Array<IJson> = []
-    if (reset) filteredData = data 
-    else filteredData = filterByValues(data)
-    
-    let value = sortBy.value
-    if (value === '0') {
-        localStorage.setItem('sortBy', '0')
-    }
-    else if (value === 'asc') {
-        filteredData = filteredData.sort((a, b) => a.quantity - b.quantity)
-        localStorage.setItem('sortBy', 'asc')
-    }   
-    else if (value === 'desc') {
-        filteredData = filteredData.sort((a, b) => b.quantity - a.quantity) 
-        localStorage.setItem('sortBy', 'desc')
-    }
-    else if (value === 'nameUp') {
-        filteredData = filteredData.sort((a, b) => {
-            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
-            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
-            return 0
-        })
-        localStorage.setItem('sortBy', 'nameUp')
-    }
-    else if (value === 'nameDn') {
-        filteredData = filteredData.sort((a, b) => {
-            if (b.name.toLowerCase() < a.name.toLowerCase()) return -1
-            if (b.name.toLowerCase() > a.name.toLowerCase()) return 1
-            return 0
-        })
-        localStorage.setItem('sortBy', 'nameDn')
-    }
-    return filteredData
-}
-
 export const renderByValues = (): void => {
     let filteredData = filterByValues(data)
     renderCards(filteredData)
@@ -103,7 +78,6 @@ brandBlock.addEventListener('click', (event: MouseEvent) => {
 })
 
 sizeBlock.addEventListener('click', (event: MouseEvent) => {
-    // sizeButtons.forEach(element => element.classList.remove('size__radio_active'))
     if (event.target instanceof HTMLButtonElement) {
         if (event.target.classList.contains('size__item')) {
             event.target.classList.toggle('size__radio_active')
@@ -130,78 +104,55 @@ popularBlock.addEventListener('click', (event: MouseEvent) => {
     }
 })
 
-// reset functionality
-reset.addEventListener('click', () => {
-    let filteredData = sortByValue(data, true)
-    Array.from(brandButtons).forEach(elem => elem.classList.remove('purpose-button__item_active'))
-    Array.from(sizeButtons).forEach(elem => elem.classList.remove('size__radio_active'))
-    Array.from(colorButtons).forEach(elem => elem.classList.remove('color__item_active'))
-    Array.from(popularButtons).forEach(elem => elem.classList.remove('popular-checkbox_active'))
-    slidesReset()
-    renderCards(filteredData)
+// reset filters
+softReset.addEventListener('click', () => {
+    softResetOn()
+    renderByValues()
 })
+// resrt settings
+hardReset.addEventListener('click', () => {
+    Array.from(cards.children).forEach(elem => elem.classList.remove('card_active'))
+    cardIdArr = []
+    if (amount) amount.innerHTML = '0'
+    sortBy.value = '0'
+    input.value = ''
+    localStorage.clear()
+    softResetOn()
+    renderByValues()
+})
+
 
 // search by sort
 sortBy.addEventListener('change', () => {
-    let filteredData = sortByValue(data, false)
+    let filteredData = filterByValues(data, false)
     renderCards(filteredData)  
 })
-
-// export const renderLS = () => {
-//     let brandArrLS = localStorage.getItem('brands')?.split(',')
-//     let sizeLS = <string>localStorage.getItem('sizes')
-//     let popularLS = <string>localStorage.getItem('popular')
-//     let colorArrLS = localStorage.getItem('color')?.split(',')
-//     let selectValueLS = localStorage.getItem('sortBy')
-//     let inputValueLS = localStorage.getItem('input')
-
-//     // brand filters
-//     brandArrLS?.forEach(element => Array.from(brandBlock.children).forEach(elem => {
-//         if (elem.innerHTML === element) elem.classList.add('purpose-button__item_active')}))
-//     // size filters
-//     Array.from(sizeBlock.children).forEach(elem => {if (elem.innerHTML === sizeLS) {elem.classList.add('size__radio_active')}})
-//     // color filters
-//     let colorArr  = Array.from(colorBlock.children).map(element => element as HTMLElement)
-//     colorArrLS?.forEach(element => colorArr.forEach(elem => {if (elem.dataset.color === element) {elem.classList.add('color__item_active')}}))
-//     // popular filters
-//     if (popularLS === '1') popularBlock.children[0].classList.add('popular-checkbox_active')
-//     // sortBy
-//     if (selectValueLS) sortBy.value = selectValueLS
-//     // input value
-//     if (inputValueLS) input.value = inputValueLS
-//     // range values
-// }
 
 // search-bar functionality
 cross.addEventListener('click', () => {
     input.value = ''
-    let filteredData = filterByValues(data)
-    renderCards(filteredData)
+    localStorage.setItem('input', input.value)
+    renderByValues()
 })
 
 // search by input
 input.addEventListener('input', () => {
     localStorage.setItem('input', input.value)
-    let filteredData = filterByValues(data)
-    filteredData = filteredData.filter(element => Object.values(element).some(elem => {
-        if (typeof(elem) === 'string' && !elem.match(/\.(jpe?g|png|gif)$/i)) {
-            return elem.toLowerCase().includes(<string>input.value.toLowerCase())
-        } 
-    }))
-    renderCards(filteredData)
-})
+    renderByValues()
+} )
 
 //cart counting
 cards.addEventListener('click', (event: MouseEvent) => {
-    let amount = document.querySelector('.amount')
     if (event.target instanceof HTMLDivElement && event.target.parentNode instanceof HTMLDivElement) {
         if ((amount)) {
             if (event.target.parentNode.classList.contains('card')) {                           
                 if (event.target.parentNode.classList.contains('card_active')) {
                     event.target.parentNode.classList.remove('card_active')
                     amount.innerHTML = String(Number(amount?.innerHTML) - 1)
+                    localStorage.setItem('cartCount', amount?.innerHTML)
                     cardId = <string>event.target.parentNode.getAttribute('card-id')
                     cardIdArr.splice(cardIdArr.indexOf(cardId), 1)
+                    localStorage.setItem('cartCountArrId', cardIdArr.toString())
                 }
                 else {
                     if (Number(amount.innerHTML) > 15) {
@@ -210,8 +161,10 @@ cards.addEventListener('click', (event: MouseEvent) => {
                     else {
                         event.target.parentNode.classList.add('card_active')
                         amount.innerHTML = String(Number(amount?.innerHTML) + 1)
+                        localStorage.setItem('cartCount', amount?.innerHTML)
                         cardId = <string>event.target.parentNode.getAttribute('card-id')
                         cardIdArr.push(cardId)
+                        localStorage.setItem('cartCountArrId', cardIdArr.toString())
                     }
                 }
             }
@@ -219,6 +172,5 @@ cards.addEventListener('click', (event: MouseEvent) => {
     }
 })
 
-renderCards(data)
 
 
