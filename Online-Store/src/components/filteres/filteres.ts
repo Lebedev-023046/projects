@@ -1,6 +1,6 @@
-import wNumb from 'wnumb';
-import 'nouislider/dist/nouislider.css';
-import * as noUiSlider from 'nouislider';
+import wNumb from 'wnumb'
+import 'nouislider/dist/nouislider.css'
+import * as noUiSlider from 'nouislider'
 import { IJson } from '../../types/index'
 import { renderByValues, sortBy, input } from '../cards/cards'
  
@@ -12,23 +12,23 @@ export const popularButtons = <NodeListOf<HTMLElement>>document.querySelectorAll
 const slider_year = <HTMLElement>document.querySelector(".slider__year")
 const slider_quantity = <HTMLElement>document.querySelector(".slider__quantity")
 
-const filterСriterias = (relevantButtons: NodeListOf<HTMLElement>) => {
-    const relevantValues: string[] = Array.from(relevantButtons)
-                                            .filter((btn) => btn.classList.contains('purpose-button__item_active') ||
+const filterСriterias = (relevantButtons: NodeListOf<HTMLElement>): string[] => {
+    const relevantValues = Array.from(relevantButtons)
+                                            .filter((btn: HTMLElement) => btn.classList.contains('purpose-button__item_active') ||
                                                              btn.classList.contains('size__radio_active') ||
                                                              btn.classList.contains('popular-checkbox_active') ||
                                                              btn.classList.contains('color__item_active'))
-                                            .map((btn) => btn.innerHTML || <string>btn.dataset.color)
+                                            .map((btn: HTMLElement) => btn.innerHTML || <string>btn.dataset.color)
     return relevantValues
 }
 
-const filterByBrand = (data: Array<IJson>) => {
+const filterByBrand = (data: Array<IJson>): Array<IJson> => {
     let res: Array<IJson> = []
-    let brandArr = filterСriterias(brandButtons)
+    let brandArr: string[] = filterСriterias(brandButtons)
     localStorage.setItem('brands', brandArr.toString())
     if (brandArr.length > 0) {
         for (let i=0; i<brandArr.length;i++) {
-            let fData = data.filter(elem => elem.brand.toLowerCase().includes(brandArr[i].toLowerCase()))
+            let fData: Array<IJson> = data.filter(elem => elem.brand.toLowerCase().includes(brandArr[i].toLowerCase()))
             fData.forEach(element => res.push(element))
         }
         return res
@@ -36,8 +36,8 @@ const filterByBrand = (data: Array<IJson>) => {
     else return data
 }
 
-const filterByInput = (data: Array<IJson>) => {
-    let fData = data.filter(element => Object.values(element).some(elem => {
+const filterByInput = (data: Array<IJson>): Array<IJson> => {
+    let fData: Array<IJson> = data.filter(element => Object.values(element).some(elem => {
         if (typeof(elem) === 'string' && !elem.match(/\.(jpe?g|png|gif)$/i)) {
             return elem.toLowerCase().includes(<string>input.value.toLowerCase())
         } 
@@ -47,11 +47,11 @@ const filterByInput = (data: Array<IJson>) => {
 
 const filterBySize = (data: Array<IJson>) => {
     let res: Array<IJson> = []
-    let sizeArr = filterСriterias(sizeButtons)
+    let sizeArr: string[] = filterСriterias(sizeButtons)
     localStorage.setItem('sizes', sizeArr.toString())
     if (sizeArr.length > 0) {
         for (let i=0; i<sizeArr.length;i++) {
-            let fData = data.filter(element => sizeArr.every(elem => element.size.includes(Number(elem))))
+            let fData: Array<IJson> = data.filter(element => sizeArr.every(elem => element.size.includes(Number(elem))))
             fData.forEach(element => res.push(element))
         }
         return res
@@ -61,11 +61,11 @@ const filterBySize = (data: Array<IJson>) => {
 
 const filterByColor = (data: Array<IJson>) => {
     let res: Array<IJson> = []
-    let colorArr = filterСriterias(colorButtons)
+    let colorArr: string[] = filterСriterias(colorButtons)
     localStorage.setItem('color', colorArr.toString())
     if (colorArr.length > 0) {
         for (let i=0; i<colorArr.length;i++) {
-            let fData = data.filter(elem => elem.color.includes((colorArr[i])))
+            let fData: Array<IJson> = data.filter(elem => elem.color.includes((colorArr[i])))
             fData.forEach(element => res.push(element))
         }
         return res
@@ -75,10 +75,10 @@ const filterByColor = (data: Array<IJson>) => {
 
 const filterByPopular = (data: Array<IJson>) => {
     let res: Array<IJson> = []
-    let popularArr = filterСriterias(popularButtons)
+    let popularArr: string[] = filterСriterias(popularButtons)
     localStorage.setItem('popular', String(popularArr.length))
     if (popularArr.length > 0) {
-        let fData = data.filter(elem => elem.popular === 'yes')
+        let fData: Array<IJson> = data.filter(elem => elem.popular === 'yes')
         fData.forEach(element => res.push(element))
         return res
     }
@@ -87,9 +87,9 @@ const filterByPopular = (data: Array<IJson>) => {
 
 const filterByYear = (data: Array<IJson>) => {
     let res: Array<IJson> = []
-    let years = yearIns.get() as number[]
+    let years: number[] = yearIns.get() as number[]
     if (data.length > 0) {
-        let fData = data.filter(elem => elem.year >= years[0] && elem.year <= years[1])
+        let fData: Array<IJson> = data.filter(elem => elem.year >= years[0] && elem.year <= years[1])
         fData.forEach(element => res.push(element))
         return res
     }
@@ -98,17 +98,17 @@ const filterByYear = (data: Array<IJson>) => {
 
 const filterByQuantity = (data: Array<IJson>) => {
     let res: Array<IJson> = []
-    let quantity = quantityIns.get() as number[]
+    let quantity: number[] = quantityIns.get() as number[]
     if (data.length > 0) {
-        let fData = data.filter(elem => elem.quantity >= quantity[0] && elem.quantity <= quantity[1])
+        let fData: Array<IJson> = data.filter(elem => elem.quantity >= quantity[0] && elem.quantity <= quantity[1])
         fData.forEach(element => res.push(element))
         return res
     }
     else return data
 }
 
-const filterByValue = (data: Array<IJson>, reset=false) => {
-    let value = sortBy.value
+const filterByValue = (data: Array<IJson>, reset=false): Array<IJson> => {
+    let value: string = sortBy.value
     if (value === '0') {
         localStorage.setItem('sortBy', '0')
     }
@@ -139,7 +139,7 @@ const filterByValue = (data: Array<IJson>, reset=false) => {
     return data
 }
 
-export const filterByValues = (rawData: Array<IJson>, reset=false) => {
+export const filterByValues = (rawData: Array<IJson>, reset=false): Array<IJson> => {
     let byBrand = filterByBrand(rawData)
     let bySize = filterBySize(byBrand)
     let byColor = filterByColor(bySize)
@@ -152,7 +152,7 @@ export const filterByValues = (rawData: Array<IJson>, reset=false) => {
     return bySort
 }
 
-export const softResetOn = () => {
+export const softResetOn = (): void => {
     Array.from(brandButtons).forEach(elem => elem.classList.remove('purpose-button__item_active'))
     Array.from(sizeButtons).forEach(elem => elem.classList.remove('size__radio_active'))
     Array.from(colorButtons).forEach(elem => elem.classList.remove('color__item_active'))
@@ -161,11 +161,8 @@ export const softResetOn = () => {
 }
 
 
-
-
-
 // sliders
-const yearIns = noUiSlider.create(slider_year, {
+const yearIns: noUiSlider.API = noUiSlider.create(slider_year, {
     start: [2019, 2022],
     connect: true,
     range: {
@@ -177,9 +174,9 @@ const yearIns = noUiSlider.create(slider_year, {
     format: wNumb({
         decimals: 0
     }),
-});
+})
 
-const quantityIns = noUiSlider.create(slider_quantity, {
+const quantityIns: noUiSlider.API = noUiSlider.create(slider_quantity, {
     start: [0, 40],
     connect: true,
     range: {
@@ -191,9 +188,9 @@ const quantityIns = noUiSlider.create(slider_quantity, {
     format: wNumb({
         decimals: 0
     }),
-});
+})
 
-export const slidesReset = () => {
+export const slidesReset = (): void => {
     yearIns.reset()
     quantityIns.reset()
 }
@@ -208,15 +205,15 @@ export const slidesReset = () => {
     renderByValues()
 });
 
-export const renderLS = () => {
-    let brandArrLS = localStorage.getItem('brands')?.split(',')
+export const renderLS = (): void => {
+    let brandArrLS: string[] = <string[]>localStorage.getItem('brands')?.split(',')
+    let colorArrLS: string[] = <string[]>localStorage.getItem('color')?.split(',')
     let sizeLS = <string>localStorage.getItem('sizes')
     let popularLS = <string>localStorage.getItem('popular')
-    let colorArrLS = localStorage.getItem('color')?.split(',')
-    let selectValueLS = localStorage.getItem('sortBy')
-    let inputValueLS = localStorage.getItem('input')
-    let yearArrLS = localStorage.getItem('years')
-    let quantityArrLS = localStorage.getItem('quantity')
+    let selectValueLS: string = <string>localStorage.getItem('sortBy')
+    let inputValueLS: string = <string>localStorage.getItem('input')
+    let yearArrLS: string = <string>localStorage.getItem('years')
+    let quantityArrLS: string = <string>localStorage.getItem('quantity')
 
     // brand filters
     brandArrLS?.forEach(element => Array.from(brandButtons).forEach(elem => {
@@ -224,7 +221,7 @@ export const renderLS = () => {
     // size filters
     Array.from(sizeButtons).forEach(elem => {if (elem.innerHTML === sizeLS) {elem.classList.add('size__radio_active')}})
     // color filters
-    let colorArr  = Array.from(colorButtons).map(element => element as HTMLElement)
+    let colorArr: HTMLElement[] = Array.from(colorButtons).map(element => element as HTMLElement)
     colorArrLS?.forEach(element => colorArr.forEach(elem => {if (elem.dataset.color === element) {elem.classList.add('color__item_active')}}))
     // popular filters
     if (popularLS === '1') popularButtons[0].classList.add('popular-checkbox_active')
