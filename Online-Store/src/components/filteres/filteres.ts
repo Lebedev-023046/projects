@@ -46,15 +46,16 @@ const filterByInput = (data: Array<IJson>): Array<IJson> => {
 }
 
 const filterBySize = (data: Array<IJson>) => {
-    let res: Array<IJson> = []
+    let fData: Array<IJson> = []
     let sizeArr: string[] = filterСriterias(sizeButtons)
+    console.log(sizeArr)
     localStorage.setItem('sizes', sizeArr.toString())
     if (sizeArr.length > 0) {
         for (let i=0; i<sizeArr.length;i++) {
-            let fData: Array<IJson> = data.filter(element => sizeArr.every(elem => element.size.includes(Number(elem))))
-            fData.forEach(element => res.push(element))
+            fData = data.filter(element => sizeArr.every(elem => element.size.includes(Number(elem))))
         }
-        return res
+        // console.log(res)
+        return fData
     }
     else return data
 }
