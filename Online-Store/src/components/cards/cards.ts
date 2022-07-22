@@ -124,7 +124,7 @@ hardReset.addEventListener('click', (): void => {
 
 // search by sort
 sortBy.addEventListener('change', (): void => {
-    let filteredData = filterByValues(data, false)
+    let filteredData = filterByValues(data)
     renderCards(filteredData)  
 })
 

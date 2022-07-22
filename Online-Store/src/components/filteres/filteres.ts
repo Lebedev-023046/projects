@@ -48,13 +48,11 @@ const filterByInput = (data: Array<IJson>): Array<IJson> => {
 const filterBySize = (data: Array<IJson>) => {
     let fData: Array<IJson> = []
     let sizeArr: string[] = filterСriterias(sizeButtons)
-    console.log(sizeArr)
     localStorage.setItem('sizes', sizeArr.toString())
     if (sizeArr.length > 0) {
         for (let i=0; i<sizeArr.length;i++) {
             fData = data.filter(element => sizeArr.every(elem => element.size.includes(Number(elem))))
         }
-        // console.log(res)
         return fData
     }
     else return data
@@ -108,7 +106,7 @@ const filterByQuantity = (data: Array<IJson>) => {
     else return data
 }
 
-const filterByValue = (data: Array<IJson>, reset=false): Array<IJson> => {
+const filterByValue = (data: Array<IJson>): Array<IJson> => {
     let value: string = sortBy.value
     if (value === '0') {
         localStorage.setItem('sortBy', '0')
@@ -140,7 +138,7 @@ const filterByValue = (data: Array<IJson>, reset=false): Array<IJson> => {
     return data
 }
 
-export const filterByValues = (rawData: Array<IJson>, reset=false): Array<IJson> => {
+export const filterByValues = (rawData: Array<IJson>): Array<IJson> => {
     let byBrand = filterByBrand(rawData)
     let bySize = filterBySize(byBrand)
     let byColor = filterByColor(bySize)
@@ -234,4 +232,3 @@ export const renderLS = (): void => {
     if (yearArrLS)  yearIns.set(yearArrLS?.split(',').map(elem => +elem))
     if (quantityArrLS)  quantityIns.set(quantityArrLS?.split(',').map(elem => +elem))
 }
-
