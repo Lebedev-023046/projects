@@ -120,19 +120,11 @@ const filterByValue = (data: Array<IJson>): Array<IJson> => {
         localStorage.setItem('sortBy', 'desc')
     }
     else if (value === 'nameUp') {
-        data = data.sort((a, b) => {
-            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
-            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
-            return 0
-        })
+        data = data.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1)
         localStorage.setItem('sortBy', 'nameUp')
     }
     else if (value === 'nameDn') {
-        data = data.sort((a, b) => {
-            if (b.name.toLowerCase() < a.name.toLowerCase()) return -1
-            if (b.name.toLowerCase() > a.name.toLowerCase()) return 1
-            return 0
-        })
+        data = data.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
         localStorage.setItem('sortBy', 'nameDn')
     }
     return data
@@ -221,7 +213,9 @@ export const renderLS = (): void => {
     Array.from(sizeButtons).forEach(elem => {if (elem.innerHTML === sizeLS) {elem.classList.add('size__radio_active')}})
     // color filters
     let colorArr: HTMLElement[] = Array.from(colorButtons).map(element => element as HTMLElement)
-    colorArrLS?.forEach(element => colorArr.forEach(elem => {if (elem.dataset.color === element) {elem.classList.add('color__item_active')}}))
+    colorArrLS?.forEach(element => colorArr.forEach(elem => { if (elem.dataset.color === element) {
+        elem.classList.add('color__item_active')
+    }}))
     // popular filters
     if (popularLS === '1') {
         popularButtons[0].classList.add('popular-checkbox_active')
