@@ -153,33 +153,24 @@ export const softResetOn = (): void => {
 
 
 // sliders
-const yearIns: noUiSlider.API = noUiSlider.create(slider_year, {
-    start: [2019, 2022],
-    connect: true,
-    range: {
-        'min': 2019,
-        'max': 2022
-    },
-    behaviour: 'tap-drag',
-    tooltips: true,
-    format: wNumb({
-        decimals: 0
-    }),
-})
+const getSliderConfig = (range: number[]) => {
+    return {
+        start: range,
+        connect: true,
+        range: {
+            'min': range[0],
+            'max': range[1]
+        },
+        behaviour: 'tap-drag',
+        tooltips: true,
+        format: wNumb({
+            decimals: 0
+        }),
+    }
+}
 
-const quantityIns: noUiSlider.API = noUiSlider.create(slider_quantity, {
-    start: [0, 40],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 40
-    },
-    behaviour: 'tap-drag',
-    tooltips: true,
-    format: wNumb({
-        decimals: 0
-    }),
-})
+const yearIns: noUiSlider.API = noUiSlider.create(slider_year, getSliderConfig([2019, 2022]))
+const quantityIns: noUiSlider.API = noUiSlider.create(slider_quantity, getSliderConfig([0, 40]))
 
 export const slidesReset = (): void => {
     yearIns.reset()
