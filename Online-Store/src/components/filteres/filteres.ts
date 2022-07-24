@@ -223,12 +223,22 @@ export const renderLS = (): void => {
     let colorArr: HTMLElement[] = Array.from(colorButtons).map(element => element as HTMLElement)
     colorArrLS?.forEach(element => colorArr.forEach(elem => {if (elem.dataset.color === element) {elem.classList.add('color__item_active')}}))
     // popular filters
-    if (popularLS === '1') popularButtons[0].classList.add('popular-checkbox_active')
+    if (popularLS === '1') {
+        popularButtons[0].classList.add('popular-checkbox_active')
+    } 
     // sortBy
-    if (selectValueLS) sortBy.value = selectValueLS
+    if  (selectValueLS) {
+        sortBy.value = selectValueLS
+    } 
     // input value
-    if (inputValueLS) input.value = inputValueLS
+    if (inputValueLS) {
+        input.value = inputValueLS
+    } 
     // range values
-    if (yearArrLS)  yearIns.set(yearArrLS?.split(',').map(elem => +elem))
-    if (quantityArrLS)  quantityIns.set(quantityArrLS?.split(',').map(elem => +elem))
+    if (yearArrLS) {
+        yearIns.set(yearArrLS?.split(',').map(elem => +elem))
+    }  
+    if (quantityArrLS) {
+        quantityIns.set(quantityArrLS?.split(',').map(elem => +elem))
+    }  
 }

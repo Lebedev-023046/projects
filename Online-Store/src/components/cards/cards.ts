@@ -26,8 +26,13 @@ let cardId: string = ''
 let amount = <HTMLElement>document.querySelector('.amount')
 let cardIdArr: string[] = []
 
-if (localStorage.getItem('cartCountArrId')) cardIdArr = localStorage.getItem('cartCountArrId')?.split(',') as string[]
-if (localStorage.getItem('cartCount') && (amount)) amount.innerHTML = localStorage.getItem('cartCount') as string
+if (localStorage.getItem('cartCountArrId')) {
+    cardIdArr = localStorage.getItem('cartCountArrId')?.split(',') as string[]
+} 
+
+if (localStorage.getItem('cartCount') && (amount)) {
+    amount.innerHTML = localStorage.getItem('cartCount') as string
+} 
 
 const renderCards = (data: Array<IJson>): void => {
     cards.innerHTML = ''
@@ -43,7 +48,9 @@ const renderCards = (data: Array<IJson>): void => {
             card__photo.classList.add('card__photo')
             card__info.classList.add('card__info')
             card.setAttribute('card-id', element.id)
-            if (cardIdArr.includes(element.id)) card.classList.add('card_active')
+            if (cardIdArr.includes(element.id)) {
+                card.classList.add('card_active')
+            } 
             card__photo.style.backgroundImage = `url(${element.img})`
             card__info.innerHTML = `Name:     ${element.name}<br> 
                                     Color:    ${element.color}<br> 
@@ -113,7 +120,9 @@ softReset.addEventListener('click', (): void => {
 hardReset.addEventListener('click', (): void => {
     Array.from(cards.children).forEach(elem => elem.classList.remove('card_active'))
     cardIdArr = []
-    if (amount) amount.innerHTML = '0'
+    if (amount) {
+        amount.innerHTML = '0'
+    } 
     sortBy.value = '0'
     input.value = ''
     localStorage.clear()
