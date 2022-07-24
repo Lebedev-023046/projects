@@ -2,7 +2,7 @@ import { IJson } from '../../types/index'
 import json from '../../assets/index.json'
 import { filterByValues, renderLS, softResetOn} from '../filteres/filteres'
 
-const data = json
+const data: Array<IJson> = json
 
 const cards = <HTMLElement>document.querySelector('.cards__container')
 const modal = <HTMLElement>document.querySelector('.cards__modal')
