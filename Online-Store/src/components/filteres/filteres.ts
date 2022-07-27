@@ -2,15 +2,17 @@ import wNumb from 'wnumb'
 import 'nouislider/dist/nouislider.css'
 import * as noUiSlider from 'nouislider'
 import { IJson } from '../../types/index'
-import { renderByValues, sortBy, input } from '../cards/cards'
  
 export const brandButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.brand__item')
 export const sizeButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.size__item')
 export const colorButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.color__item')
 export const popularButtons = <NodeListOf<HTMLElement>>document.querySelectorAll('.popular-checkbox')
 
-const slider_year = <HTMLElement>document.querySelector(".slider__year")
-const slider_quantity = <HTMLElement>document.querySelector(".slider__quantity")
+export const sortBy = <HTMLInputElement>document.querySelector('.sorting')
+export const input = <HTMLInputElement>document.querySelector('.search__input')
+
+export const slider_year =  <noUiSlider.target>document.querySelector(".slider__year")
+export const slider_quantity = <noUiSlider.target>document.querySelector(".slider__quantity")
 
 const filterСriterias = (relevantButtons: NodeListOf<HTMLElement>): string[] => {
     const relevantValues = Array.from(relevantButtons)
@@ -169,23 +171,13 @@ const getSliderConfig = (range: number[]) => {
     }
 }
 
-const yearIns: noUiSlider.API = noUiSlider.create(slider_year, getSliderConfig([2019, 2022]))
-const quantityIns: noUiSlider.API = noUiSlider.create(slider_quantity, getSliderConfig([0, 40]))
+export const yearIns: noUiSlider.API = noUiSlider.create(slider_year, getSliderConfig([2019, 2022]))
+export const quantityIns: noUiSlider.API = noUiSlider.create(slider_quantity, getSliderConfig([0, 40]))
 
 export const slidesReset = (): void => {
     yearIns.reset()
     quantityIns.reset()
 }
-
-
-(slider_year as noUiSlider.target).noUiSlider?.on('end', (): void => {
-    localStorage.setItem('years', String(yearIns.get()))
-    renderByValues()
-});
-(slider_quantity as noUiSlider.target).noUiSlider?.on('end', (): void => {
-    localStorage.setItem('quantity', String(quantityIns.get()))
-    renderByValues()
-});
 
 export const renderLS = (): void => {
     let brandArrLS: string[] = <string[]>localStorage.getItem('brands')?.split(',')

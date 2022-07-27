@@ -1,6 +1,6 @@
 import { IJson } from '../../types/index'
 import json from '../../assets/index.json'
-import { filterByValues, renderLS, softResetOn} from '../filteres/filteres'
+import { filterByValues, renderLS, softResetOn, sortBy, input, yearIns, quantityIns,slider_year, slider_quantity} from '../filteres/filteres'
 
 const data: Array<IJson> = json
 
@@ -14,12 +14,30 @@ const popularBlock = <HTMLElement>document.querySelector('.purpose__choices-popu
 const softReset = <HTMLElement>document.querySelector('.reset-filters')
 const hardReset = <HTMLElement>document.querySelector('.reset-settings')
 
-export const sortBy = <HTMLInputElement>document.querySelector('.sorting')
-export const input = <HTMLInputElement>document.querySelector('.search__input')
-
 window.addEventListener('load', (): void => {
     renderLS()
     renderByValues()
+
+    sortBy.addEventListener('change', (): void => {
+        let filteredData = filterByValues(data)
+        renderCards(filteredData)  
+    })
+
+    input.addEventListener('input', (): void => {
+        localStorage.setItem('input', input.value)
+        renderByValues()
+    });
+
+    // slider
+    (slider_year).noUiSlider?.on('end', (): void => {
+        localStorage.setItem('years', String(yearIns.get()))
+        renderByValues()
+    });
+
+    (slider_quantity).noUiSlider?.on('end', (): void => {
+        localStorage.setItem('quantity', String(quantityIns.get()))
+        renderByValues()
+    });
 })
    
 let cardId: string = ''
@@ -109,7 +127,7 @@ popularBlock.addEventListener('click', (event: MouseEvent): void => {
         }
         renderByValues()
     }
-})
+});
 
 // reset filters
 softReset.addEventListener('click', (): void => {
@@ -131,24 +149,12 @@ hardReset.addEventListener('click', (): void => {
 })
 
 
-// search by sort
-sortBy.addEventListener('change', (): void => {
-    let filteredData = filterByValues(data)
-    renderCards(filteredData)  
-})
-
 // search-bar functionality
 cross.addEventListener('click', (): void => {
     input.value = ''
     localStorage.setItem('input', input.value)
     renderByValues()
 })
-
-// search by input
-input.addEventListener('input', (): void => {
-    localStorage.setItem('input', input.value)
-    renderByValues()
-} )
 
 //cart counting
 cards.addEventListener('click', (event: MouseEvent): void => {
