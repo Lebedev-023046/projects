@@ -1,19 +1,13 @@
  .btn {
     appearance: none;
-    @include size(2rem, 2rem);
     position: relative;
-    font-family: $mainFont;
-    border: 2px solid $crimson-color-opacity;
+    @include size(8rem, 1.6rem);
     border-radius: 10px;
+    border: 2px solid $crimson-color-opacity;
+    font-family: $mainFont;
     transition: .1s;
 
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.btn_active {
-    background-color: $crimson-color-opacity;
+    cursor: pointer;
 }
 
 
