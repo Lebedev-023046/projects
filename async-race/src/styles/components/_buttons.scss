@@ -1,0 +1,19 @@
+ .btn {
+    appearance: none;
+    @include size(2rem, 2rem);
+    position: relative;
+    font-family: $mainFont;
+    border: 2px solid $crimson-color-opacity;
+    border-radius: 10px;
+    transition: .1s;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn_active {
+    background-color: $crimson-color-opacity;
+}
+
+

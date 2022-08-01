@@ -1,0 +1,63 @@
+/* Mixins:
+  ========================================================================== */
+
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+    @if (unitless($pixels)) {
+      $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+      $context: $context * 1px;
+    }
+    @return $pixels / $context * 1rem;
+  }
+  
+// size to one line
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// placeholder helper
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin centered-absolute {
+  top: 50%;
+  right: 50%;
+  transform: translate(20%, -50%);
+}
+
+// Two sticks around content ( ---- @content ----)
+@mixin stick-after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 120%;
+  width: 4.065rem;
+  height: 3px;
+  background-color: #7e1414;
+}
+
+@mixin stick-before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 120%;
+  width: 4.065rem;
+  height: 3px;
+  background-color: #7e1414;
+}
+  
