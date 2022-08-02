@@ -2,6 +2,8 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
 @import './components/buttons';
+@import './layout/winners';
+@import './layout/menu';
 
 html {
   font-family: $mainFont;
@@ -21,6 +23,10 @@ html {
   }
 }
 
+.header, 
+.footer {
+  margin: 2rem 0;
+}
 
 .wrapper {
   display: flex;

@@ -1,0 +1,17 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+tr,
+th,
+td  {
+    border: 2px solid $light-color;
+}
+
+td {
+    text-align: center;
+    line-height: 2rem;
+    width: 5rem;
+    height: 2rem;
+}

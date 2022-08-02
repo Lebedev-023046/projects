@@ -2,6 +2,7 @@
     appearance: none;
     position: relative;
     @include size(8rem, 1.6rem);
+    background-color: $dark-red-color-opacity;
     border-radius: 10px;
     border: 2px solid $crimson-color-opacity;
     font-family: $mainFont;
