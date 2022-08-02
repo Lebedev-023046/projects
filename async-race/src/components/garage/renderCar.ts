@@ -22,8 +22,8 @@ const renderCarImg = (color: string): string => `
 export const renderCar = ({id, name, color, isEngineStart}: ICars) => `
     <div class="buttons">
         <button class="btn select-btn" id="select-car-${id}">Select</button>
-        <button class="btn remove-btn" id="remove-car-${id}">Create</button>
-        <span class="carname">${name}</span>
+        <button class="btn remove-btn" id="remove-car-${id}">Remove</button>
+        <span class="car-name">${name}</span>
     </div>
     <div class="road">
         <div class="pedals">

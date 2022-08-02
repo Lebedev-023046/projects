@@ -7,12 +7,12 @@ export const renderMenu = () =>  `
         <form action="" method="POST">
             <input class="input-text" type="text" placeholder="name"/>
             <input class="input-color" type="color"/>
-            <input class="btn" type="submit" value="create">
+            <input class="btn createBtn" type="submit" value="create">
         </form>
         <form action="" method="PUT">
             <input class="input-text" type="text" placeholder="name">
             <input class="input-color" type="color">
-            <input class="btn" type="submit" value="update">
+            <input class="btn updateBtn" type="submit" value="update">
         </form>
         <div>
             <button class="btn">race</button>
