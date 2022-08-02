@@ -5,13 +5,49 @@
 }
 
 .garage-items {
-    margin: 6rem 0 1.5rem
+    margin: 2rem 0 1.5rem
 }
 
 .page-number {
-    margin: 1.5rem 0 4.5rem 
+    margin: 1.5rem 0 .5rem 
+}
+
+
+
+.car-name {
+    padding-left: 1rem;
+    font-weight: 700;
+}
+
+.road {
+    position: relative;
+}
+
+.pedals {
+    padding: .7rem 0;
+    display: flex;
+    border-bottom: 3px dashed #000;
+}
+
+.start-engine-button {
+    background-color: rgb(74, 126, 53);
+    border: 2px solid rgb(148, 148, 148);
+    color: rgb(246, 233, 233);
+}
+
+.stop-engine-button {
+    background-color: rgb(168, 67, 34);
+    border: 2px solid rgb(148, 148, 148);
+    color: rgb(246, 233, 233);
 }
 
 .car {
     @include size(6rem, 4rem);
+}
+
+.flag {
+    position: absolute;
+    top: 1.3rem;
+    right: 10rem;
+    font-size: 4rem;
 }
