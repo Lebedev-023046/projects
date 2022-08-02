@@ -1,5 +1,4 @@
 import { IWinners } from '../../interfaces/winners'
-// import { renderHF } from '../garage/garage'
 
 const body = document.querySelector('body')
 
@@ -19,14 +18,14 @@ const winners = (data: IWinners[]): string[]  => {
     return [...winnersArr]
 }
 
-export async function renderWinners(){
+export let renderWinners = async (): Promise<void>  => {
     const main = document.querySelector('.main')
     const responce: Response = await fetch('http://127.0.0.1:3000/winners')
     const data: IWinners[] = await responce.json()
     let htmlWinners: string =  `
     <div class "wrapper">
-        <div class "winners-number">Winners #${data.length}</div>
-        <div class "pages-number">Page  #${1}</div>
+        <h1 class "winners-number">Winners #${data.length}</h1>
+        <h2 class "pages-number">Page  #${1}</h2>
         <table class="winners-table">
             <thead>
                 <tr>
