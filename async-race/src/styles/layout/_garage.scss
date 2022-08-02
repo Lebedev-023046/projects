@@ -1,0 +1,17 @@
+.garage-items,
+.page-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.garage-items {
+    margin: 6rem 0 1.5rem
+}
+
+.page-number {
+    margin: 1.5rem 0 4.5rem 
+}
+
+.car {
+    @include size(6rem, 4rem);
+}

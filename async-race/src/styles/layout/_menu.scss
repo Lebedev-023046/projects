@@ -5,7 +5,7 @@
     gap: 1rem;
     width: 25rem;
 
-    & > div {
+    & > div, form {
         display: flex;
         justify-content: space-between;
     }
