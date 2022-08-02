@@ -3,7 +3,6 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const autoprefixer = require('autoprefixer')
 
 const assetsPath = path.join(__dirname, './src', 'assets')
 
@@ -52,11 +51,13 @@ const baseConfig = {
         //     ]
         // })
     ],
+    experiments: {
+        topLevelAwait: true
+    }
 };
 
 module.exports = ({ mode }) => {
     const isProductionMode = mode === 'production';
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
-
     return merge(baseConfig, envConfig);
 };
