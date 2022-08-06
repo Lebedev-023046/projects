@@ -1,12 +1,12 @@
-import { renderGarage } from "../garage/garage"
-import { renderWinners } from "../winners/winners"
+import { renderGarage } from "./garage/renderGarage"
+import { renderWinners } from "./winners/renderWinners"
 
 export const render = () => {
     const html = `
     <div class="wrapper">
         <header class="header">
-            <button class="btn toGarage">To Garage</button>
-            <button class="btn toWinners">To Winners</button>
+            <button class="btn to-garage">To Garage</button>
+            <button class="btn to-winners">To Winners</button>
         </header>
         <div class="garage">
             ${renderGarage()}
