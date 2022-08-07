@@ -3,15 +3,23 @@
     justify-content: space-around;
 }
 
+table {
+    vertical-align: bottom;
+}
+
 tr,
 th,
 td  {
+    padding: 0;
     border: 2px solid $light-color;
 }
 
 td {
     text-align: center;
-    line-height: 2rem;
+    vertical-align: middle;
     width: 5rem;
-    height: 2rem;
+}
+
+.winners-car-img {
+    @include size(2rem, 2rem);
 }
