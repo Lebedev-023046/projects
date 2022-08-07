@@ -1,7 +1,8 @@
 import { ICars } from '../../../../interfaces/cars'
 import { getCar, deleteCar } from '../../../api/api'
-import { renderGarage, updateState } from '../../../renderUI/garage/renderGarage'
-import { insertCarData } from '../../listenerFunctions'
+import { renderGarage } from '../../../renderUI/garage/renderGarage'
+import { insertCarData } from '../../utils'
+import { updateGarageState } from '../../utils'
 
 
 export const selectCarListFunc = async (event: MouseEvent) => {
@@ -25,7 +26,7 @@ export const deleteCarListFunc = async (event: MouseEvent) => {
     if (event.target instanceof Element) {
         const id: number = +event.target.id.split('delete-car-')[1]
         await deleteCar(id)
-        await updateState()
+        await updateGarageState()
         const garage = document.querySelector('.garage')
         if (garage instanceof HTMLElement) {
             garage.innerHTML = renderGarage()
