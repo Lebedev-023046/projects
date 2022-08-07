@@ -1,5 +1,3 @@
-import { IWinners } from '../../../interfaces/winners'
-import { getWinners } from '../../api/api'
 import globalState from '../../globalState/globalState'
 import { renderCarImg } from '../garage/renderCar'
 
@@ -11,7 +9,7 @@ const winners = (): string[]  => {
         winnersArr.push(`
         <tr>
             <td>${index + 1}</td>
-            <td>${renderCarImg(elem.car.color)}</td>
+            <td class="winners-car-img" valign="bottom">${renderCarImg(elem.car.color)}</td>
             <td>${elem.car.name}</td>
             <td>${elem.wins}</td>
             <td>${elem.time}</td>
@@ -41,7 +39,5 @@ export let renderWinners = ()  =>   `
         </table>
     </div>
     `
-
-// console.log(await getWinners(1))
 
 
