@@ -1,11 +1,12 @@
-import { newCarBody, updateCarBody } from '../../listenerFunctions'
+import { newCarBody, updateCarBody, updateGarageState } from '../../utils'
 import { createCar, updateCar, getCar, deleteCar } from '../../../api/api'
-import { renderGarage, updateState } from '../../../renderUI/garage/renderGarage'
+import { renderGarage } from '../../../renderUI/garage/renderGarage'
+import { getRandomName, getRandomColor} from '../../utils'
 
 
 export const createCarListFunc = async () => {
     await createCar(newCarBody())
-    await updateState()
+    await updateGarageState()
     const garage = document.querySelector('.garage')
     if (garage instanceof HTMLElement) {
         garage.innerHTML = renderGarage()
@@ -17,9 +18,20 @@ export const updateCarListFunc = async () => {
     if (updateBtn instanceof HTMLElement) {
         await updateCar(updateCarBody(), +updateBtn.dataset.id!)
     }
-    await updateState()
+    await updateGarageState()
     const garage = document.querySelector('.garage')
     if (garage instanceof HTMLElement) {
         garage.innerHTML = renderGarage()
+    }
+}
+
+export const generateCarsFunc = async () => {
+    const garage = document.querySelector('.garage')
+    if (garage instanceof HTMLElement) {
+        for (let i=0; i<100; i++) {
+            await createCar({name : getRandomName(), color: getRandomColor()})
+            await updateGarageState()
+            garage.innerHTML = renderGarage()
+        }
     }
 }

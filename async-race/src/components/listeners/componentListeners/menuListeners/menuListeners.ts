@@ -1,4 +1,4 @@
-import { createCarListFunc, updateCarListFunc } from './menuListenersFuncs'
+import { createCarListFunc, generateCarsFunc, updateCarListFunc } from './menuListenersFuncs'
 
 const body = document.querySelector('body')
 
@@ -11,6 +11,9 @@ export const menuListeners = () => {
                 }
                 if (event.target.classList.contains('update-btn')) {
                     updateCarListFunc()
+                }
+                if (event.target.classList.contains('generate-btn')) {
+                    generateCarsFunc()
                 }
             }
         })
