@@ -71,6 +71,21 @@ export const getRandomColor = function () {
 }
 
 
+export const animation = (car: HTMLElement, distance: number, animationTime: number) => {
+    let currentX = car.offsetLeft
+    const frameCount = animationTime / 1000 * 60 
+    const dX = Math.round(distance - car.offsetLeft) / frameCount
+
+    function step() {
+        currentX += dX
+        car.style.transform = `translateX(${currentX}px`;
+        if (currentX < distance) {
+            window.requestAnimationFrame(step);
+        }
+    }
+}
+
+
 
 
 
