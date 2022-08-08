@@ -1,3 +1,4 @@
+import { Response } from '../../interfaces/params'
 import { IWinners } from '../../interfaces/winners'
 
 export const getCars = async (page: number, limit=7) => {
@@ -48,4 +49,24 @@ export const getWinners = async (page: number, limit=10) => {
         }))),
         count: response.headers.get('X-Total-Count')
     }
+}
+
+export const createWinner = async (body: object) => {
+    return await fetch(`http://127.0.0.1:3000/winner`, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
+export const startEngine = async (id: number) => {
+    return (await fetch(`http://127.0.0.1:3000/engine?id=${id}&status=started`, {
+        method: 'PATCH'
+    })).json()
+}
+
+export const stopEngine = async (id: number) => {
+    return (await fetch(`http://127.0.0.1:3000/engine?id=${id}&status=stopped`)).json()
 }
