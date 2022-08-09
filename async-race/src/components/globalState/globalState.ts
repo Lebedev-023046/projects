@@ -1,8 +1,7 @@
-import { getCars, getWinners } from '../api/api'
+import { getCars, getWinners } from '../api/api';
 
-const { items: cars, count: carsCount } = await getCars(1)
-const { items: winners, count: winnersCount } = await getWinners(1)
-
+const { items: cars, count: carsCount } = await getCars(1);
+const { items: winners, count: winnersCount } = await getWinners(1);
 
 export default {
     garagePage: 1,
@@ -11,5 +10,11 @@ export default {
 
     winnersPage: 1,
     winners,
-    winnersCount
-}
+    winnersCount,
+
+    animation: {
+        id: {
+            id: 0,
+        },
+    },
+};
