@@ -22,7 +22,7 @@ export const selectCarListFunc = async (event: MouseEvent) => {
     }   
 }
 
-export const deleteCarListFunc = async (event: MouseEvent) => {
+export const deleteCarListFunc = async (event: MouseEvent): Promise<void> => {
     if (event.target instanceof Element) {
         const id: number = +event.target.id.split('delete-car-')[1]
         await deleteCar(id)

@@ -47,7 +47,7 @@ export const deleteCar = async (id: number): Promise<ICars> => {
     ).json();
 };
 
-export const getWinners = async (page: number, limit = 10): Promise<{ items: ICars[]; count: string | null }> => {
+export const getWinners = async (page: number, limit = 10): Promise<{ items: IWinners[]; count: string | null }> => {
     const response = await fetch(`http://127.0.0.1:3000/winners?_page=${page}&_limit=${limit}`);
     const items = await response.json();
 
@@ -62,7 +62,7 @@ export const getWinners = async (page: number, limit = 10): Promise<{ items: ICa
     };
 };
 
-export const createWinner = async (body: object): Promise<ICars> => {
+export const createWinner = async (body: object): Promise<IWinners> => {
     return (
         await fetch(`http://127.0.0.1:3000/winner`, {
             method: 'POST',

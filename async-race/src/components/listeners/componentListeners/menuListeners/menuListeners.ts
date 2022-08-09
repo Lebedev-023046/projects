@@ -2,7 +2,7 @@ import { createCarListFunc, generateCarsFunc, updateCarListFunc } from './menuLi
 
 const body = document.querySelector('body')
 
-export const menuListeners = () => {
+export const menuListeners = (): void => {
     if (body instanceof HTMLElement) {
         body.addEventListener('click', async (event: MouseEvent) => {
             if (event.target instanceof Element) {

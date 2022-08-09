@@ -1,8 +1,6 @@
 import globalState from '../../globalState/globalState'
 import { renderCarImg } from '../garage/renderCar'
 
-const body = document.querySelector('body')
-
 const winners = (): string[]  => {
     let winnersArr: string[] = []
     globalState.winners.forEach((elem, index) => {
@@ -19,7 +17,7 @@ const winners = (): string[]  => {
     return [...winnersArr]
 }
 
-export let renderWinners = ()  =>   `
+export let renderWinners = (): string  => `
     <div class "wrapper">
         <h1 class "winners-number">Winners #${globalState.winnersCount}</h1>
         <h2 class "pages-number">Page  #${globalState.winnersPage}</h2>

@@ -1,4 +1,4 @@
-export const toGaragePressBtn = () => {
+export const toGaragePressBtn = (): void => {
     const toGarage = document.querySelector('.to-garage')
     const toWinners = document.querySelector('.to-winners')
     const garage = document.querySelector('.garage')
@@ -10,7 +10,7 @@ export const toGaragePressBtn = () => {
         winners.style.display = 'none'
     }
 }
-export const toWinnersPressBtn = () => {
+export const toWinnersPressBtn = (): void => {
     const toGarage = document.querySelector('.to-garage')
     const toWinners = document.querySelector('.to-winners')
     const garage = document.querySelector('.garage')

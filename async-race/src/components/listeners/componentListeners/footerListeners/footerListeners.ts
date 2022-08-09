@@ -3,7 +3,7 @@ import { nextPressBtn, prevPressBtn } from "./footerListenersFuncs"
 
 const body = document.querySelector('body')
 
-export const footerListeners = () => {
+export const footerListeners = (): void => {
     if (body instanceof HTMLElement) {
         body.addEventListener('click', async (event: MouseEvent) => {
             if (event.target instanceof Element) {

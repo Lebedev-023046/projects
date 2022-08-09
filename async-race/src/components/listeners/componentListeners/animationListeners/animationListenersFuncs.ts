@@ -1,8 +1,9 @@
+import { Isuccess } from '../../../../interfaces/drive';
 import { drive, startEngine, stopEngine } from '../../../api/api';
 import globalState from '../../../globalState/globalState';
 import { animation, getDist } from '../../utils';
 
-export const start = async (event: MouseEvent) => {
+export const start = async (event: MouseEvent): Promise<Isuccess | undefined> => {
     if (event.target instanceof HTMLElement) {
         const id: number = +event.target.id.split('start-engine-car-')[1];
         const car = <HTMLElement>document.getElementById(`car-${id}`);
@@ -19,7 +20,7 @@ export const start = async (event: MouseEvent) => {
     }
 };
 
-export const stop = async (event: MouseEvent) => {
+export const stop = async (event: MouseEvent): Promise<void> => {
     if (event.target instanceof HTMLElement) {
         const id: number = +event.target.id.split('stop-engine-car-')[1];
         await stopEngine(id);

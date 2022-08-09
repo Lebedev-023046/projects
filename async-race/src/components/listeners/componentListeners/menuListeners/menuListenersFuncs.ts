@@ -4,7 +4,7 @@ import { renderGarage } from '../../../renderUI/garage/renderGarage'
 import { getRandomName, getRandomColor} from '../../utils'
 
 
-export const createCarListFunc = async () => {
+export const createCarListFunc = async (): Promise<void> => {
     await createCar(newCarBody())
     await updateGarageState()
     const garage = document.querySelector('.garage')
@@ -13,7 +13,7 @@ export const createCarListFunc = async () => {
     }
 }
 
-export const updateCarListFunc = async () => {
+export const updateCarListFunc = async (): Promise<void> => {
     const updateBtn = document.querySelector('.update-btn')
     if (updateBtn instanceof HTMLElement) {
         await updateCar(updateCarBody(), +updateBtn.dataset.id!)
@@ -25,7 +25,7 @@ export const updateCarListFunc = async () => {
     }
 }
 
-export const generateCarsFunc = async () => {
+export const generateCarsFunc = async (): Promise<void> => {
     const garage = document.querySelector('.garage')
     if (garage instanceof HTMLElement) {
         for (let i=0; i<100; i++) {

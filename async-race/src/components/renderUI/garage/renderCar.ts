@@ -19,7 +19,7 @@ export const renderCarImg = (color: string): string => `
     </svg>
 `;
 
-export const renderCar = ({ id, name, color }: ICars) => `
+export const renderCar = ({ id, name, color }: ICars): string => `
     <div class="buttons">
         <button class="btn select-btn" id="select-car-${id}">Select</button>
         <button class="btn delete-btn" id="delete-car-${id}">Remove</button>

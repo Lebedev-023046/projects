@@ -1,7 +1,7 @@
 import { renderGarage } from "./garage/renderGarage"
 import { renderWinners } from "./winners/renderWinners"
 
-export const render = () => {
+export const render = (): void => {
     const html = `
     <div class="wrapper">
         <header class="header">

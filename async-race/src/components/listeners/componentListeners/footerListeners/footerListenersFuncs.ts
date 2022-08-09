@@ -2,7 +2,7 @@ import globalState from "../../../globalState/globalState"
 import { renderGarage } from "../../../renderUI/garage/renderGarage"
 import { updateGarageState } from "../../utils"
 
-export const prevPressBtn = async () => {
+export const prevPressBtn = async (): Promise<void> => {
     const garage = document.querySelector('.garage')
     if (garage instanceof HTMLElement) {
         if (globalState.garagePage > 1) {
@@ -12,7 +12,7 @@ export const prevPressBtn = async () => {
         }
     }
 }
-export const nextPressBtn = async () => {
+export const nextPressBtn = async (): Promise<void> => {
     const garage = document.querySelector('.garage')
     if (garage instanceof HTMLElement) {
         if (globalState.garagePage * 7 < Number(globalState.carsCount)) {

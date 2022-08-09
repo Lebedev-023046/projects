@@ -2,7 +2,7 @@ import { start, stop } from './animationListenersFuncs';
 
 const body = document.querySelector('body');
 
-export const animationListeners = () => {
+export const animationListeners = (): void => {
     if (body instanceof HTMLElement) {
         body.addEventListener('click', async (event: MouseEvent) => {
             if (event.target instanceof HTMLElement) {

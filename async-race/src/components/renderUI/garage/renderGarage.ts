@@ -3,7 +3,7 @@ import { renderCar } from './renderCar'
 import globalState from '../../globalState/globalState'
 
 
-export const renderMenu = () =>  `
+export const renderMenu = (): string =>  `
     <div class="menu">
         <div>
             <input required class="input-text-create" type="text" placeholder="name"/>
@@ -22,7 +22,7 @@ export const renderMenu = () =>  `
         </div>
     </div>`
 
-export const renderGarage = () => {
+export const renderGarage = (): string => {
     return `${renderMenu()}
     <div class="cars-view">
         <h1 class="garage-items">Garage #${globalState.carsCount}</h1>
