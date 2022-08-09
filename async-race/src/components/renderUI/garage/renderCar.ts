@@ -1,4 +1,4 @@
-import { ICars } from "../../../interfaces/cars"
+import { ICars } from '../../../interfaces/cars';
 
 export const renderCarImg = (color: string): string => `
     <?xml version="1.0" encoding="iso-8859-1"?>
@@ -17,9 +17,9 @@ export const renderCarImg = (color: string): string => `
             </g>
         </g>
     </svg>
-`
+`;
 
-export const renderCar = ({id, name, color, isEngineStart}: ICars) => `
+export const renderCar = ({ id, name, color }: ICars) => `
     <div class="buttons">
         <button class="btn select-btn" id="select-car-${id}">Select</button>
         <button class="btn delete-btn" id="delete-car-${id}">Remove</button>
@@ -28,8 +28,8 @@ export const renderCar = ({id, name, color, isEngineStart}: ICars) => `
     <div class="road">
         <div class="pedals">
             <div class="control-btns">
-                <button class="start-engine-button" id="start-engine-car-${id}" ${isEngineStart ? "disabled" : ""}>A</button>
-                <button class="stop-engine-button" id="stop-engine-car-${id}" ${!isEngineStart ? "disabled" : ""}>B</button>
+                <button class="start-engine-button" id="start-engine-car-${id}">A</button>
+                <button class="stop-engine-button" id="stop-engine-car-${id}">B</button>
             </div>
             <div class="car" id="car-${id}">
                 ${renderCarImg(color)}
@@ -37,4 +37,4 @@ export const renderCar = ({id, name, color, isEngineStart}: ICars) => `
         </div>
         <div class="flag" id="flag-${id}">🚩</div>
     </div>
-`
+`;
