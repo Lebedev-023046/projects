@@ -71,3 +71,10 @@ export const animation = (car: HTMLElement, distance: number, animationTime: num
 export const getDist = (car: HTMLElement, flag: HTMLElement): number => {
     return flag.offsetLeft - car.offsetLeft + 100;
 };
+
+export const getIdxes = async () => {
+    const { items } =  await getCars(globalState.garagePage)
+    return items.map(elem => elem.id) as number[]
+}
+
+
