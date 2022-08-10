@@ -17,4 +17,6 @@ export default {
             id: 0,
         },
     },
+
+    winnerTime: Infinity
 };
