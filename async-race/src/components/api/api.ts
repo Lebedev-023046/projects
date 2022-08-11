@@ -81,6 +81,17 @@ export const createWinner = async (body: object): Promise<IWinners> => {
     ).json()
 }
 
+export const updateWinner = async (body: object, id: number): Promise<ICars> => {
+    return (
+        await fetch(`http://127.0.0.1:3000/winners/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+    ).json();
+};
 
 export const deleteWinner = async (id: number): Promise<ICars> => {
     return (
