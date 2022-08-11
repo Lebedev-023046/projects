@@ -8,7 +8,7 @@ export const render = (): void => {
             <button class="btn to-garage">To Garage</button>
             <button class="btn to-winners">To Winners</button>
         </header>
-        <div class="garage">
+        <div class="garage" style="display: block">
             ${renderGarage()}
         </div>
         
