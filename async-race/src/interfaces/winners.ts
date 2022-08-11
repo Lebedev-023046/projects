@@ -8,3 +8,10 @@ export interface IWinners {
     time: number,
 }
 
+export interface IGetWinners {
+    page: number,
+    limit?: number,
+    sort?: string | undefined,
+    order?: string | undefined
+}
+
