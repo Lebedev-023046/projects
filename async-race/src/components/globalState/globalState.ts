@@ -1,7 +1,7 @@
 import { getCars, getWinners } from '../api/api';
 
 const { items: cars, count: carsCount } = await getCars(1);
-const { items: winners, count: winnersCount } = await getWinners(1);
+const { items: winners, count: winnersCount } = await getWinners({ page: 1 });
 
 export default {
     garagePage: 1,
@@ -18,5 +18,6 @@ export default {
         },
     },
 
-    winnerTime: Infinity
+    sort: '',
+    order: 'asc'
 };
