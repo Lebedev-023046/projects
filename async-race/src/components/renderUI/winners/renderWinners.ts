@@ -7,10 +7,11 @@ const winners = (): string[]  => {
         winnersArr.push(`
         <tr>
             <td>${index + 1}</td>
+            <td>${elem.id}</td>
             <td class="winners-car-img" valign="bottom">${renderCarImg(elem.car.color)}</td>
             <td>${elem.car.name}</td>
             <td>${elem.wins}</td>
-            <td>${elem.time}</td>
+            <td>${(Number(elem.time))}</td>
         </tr>
         `)
     })
@@ -19,16 +20,17 @@ const winners = (): string[]  => {
 
 export let renderWinners = (): string  => `
     <div class "wrapper">
-        <h1 class "winners-number">Winners #${globalState.winnersCount}</h1>
+        <h1 class "winners-number">Winners (${globalState.winnersCount})</h1>
         <h2 class "pages-number">Page  #${globalState.winnersPage}</h2>
         <table class="winners-table">
             <thead>
                 <tr>
                     <th>Number</th>
+                    <th class="id">Id ↓</th>
                     <th>Car</th>
                     <th>Name</th>
-                    <th>Wins</th>
-                    <th>Best time (seconds)</th>
+                    <th class="winners">Wins ↓</th>
+                    <th class="time">Best time (seconds) ↓</th>
                 </tr>
             </thead>
             <tbody>
