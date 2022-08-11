@@ -1,9 +1,8 @@
-import { ICars } from '../../../interfaces/cars'
-import { renderCar } from './renderCar'
-import globalState from '../../globalState/globalState'
+import { ICars } from '../../../interfaces/cars';
+import { renderCar } from './renderCar';
+import globalState from '../../globalState/globalState';
 
-
-export const renderMenu = (): string =>  `
+export const renderMenu = (): string => `
     <div class="menu">
         <div>
             <input required class="input-text-create" type="text" placeholder="name"/>
@@ -20,7 +19,7 @@ export const renderMenu = (): string =>  `
             <button class="btn reset-btn">reset</button>
             <button class="btn generate-btn">generate cars</button>
         </div>
-    </div>`
+    </div>`;
 
 export const renderGarage = (): string => {
     return `${renderMenu()}
@@ -28,27 +27,28 @@ export const renderGarage = (): string => {
         <h1 class="garage-items">Garage (${globalState.carsCount})</h1>
         <h2 class="page-number">Page  #${globalState.garagePage}</h2>
         <ul class="garage-list">
-            ${globalState.cars.map(((elem: ICars) => `
+            ${globalState.cars.map(
+                (elem: ICars) => `
                 <li>${renderCar(elem)}</li>
-            `))}
+            `
+            )}
         </ul>
     </div>
-    `
-} 
+    `;
+};
 
-export const renderWinnerTime = (name:string, time: number): void => {
+export const renderWinnerTime = (name: string, time: number): void => {
     const html = `
     <div class="winner-info">
     ${name} reached finish first(${time}ms)
     </div>
-    `
-    const wrapper = document.querySelector('.wrapper')
-    const winnerBlock = document.createElement('div')
-    
+    `;
+    const wrapper = document.querySelector('.wrapper');
+    const winnerBlock = document.createElement('div');
+
     if (wrapper instanceof HTMLElement && winnerBlock instanceof HTMLElement) {
-        winnerBlock.innerHTML = html
-        wrapper.appendChild(winnerBlock)
-        setTimeout(() => wrapper.removeChild(winnerBlock), 4000)
+        winnerBlock.innerHTML = html;
+        wrapper.appendChild(winnerBlock);
+        setTimeout(() => wrapper.removeChild(winnerBlock), 4000);
     }
-}
- 
+};

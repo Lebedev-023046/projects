@@ -19,5 +19,5 @@ export default {
     },
 
     sort: '',
-    order: 'asc'
+    order: 'asc',
 };

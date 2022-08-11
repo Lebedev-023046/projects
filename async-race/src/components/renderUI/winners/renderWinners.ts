@@ -1,24 +1,26 @@
-import globalState from '../../globalState/globalState'
-import { renderCarImg } from '../garage/renderCar'
+import globalState from '../../globalState/globalState';
+import { renderCarImg } from '../garage/renderCar';
 
-const winners = (): string[]  => {
-    let winnersArr: string[] = []
+const winners = (): string[] => {
+    let winnersArr: string[] = [];
     globalState.winners.forEach((elem, index) => {
-        winnersArr.push(`
-        <tr>
-            <td>${index + 1}</td>
-            <td>${elem.id}</td>
-            <td class="winners-car-img" valign="bottom">${renderCarImg(elem.car.color)}</td>
-            <td>${elem.car.name}</td>
-            <td>${elem.wins}</td>
-            <td>${(Number(elem.time))}</td>
-        </tr>
-        `)
-    })
-    return [...winnersArr]
-}
+        if (elem.car) {
+            winnersArr.push(`
+            <tr>
+                <td>${index + 1}</td>
+                <td>${elem.id}</td>
+                <td class="winners-car-img" valign="bottom">${renderCarImg(elem.car.color)}</td>
+                <td>${elem.car.name}</td>
+                <td>${elem.wins}</td>
+                <td>${Number(elem.time)}</td>
+            </tr>
+            `);
+        }
+    });
+    return [...winnersArr];
+};
 
-export let renderWinners = (): string  => `
+export let renderWinners = (): string => `
     <div class "wrapper">
         <h1 class "winners-number">Winners (${globalState.winnersCount})</h1>
         <h2 class "pages-number">Page  #${globalState.winnersPage}</h2>
@@ -38,6 +40,4 @@ export let renderWinners = (): string  => `
             </tbody>
         </table>
     </div>
-    `
-
-
+    `;

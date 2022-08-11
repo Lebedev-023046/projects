@@ -1,5 +1,5 @@
-import { renderGarage } from "./garage/renderGarage"
-import { renderWinners } from "./winners/renderWinners"
+import { renderGarage } from './garage/renderGarage';
+import { renderWinners } from './winners/renderWinners';
 
 export const render = (): void => {
     const html = `
@@ -20,11 +20,10 @@ export const render = (): void => {
             <button class="btn prev">PREV</button>
             <button class="btn next">NEXT</button>
         </footer>
-    </div>`
+    </div>`;
 
-    const body = document.querySelector('body')
+    const body = document.querySelector('body');
     if (body instanceof HTMLElement) {
-        body.innerHTML = html
+        body.innerHTML = html;
     }
-    
-}
+};

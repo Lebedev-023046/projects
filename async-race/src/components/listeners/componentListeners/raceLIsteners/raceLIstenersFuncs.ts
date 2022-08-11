@@ -1,7 +1,6 @@
-import { drive, startEngine, stopEngine } from "../../../api/api";
-import globalState from "../../../globalState/globalState";
-import { animation, getDist } from "../../utils";
-
+import { drive, startEngine, stopEngine } from '../../../api/api';
+import globalState from '../../../globalState/globalState';
+import { animation, getDist } from '../../utils';
 
 export const startRaceCars = async (id: number) => {
     const car = <HTMLElement>document.getElementById(`car-${id}`);
@@ -15,13 +14,13 @@ export const startRaceCars = async (id: number) => {
         window.cancelAnimationFrame(globalState.animation.id.id);
     }
     return { success, id, time };
-}
+};
 
 export const stopRaceCars = async (idxes: number[]) => {
-    for (let i=0;i<idxes.length;i++) {
+    for (let i = 0; i < idxes.length; i++) {
         stopEngine(idxes[i]);
         const car = <HTMLElement>document.getElementById(`car-${idxes[i]}`);
         car.style.transform = 'translateX(0)';
         if (globalState.animation.id) window.cancelAnimationFrame(globalState.animation.id.id);
     }
-}
+};

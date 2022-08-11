@@ -14,7 +14,11 @@ export const updateGarageState = async (): Promise<void> => {
 };
 
 export const updateWinnerState = async (): Promise<void> => {
-    const { items, count } = await getWinners({page: globalState.winnersPage, sort: globalState.sort, order: globalState.order});
+    const { items, count } = await getWinners({
+        page: globalState.winnersPage,
+        sort: globalState.sort,
+        order: globalState.order,
+    });
     globalState.winners = items;
     globalState.winnersCount = count;
 };
@@ -72,15 +76,13 @@ export const animation = (car: HTMLElement, distance: number, animationTime: num
     }
     state.id = window.requestAnimationFrame(step);
     return state;
-}
+};
 
 export const getDist = (car: HTMLElement, flag: HTMLElement): number => {
     return flag.offsetLeft - car.offsetLeft + 100;
 };
 
 export const getIdxes = async () => {
-    const { items } =  await getCars(globalState.garagePage)
-    return items.map(elem => elem.id) as number[]
-}
-
-
+    const { items } = await getCars(globalState.garagePage);
+    return items.map((elem) => elem.id) as number[];
+};

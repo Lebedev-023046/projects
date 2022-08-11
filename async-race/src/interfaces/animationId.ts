@@ -1,3 +1,3 @@
 export interface IAnimation {
-    id: number,
+    id: number;
 }

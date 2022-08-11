@@ -27,7 +27,7 @@ export const createCar = async (body: object): Promise<ICars> => {
     ).json();
 };
 
-export const updateCar = async (body: object, id: number): Promise<ICars> => {
+export const updateCar = async (body: ICars, id: number): Promise<ICars> => {
     return (
         await fetch(`http://127.0.0.1:3000/garage/${id}`, {
             method: 'PUT',
@@ -49,13 +49,20 @@ export const deleteCar = async (id: number): Promise<ICars> => {
 
 const getSortOrder = (sort: string | undefined, order: string | undefined) => {
     if (sort && order) {
-        return `&_sort=${sort}&_order=${order}`
+        return `&_sort=${sort}&_order=${order}`;
     }
-    return ''
-}
+    return '';
+};
 
-export const getWinners = async ({page, limit = 10, sort, order}: IGetWinners): Promise<{ items: IWinners[]; count: string | null }> => {
-    const response = await fetch(`http://127.0.0.1:3000/winners?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`);
+export const getWinners = async ({
+    page,
+    limit = 10,
+    sort,
+    order,
+}: IGetWinners): Promise<{ items: IWinners[]; count: string | null }> => {
+    const response = await fetch(
+        `http://127.0.0.1:3000/winners?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`
+    );
     const items = await response.json();
 
     return {
@@ -69,7 +76,7 @@ export const getWinners = async ({page, limit = 10, sort, order}: IGetWinners): 
     };
 };
 
-export const createWinner = async (body: object): Promise<IWinners> => {
+export const createWinner = async (body: IWinners): Promise<IWinners> => {
     return (
         await fetch(`http://127.0.0.1:3000/winners`, {
             method: 'POST',
@@ -78,10 +85,10 @@ export const createWinner = async (body: object): Promise<IWinners> => {
                 'Content-Type': 'application/json',
             },
         })
-    ).json()
-}
+    ).json();
+};
 
-export const updateWinner = async (body: object, id: number): Promise<ICars> => {
+export const updateWinner = async (body: ICars, id: number): Promise<ICars> => {
     return (
         await fetch(`http://127.0.0.1:3000/winners/${id}`, {
             method: 'PUT',

@@ -1,4 +1,4 @@
 export interface IParams {
-    velocity: number,
-    distance:  number
+    velocity: number;
+    distance: number;
 }

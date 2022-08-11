@@ -1,21 +1,21 @@
-import { createCarListFunc, generateCarsFunc, updateCarListFunc } from './menuListenersFuncs'
+import { createCarListFunc, generateCarsFunc, updateCarListFunc } from './menuListenersFuncs';
 
-const body = document.querySelector('body')
+const body = document.querySelector('body');
 
 export const menuListeners = (): void => {
     if (body instanceof HTMLElement) {
         body.addEventListener('click', async (event: MouseEvent) => {
             if (event.target instanceof Element) {
                 if (event.target.classList.contains('create-btn')) {
-                    createCarListFunc()
+                    createCarListFunc();
                 }
                 if (event.target.classList.contains('update-btn')) {
-                    updateCarListFunc()
+                    updateCarListFunc();
                 }
                 if (event.target.classList.contains('generate-btn')) {
-                    generateCarsFunc()
+                    generateCarsFunc();
                 }
             }
-        })
+        });
     }
-}
+};
