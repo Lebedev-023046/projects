@@ -4,6 +4,7 @@ import { footerListeners } from "./componentListeners/footerListeners/footerList
 import { headerListeners } from "./componentListeners/headerListeners/headerListeners";
 import { menuListeners } from "./componentListeners/menuListeners/menuListeners";
 import { raceListeners } from "./componentListeners/raceLIsteners/raceLIsteners";
+import { winnerListeners } from "./componentListeners/winnerListeners/winnerListeners";
 
 export const listeners = (): void => {
     garageListeners()
@@ -12,4 +13,5 @@ export const listeners = (): void => {
     footerListeners()
     animationListeners()
     raceListeners()
+    winnerListeners()
 }
