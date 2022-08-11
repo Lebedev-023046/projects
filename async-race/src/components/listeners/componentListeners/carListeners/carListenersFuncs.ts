@@ -1,8 +1,10 @@
 import { ICars } from '../../../../interfaces/cars'
-import { getCar, deleteCar } from '../../../api/api'
+import { getCar, deleteCar, deleteWinner } from '../../../api/api'
 import { renderGarage } from '../../../renderUI/garage/renderGarage'
-import { insertCarData } from '../../utils'
+import { renderWinners } from '../../../renderUI/winners/renderWinners'
+import { insertCarData, updateWinnerState } from '../../utils'
 import { updateGarageState } from '../../utils'
+import { renderSortedView } from '../winnerListeners/winnerListenersFuncs'
 
 
 export const selectCarListFunc = async (event: MouseEvent) => {
@@ -26,10 +28,14 @@ export const deleteCarListFunc = async (event: MouseEvent): Promise<void> => {
     if (event.target instanceof Element) {
         const id: number = +event.target.id.split('delete-car-')[1]
         await deleteCar(id)
+        await deleteWinner(id)
         await updateGarageState()
+        await updateWinnerState()
         const garage = document.querySelector('.garage')
-        if (garage instanceof HTMLElement) {
+        const winners = document.querySelector('.winners')
+        if (garage instanceof HTMLElement && winners instanceof HTMLElement) {
             garage.innerHTML = renderGarage()
+            winners.innerHTML = renderWinners()
         }
     }
 }
