@@ -1,6 +1,6 @@
 import { IAnimation } from '../../interfaces/animationId';
 import { ICars } from '../../interfaces/cars';
-import { getCars } from '../api/api';
+import { getCars, getWinners } from '../api/api';
 import globalState from '../globalState/globalState';
 
 const carNames = ['Audi', 'BMW', 'Ford', 'Honda', 'Hyundai', 'Kia', 'Lada', 'Mazda', 'Toyota', 'Volkswagen'];
@@ -11,6 +11,12 @@ export const updateGarageState = async (): Promise<void> => {
     const { items, count } = await getCars(globalState.garagePage);
     globalState.cars = items;
     globalState.carsCount = count;
+};
+
+export const updateWinnerState = async (): Promise<void> => {
+    const { items, count } = await getWinners({page: globalState.winnersPage, sort: globalState.sort, order: globalState.order});
+    globalState.winners = items;
+    globalState.winnersCount = count;
 };
 
 export const newCarBody = (): ICars => {
