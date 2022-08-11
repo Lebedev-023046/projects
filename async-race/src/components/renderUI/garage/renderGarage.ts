@@ -25,7 +25,7 @@ export const renderMenu = (): string =>  `
 export const renderGarage = (): string => {
     return `${renderMenu()}
     <div class="cars-view">
-        <h1 class="garage-items">Garage #${globalState.carsCount}</h1>
+        <h1 class="garage-items">Garage (${globalState.carsCount})</h1>
         <h2 class="page-number">Page  #${globalState.garagePage}</h2>
         <ul class="garage-list">
             ${globalState.cars.map(((elem: ICars) => `
@@ -35,3 +35,20 @@ export const renderGarage = (): string => {
     </div>
     `
 } 
+
+export const renderWinnerTime = (name:string, time: number): void => {
+    const html = `
+    <div class="winner-info">
+    ${name} reached finish first(${time}ms)
+    </div>
+    `
+    const wrapper = document.querySelector('.wrapper')
+    const winnerBlock = document.createElement('div')
+    
+    if (wrapper instanceof HTMLElement && winnerBlock instanceof HTMLElement) {
+        winnerBlock.innerHTML = html
+        wrapper.appendChild(winnerBlock)
+        setTimeout(() => wrapper.removeChild(winnerBlock), 4000)
+    }
+}
+ 
