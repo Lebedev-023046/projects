@@ -1,5 +1,4 @@
 import { createWinner, getCar } from "../../../api/api"
-import globalState from "../../../globalState/globalState"
 import { renderWinnerTime } from "../../../renderUI/garage/renderGarage"
 import { getIdxes, updateWinnerState } from "../../utils"
 import { renderSortedView } from "../winnerListeners/winnerListenersFuncs"
