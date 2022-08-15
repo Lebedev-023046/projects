@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 style="font-size: 5rem">Regular Expressions</h1>
+				</section>
+				<section style="font-size: 4rem;">
+					<h2 style="font-size: 4rem;">Used for</h2>
+					<ul>
+						<li class="fragment">search for specific elements</li>
+						<li class="fragment">character replacement</li>
+						<li class="fragment">input validation</li>
+						<li class="fragment">coordination</li>
+					</ul>
+				</section>
+				<section>
+					<h1 style="font-size: 5rem">Metasymbols and character ranges</h1>
+				</section>
+				<section  style="font-size: 4rem;">
+					<p>RegExp: <em>/.[oe]t/g</em></p>
+					<p>Result: He <em>got</em> off the bus and <em>set</em> off to home.</p>
+				</section>
+				<section>
+					<h1>Multipliers</h1>
+				</section>
+				<section>
+					<h2 style="font-size: 4rem;">Examples</h2>
+					<ul>
+						<li class="fragment">* - the value occurs 0 or more times</li>
+						<li class="fragment">+ - the value occurs 1 or more times</li>
+						<li class="fragment">? - the value occurs 0 or 1 time</li>
+						<li class="fragment">{5} - the value occurs 5 times</li>
+						<li class="fragment">{3,7} - the value occurs between 3 and 7 times</li>
+						<li class="fragment">{2,} - the value occurs at least 2 times</li>
+					</ul>
+				</section>
+				<section  style="font-size: 4rem;">
+					<p>RegExp: <em> /b.*e/g</em></p>
+					<p>Result: To shoot the <em>breeze.</em></p>
+				</section>
+				<section  style="font-size: 4rem;">
+					<h1>character screening</h1>
+				</section>
+				<section  style="font-size: 4rem;">
+					<p>RegExp: <em>this\.</em></p>
+					<p>Result: Give me a book like <em>this.</em></p>
+				</section>
+				<section  style="font-size: 4rem;">
+					<h1>A little more about metasymbols</h1>
+				</section>
+				<section  style="font-size: 4rem;">				
+					<h2 style="font-size: 4rem;">Examples</h2>
+					<ul>
+						<li class="fragment">\s - corresponds to anything that is considered a space</li>
+						<li class="fragment">\S - is the opposite of \s</li>
+						<li class="fragment">\d - corresponds to any number from 0 to 9</li>
+						<li class="fragment">\D - is the opposite of \d</li>
+						<li class="fragment">\w - corresponds to any string character: [A-Za-z0-9_]</li>
+						<li class="fragment">\W - is the opposite of \w</li>
+					</ul>				
+				</section>
+				<section  style="font-size: 4rem;">
+					<p>RegExp: <em>\d{2}</em></p>
+					<p>Result: I need to pay all my debts to Mishel($<em>50</em>) and Ragnar($<em>90</em>)</p>
+				</section>
+				<section  style="font-size: 4rem;">
+					<h1>Anchors</h1>
+				</section>
+				<section>
+					<h2 style="font-size: 4rem;">Examples</h2>
+					<ul>
+						<li class="fragment">^ - represents the beginning of the string</li>
+						<li class="fragment">$ - represents the end of the string</li>
+					</ul>
+				</section>
+				<section  style="font-size: 4rem;">
+					<p>RegExp: <em>^\d+</em></p>
+					<p>Result: <em>6</em> women and 5 men were invited to a meeting.</p>
+				</section>
+				<section  style="font-size: 4rem;">
+					<h1>Flags</h1>
+					<p>Example: <em>(/.+/<i>g</i>)</em></p>
+				</section>
+				<section>
+					<h2 style="font-size: 4rem;">Examples</h2>
+					<ul>
+						<li class="fragment">g - global search</li>
+						<li class="fragment">i - ignore case</li>
+						<li class="fragment">m - multiline</li>
+					</ul>
+				</section>
+				<section  style="font-size: 4rem;">
+					<h1>The End</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
